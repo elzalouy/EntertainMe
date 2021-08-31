@@ -1,0 +1,15 @@
+.main-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: 100% 100%;
+    background-position: center center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(http://entertainme.co/storage/images/loading_bg.jpg);
+}
