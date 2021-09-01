@@ -7,21 +7,25 @@ export default class navbar extends Component {
       <div>
         <nav className="navbar navbar-dark bg-faded navbar-expand-lg">
           <div className="container-fluid">
-              <Logo width="150" height="100"/>
+            <a href="/" class="navbar-brand router-link-exact-active router-link-active" target="_self">
+              <Logo width="200" height="40"/>
+            </a>
             <button
               type="button"
               aria-label="Toggle navigation"
               aria-controls="nav-collapse"
               aria-expanded="false"
               className="navbar-toggler"
-            >
+              data-target="#nav-collapse"
+              data-toggle="collapse">
+                
               <span className="navbar-toggler-icon"></span>
             </button>
             <div
               id="nav-collapse"
-              className="navbar-collapse collapse"
-              style={{ display: "none;" }}
-            >
+              className="collapse navbar-collapse"
+              
+              >
               <ul className="navbar-nav ml-auto align-items-center">
                 <li className="navbar-text p-0 pr-2">
                   <div data-v-36959b50="" className="global-search">
@@ -44,7 +48,7 @@ export default class navbar extends Component {
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
                         className="bi-search search-icon b-icon bi text-light"
-                        style={{ fontSize: "150%;" }}
+                        style={{ fontSize: "150%" }}
                       >
                         <g data-v-36959b50="">
                           <path
@@ -63,8 +67,7 @@ export default class navbar extends Component {
                         data-v-36959b50=""
                         aria-hidden="true"
                         className="search-icon spinner-border spinner-border-sm text-light"
-                        style={{ display: "none;" }}
-                      ></span>
+                        style={{ display: "none"}}></span>
                     </div>
                   </div>
                 </li>
@@ -72,8 +75,7 @@ export default class navbar extends Component {
                   <a
                     target="_self"
                     href="https://www.entertainme.co/login"
-                    className="nav-link"
-                  >
+                    className="nav-link">
                     Login
                   </a>
                 </li>
