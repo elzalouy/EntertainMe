@@ -12762,3 +12762,21 @@ input[type="color"].form-control:disabled {
 ::-webkit-scrollbar-thumb {
   background-color: #fff;
 }
+
+/* ------ Added parts for navbar ----- */
+.navbar {
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  padding: .5rem 1rem;
+}
+.navbar-brand {
+  display: inline-block;
+  padding-top: .32rem;
+  padding-bottom: .32rem;
+  margin-right: 1rem;
+  font-size: 1.125rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
