@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Logo from "../UIs/logo.jsx";
-
 export default class navbar extends Component {
   render() {
     return (
@@ -20,7 +19,7 @@ export default class navbar extends Component {
             <div
               id="nav-collapse"
               className="navbar-collapse collapse"
-              style={{ display: "none;" }}
+              style={{ display: "none" }}
             >
               <ul className="navbar-nav ml-auto align-items-center">
                 <li className="navbar-text p-0 pr-2">
@@ -29,7 +28,7 @@ export default class navbar extends Component {
                       <input
                         data-v-36959b50=""
                         type="text"
-                        autocomplete="off"
+                        autoComplete="off"
                         className="border-0 form-control"
                         id="__BVID__12"
                       />
@@ -44,18 +43,18 @@ export default class navbar extends Component {
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
                         className="bi-search search-icon b-icon bi text-light"
-                        style={{ fontSize: "150%;" }}
+                        style={{ fontSize: "150%" }}
                       >
                         <g data-v-36959b50="">
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M12.442 12.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M8.5 14a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM15 8.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </g>
                       </svg>
@@ -63,7 +62,7 @@ export default class navbar extends Component {
                         data-v-36959b50=""
                         aria-hidden="true"
                         className="search-icon spinner-border spinner-border-sm text-light"
-                        style={{ display: "none;" }}
+                        style={{ display: "none" }}
                       ></span>
                     </div>
                   </div>

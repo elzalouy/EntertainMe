@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../UIs/logo";
+
 const Laoding = () => {
   return (
     <React.Fragment>

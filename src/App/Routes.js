@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import { Route} from "react-router-dom";
 import Home from "../components/Home/Home";
-import Laoding from "../components/Loading/Laoding";
 
 class Routes extends Component {
   state = {
+    isLoading:true,
     Routes: [
       {
         route: "/",
-        Route: <Route path="/" key="Loading" component={Laoding} />,
+        Route: <Route path="/" key="home"  component={Home} />,
       },
-      {
-        route: "/home",
-        Route: <Route path="/home" key="home" component={Home} />,
-      }
     ],
   };
+  componentDidMount(){
+    this.setState({isLoading:false});
+  }
 }
 
 export default Routes;
