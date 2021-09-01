@@ -4,14 +4,14 @@ const Artist = (props) => {
     return ( 
         <React.Fragment>
             <div
-            class="swiper-slide featured-artist swiper-slide-duplicate"
+            className="swiper-slide featured-artist swiper-slide-duplicate"
             data-swiper-slide-index="0"
             style={{backgroundImage : `url(${})`, marginRight: '10px'}}
             >
-            <div class="artist-info">
-              <h2 class="font-noto text-primary">AL-Sharif</h2>{" "}
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <p class="artist-description text-white m-0">
+            <div className="artist-info">
+              <h2 className="font-noto text-primary">AL-Sharif</h2>{" "}
+              <div className="d-flex justify-content-between align-items-center mb-2">
+                <p className="artist-description text-white m-0">
                   Purveyor of deep, infectious dance grooves and a feel-good atmosphere!
                 </p>{" "}
                 <svg
@@ -23,7 +23,7 @@ const Artist = (props) => {
                   alt="icon"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  class="bi-triangle-fill triangle b-icon bi text-primary"
+                  className="bi-triangle-fill triangle b-icon bi text-primary"
                   style="font-size: 300%;"
                   >
                   <g>

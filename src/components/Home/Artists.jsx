@@ -1,5 +1,6 @@
 import React from "react";
 import artistImg from '../../assets/artist.png';
+
 const Artists = () => {
   const artists = [
     {
@@ -78,26 +79,20 @@ const Artists = () => {
             ></path>
           </g>
         </svg>
-      </h1>{" "}
-      <div className="swiper-container swiper-container-initialized swiper-container-horizontal">
-        <div
-          className="swiper-wrapper"
-          style={{
-            transitionDuration: "0ms",
-            transform: "translate3d(-2970px, 0px, 0px)",
-          }}
-        >
+      </h1>
+      <div className="swiper swiper-container">
+        <div className="swiper-wrapper">
           {artists.map((item) => {
             return (
               <div
               key={(artists.indexOf(item)+1).toString()}
-                className={"swiper-slide w-100 h-100 featured-artist swiper-slide-duplicate "+item.className}
-                data-swiper-slide-index={(artists.indexOf(item)+1).toString()}
-                style={{
-                  backgroundImage:{artistImg},
-                  marginRight: "10px",
+              className="swiper-slide featured-artist"
+              data-swiper-slide-index={(artists.indexOf(item)+1).toString()}
+              style={{
+                backgroundImage:`url(${artistImg})`,
+                marginRight: "10px",
                 }}
-              >
+                >
                 <div className="artist-info">
                   <h2 className="font-noto text-primary">Hassan Ramzy</h2>
                   <div className="d-flex justify-content-between align-items-center mb-2">
@@ -116,13 +111,13 @@ const Artists = () => {
                       fill="currentColor"
                       className="bi-triangle-fill triangle b-icon bi text-primary"
                       style={{fontSize: '300%'}}
-                    >
+                      >
                       <g>
                         <path
                           fillRule="evenodd"
                           d="M9.022 3.566a1.13 1.13 0 011.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H3.144c-.889 0-1.437-.99-.98-1.767L9.022 3.566z"
                           clipRule="evenodd"
-                        ></path>
+                          ></path>
                       </g>
                     </svg>
                   </div>
@@ -130,12 +125,13 @@ const Artists = () => {
               </div>
             );
           })}
-        </div>
-        <span
+          </div>
+                <div className="swiper-pagination"></div>
+        {/* <span
           className="swiper-notification"
           aria-live="assertive"
           aria-atomic="true"
-        ></span>
+        ></span> */}
       </div>
     </section>
   );
