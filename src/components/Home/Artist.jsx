@@ -6,7 +6,8 @@ const Artist = (props) => {
             <div
             class="swiper-slide featured-artist swiper-slide-duplicate"
             data-swiper-slide-index="0"
-            style={{backgroundImage : `url(${})`, marginRight: '10px'}}
+            // backgroundImage : `url(${})`,
+            style={{ marginRight: '10px'}}
             >
             <div class="artist-info">
               <h2 class="font-noto text-primary">AL-Sharif</h2>{" "}

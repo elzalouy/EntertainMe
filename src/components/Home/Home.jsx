@@ -1,4 +1,5 @@
 import React from "react";
+import AboutUs from "./AboutUs";
 import Artists from "./Artists";
 
 const Home = () => {
@@ -11,8 +12,7 @@ const Home = () => {
               <div
                 id="start-journy"
                 className="d-flex flex-column"
-                style={{ height: "291px" }}
-              >
+                style={{ height: "291px" }}>
                 <h1 className="text-white font-noto">START YOUR JOURNEY</h1>{" "}
                 <p className="text-white mt-auto font-weight-bold">
                   It is difficult to plan an event when you’re not sure where to
@@ -54,6 +54,7 @@ const Home = () => {
           </div>
         </div>
         <Artists/>
+        <AboutUs />
       </div>
     </React.Fragment>
   );

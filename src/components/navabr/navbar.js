@@ -22,15 +22,9 @@ export default class navbar extends Component {
             </button>
             <div
               id="nav-collapse"
-<<<<<<< HEAD
               className="navbar-collapse collapse"
               style={{ display: "none" }}
             >
-=======
-              className="collapse navbar-collapse"
-              
-              >
->>>>>>> 917da1f786e35c5535c25661395951bfcb8e9eea
               <ul className="navbar-nav ml-auto align-items-center">
                 <li className="navbar-text p-0 pr-2">
                   <div data-v-36959b50="" className="global-search">
@@ -72,20 +66,16 @@ export default class navbar extends Component {
                         data-v-36959b50=""
                         aria-hidden="true"
                         className="search-icon spinner-border spinner-border-sm text-light"
-<<<<<<< HEAD
                         style={{ display: "none" }}
                       ></span>
-=======
-                        style={{ display: "none"}}></span>
->>>>>>> 917da1f786e35c5535c25661395951bfcb8e9eea
                     </div>
                   </div>
                 </li>
                 <li className="nav-item">
                   <a
                     target="_self"
-                    href="https://www.entertainme.co/login"
-                    className="nav-link">
+                    href="/logIn"
+                     className="nav-link">
                     Login
                   </a>
                 </li>
