@@ -32,7 +32,7 @@ class Routes extends Component {
       },
       {
         route:'/tohome',
-        Route:<Redirect from='/' to='/home'/>
+        Route:<Redirect from='/' to='/home'/>,
       }
     ],
   };

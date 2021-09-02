@@ -7,7 +7,6 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
-    "bootstrap": "^5.1.0",
     "config": "^3.3.6",
     "dotenv": "^8.2.0",
     "jwt-decode": "^3.1.2",
@@ -22,7 +21,7 @@
     "redux": "^4.1.1",
     "sass": "^1.38.2",
     "scss": "^0.2.4",
-    "swiper": "^7.0.2",
+    "swiper": "^6.8.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -48,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/swiper": "^5.4.3"
   }
 }

@@ -69,9 +69,6 @@ body {
   height: 100vh;
   background-image: url(/src/assets/home_background.jpg);
 }
-.text-primary {
-  color: #f70 !important;
-}
 .font-noto {
   font-weight: 700;
 }
@@ -646,6 +643,9 @@ body {
 }
 
 /* <<<<<<< HEAD */
+/* <<<<<<< HEAD */
+/* =======
+>>>>>>> d86982b073891d744cf09ea98a4637f672063a4d */
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap);
 @font-face {
@@ -12339,6 +12339,8 @@ input[type="color"].form-control:disabled {
 }
 /* =======
 >>>>>>> 4e9b06e5e9a7c1c80e1cca9f4d40fe79a886bece */
+/* =======
+>>>>>>> d86982b073891d744cf09ea98a4637f672063a4d */
 .btn .b-icon.bi,
 .dropdown-item .b-icon.bi,
 .dropdown-toggle .b-icon.bi,
@@ -12751,4 +12753,7 @@ input[type="color"].form-control:disabled {
   background: #f97501;
   bottom: -10px;
   width: 60%;
+}
+.text-primary{
+  color: #f70 !important;
 }

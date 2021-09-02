@@ -1,20 +1,20 @@
 import React from "react";
-import artistImg from '../../assets/artist.png';
+// note : Don't change swiper version until check if the new version is working with others correctly
+import {Swiper} from 'swiper/react';
+import artistImg from "../../assets/artist.png";
 const Artists = () => {
-  const artists = [
+    const artists = [
     {
       artist_name: "AL-Sharif",
       artist_description:
         "Purveyor of deep, infectious dance grooves and a feel-good atmosphere!",
       image: "/src/assets/artist.png",
-      className: "",
     },
     {
       artist_name: "Hassan Ramzy",
       artist_description:
         "Hassan Ramzy is a growing Egyptian musician who mainly plays guitar an...",
       image: "/src/assets/artist.png",
-      className: "",
     },
     {
       artist_name: "Khaled El Agaty",
@@ -27,32 +27,25 @@ const Artists = () => {
       artist_name: "Funk OFF",
       artist_description:
         "Funk Off is a funk, disco, blues, rock and pop band based in Cairo, Eg...",
-      className: "swiper-slide-duplicate-prev",
       image: "/src/assets/artist.png",
-
     },
     {
       artist_name: "Abyusif",
       artist_description:
         " Rapper/Producer Youssef Altay (aka Abyusif) is a bit of a favourite of...",
-      className: "swiper-slide-duplicate-active",
       image: "/src/assets/artist.png",
-
     },
     {
       artist_name: "Omar Etman",
       artist_description:
         "A local songwriter/busker from Cairo,Egypt, known for his knack for im...",
-      className: "swiper-slide-duplicate-next",
       image: "/src/assets/artist.png",
-
     },
     {
       artist_name: "Abo El Anwar",
       artist_description:
         "Abo El Anwar, based in Cairo, Egypt. He has been rapping since his ea...",
-        image: "/src/assets/artist.png",
-        className: "",
+      image: "/src/assets/artist.png",
     },
   ];
   return (
@@ -79,59 +72,63 @@ const Artists = () => {
           </g>
         </svg>
       </h1>
-      <div className="swiper swiper-container swiper-container-initialized swiper-container-horizontal">
-        <div className="swiper-wrapper">
+      <Swiper slidesPerView='auto' spaceBetween='10'  className="swiper-container">
+        <div className="swiper-wrapper" >
           {artists.map((item) => {
             return (
-              <div
-              key={(artists.indexOf(item)+1).toString()}
-              className="swiper-slide featured-artist"
-              data-swiper-slide-index={(artists.indexOf(item)+1).toString()}
-              style={{
-                backgroundImage:`url(${artistImg})`,
-                marginRight: "10px",
-                }}
+              <React.Fragment key={(artists.indexOf(item) + 1).toString()}>
+                <div
+                  className="swiper-slide featured-artist text-primary"
+                  data-swiper-slide-index={(
+                    artists.indexOf(item) + 1
+                  ).toString()}
+                  
+                  style={{
+                    backgroundImage: `url(${artistImg})`,
+                    marginRight: "10px",
+                  }}
                 >
-                <div className="artist-info">
-                  <h2 className="font-noto text-primary">Hassan Ramzy</h2>
-                  <div className="d-flex justify-content-between align-items-center mb-2">
-                    <p className="artist-description text-white m-0">
-                      Hassan Ramzy is a growing Egyptian musician who mainly
-                      plays guitar an...
-                    </p>
-                    <svg
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 20 20"
-                      focusable="false"
-                      role="img"
-                      alt="icon"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="bi-triangle-fill triangle b-icon bi text-primary"
-                      style={{fontSize: '300%'}}
+                  <div className="artist-info">
+                    <h2 className="font-noto text-primary">Hassan Ramzy</h2>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <p className="artist-description text-white m-0">
+                        Hassan Ramzy is a growing Egyptian musician who mainly
+                        plays guitar an...
+                      </p>
+                      <svg
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 20 20"
+                        focusable="false"
+                        role="img"
+                        alt="icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        className="bi-triangle-fill triangle b-icon bi text-primary"
+                        style={{ fontSize: "300%" }}
                       >
-                      <g>
-                        <path
-                          fillRule="evenodd"
-                          d="M9.022 3.566a1.13 1.13 0 011.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H3.144c-.889 0-1.437-.99-.98-1.767L9.022 3.566z"
-                          clipRule="evenodd"
+                        <g>
+                          <path
+                            fillRule="evenodd"
+                            d="M9.022 3.566a1.13 1.13 0 011.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H3.144c-.889 0-1.437-.99-.98-1.767L9.022 3.566z"
+                            clipRule="evenodd"
                           ></path>
-                      </g>
-                    </svg>
+                        </g>
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </React.Fragment>
             );
           })}
-          </div>
-                <div className="swiper-pagination"></div>
+        </div>
+        <div className="swiper-pagination"></div>
         {/* <span
           className="swiper-notification"
           aria-live="assertive"
           aria-atomic="true"
         ></span> */}
-      </div>
+      </Swiper>
     </section>
   );
 };
