@@ -69,9 +69,6 @@ body {
   height: 100vh;
   background-image: url(/src/assets/home_background.jpg);
 }
-.text-primary {
-  color: #f70 !important;
-}
 .font-noto {
   font-weight: 700;
 }
@@ -444,8 +441,8 @@ body {
   align-items: flex-end;
 }
 #featured-artists .swiper-container .featured-artist {
-  height: 200px !important;
-  width: 250px  !important;
+  height: 200px ;
+  width: 250px;
   background-color: var(--primary);
   position: relative;
   display: flex;
@@ -491,11 +488,11 @@ body {
   left: 0;
 }
 #featured-artists .swiper-container .featured-artist:hover {
-  height: 300px !important;
-  width: 350px  !important;
+  height: 300px;
+  width: 350px;
 }
 #featured-artists .swiper-container .featured-artist:hover:after {
-  opacity: 1 !important;
+  opacity: 1;
 }
 #featured-artists .swiper-container .featured-artist:hover .artist-info {
   opacity: 1;
@@ -9974,6 +9971,9 @@ button.bg-dark:hover {
 }
 .text-white {
   color: #fff !important;
+}
+.text-primary {
+  color: #f70 !important;
 }
 a.text-primary:focus,
 a.text-primary:hover {
