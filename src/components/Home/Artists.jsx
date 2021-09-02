@@ -1,6 +1,5 @@
 import React from "react";
 import artistImg from '../../assets/artist.png';
-
 const Artists = () => {
   const artists = [
     {
@@ -80,7 +79,7 @@ const Artists = () => {
           </g>
         </svg>
       </h1>
-      <div className="swiper swiper-container">
+      <div className="swiper swiper-container swiper-container-initialized swiper-container-horizontal">
         <div className="swiper-wrapper">
           {artists.map((item) => {
             return (
