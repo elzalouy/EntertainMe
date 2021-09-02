@@ -14,6 +14,10 @@ class Routes extends Component {
       {
         route:'/login',
         Route: <Route path="/logIn" key="logIn"  component={LogIn} />,
+      },
+      {
+        route:'/tohome',
+        Route:<Redirect from='/' to='/home'/>
       }
     ],
   };
