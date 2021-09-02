@@ -95,7 +95,7 @@ export default class navbar extends Component {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/contact" className="nav-link" target="_self">
+                  <a href="/contactUs" className="nav-link" target="_self">
                     Contact Us
                   </a>
                 </li>

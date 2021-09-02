@@ -645,7 +645,7 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap);
 @font-face {
@@ -9976,9 +9976,6 @@ button.bg-dark:hover {
 .text-white {
   color: #fff !important;
 }
-.text-primary {
-  color: #f70 !important;
-}
 a.text-primary:focus,
 a.text-primary:hover {
   color: #b35300 !important;
@@ -12340,8 +12337,8 @@ input[type="color"].form-control:disabled {
     transform: translateY(-25%);
   }
 }
-=======
->>>>>>> 4e9b06e5e9a7c1c80e1cca9f4d40fe79a886bece
+/* =======
+>>>>>>> 4e9b06e5e9a7c1c80e1cca9f4d40fe79a886bece */
 .btn .b-icon.bi,
 .dropdown-item .b-icon.bi,
 .dropdown-toggle .b-icon.bi,
@@ -12657,7 +12654,7 @@ input[type="color"].form-control:disabled {
   background-color: #fff;
 }
 
-/* ------ Added parts for navbar ----- */
+/* ------ Added parts ----- */
 .navbar {
   font-family: Noto Sans KR;
   font-weight: 700;
@@ -12673,4 +12670,85 @@ input[type="color"].form-control:disabled {
   font-size: 1.125rem;
   line-height: inherit;
   white-space: nowrap;
+}
+.contactus-background:after {
+  content: "";
+  background-color: var(--primary);
+  left: 0;
+  top: 50px;
+  width: 90%;
+  height: 45%;
+  position: absolute;
+  mix-blend-mode: overlay;
+}
+#news-page {
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+}
+.categories-page {
+  height: calc(100vh - 55px);
+  display: flex;
+  flex-direction: column;
+}
+.categories-page .categories-title {
+  font-family: Noto Sans KR;
+  font-size: 6rem;
+  position: absolute;
+  right: 21%;
+  top: 8vh;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.categories-page .categories-container .category .category-title {
+  z-index: 2;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  transition: transform .3s ease;
+}
+.categories-page .categories-container {
+  display: grid;
+  grid-template-columns: repeat(6,minmax(195px,1fr));
+  grid-template-rows: 50vh;
+  align-content: center;
+  gap: 20px;
+  flex: 1;
+  overflow: auto hidden;
+}
+.categories-page .categories-container .category {
+  height: 100%;
+  align-self: flex-end;
+  background-image: url(../assets/artist.png);
+  background-size: 100% calc(50vh + 100px);
+  background-position: 50%;
+  color: #fff;
+  text-align: center;
+  transition: all .3s cubic-bezier(.075,.4,.2,1);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+.categories-page .categories-container .category:after {
+  content: "";
+  height: 51%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+0deg
+,#f97501,rgba(249,117,1,0));
+  transition: all .3s ease;
+}
+.categories-page .categories-container .category:hover {
+  height: calc(100% + 100px);
+}
+.categories-page .categories-container .category:hover .category-title {
+  transform: scale(0);
+}
+.categories-page .categories-container .category:hover:after {
+  height: 5px;
+  box-shadow: none;
+  background: #f97501;
+  bottom: -10px;
+  width: 60%;
 }

@@ -1,5 +1,4 @@
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from "./Routes";
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
