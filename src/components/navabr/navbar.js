@@ -6,7 +6,7 @@ export default class navbar extends Component {
       <div>
         <nav className="navbar navbar-dark bg-faded navbar-expand-lg">
           <div className="container-fluid">
-            <a href="/" class="navbar-brand router-link-exact-active router-link-active" target="_self">
+            <a href="/" className="navbar-brand router-link-exact-active router-link-active" target="_self">
               <Logo width="200" height="40"/>
             </a>
             <button
