@@ -1,5 +1,4 @@
 import React from "react";
-import 'swiper/css';
 import artistImg from '../../assets/artist.png';
 const Artists = () => {
   const artists = [
