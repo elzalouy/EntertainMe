@@ -17,7 +17,6 @@ export default class navbar extends Component {
               className="navbar-toggler"
               data-target="#nav-collapse"
               data-toggle="collapse">
-                
               <span className="navbar-toggler-icon"></span>
             </button>
             <div
