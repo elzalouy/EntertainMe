@@ -4,7 +4,7 @@ const News = () => {
   return (
     <main>
         <div id="news-page" className="flex-center">
-            <h1 class="font-noto text-primary">Coming Soon</h1>
+            <h1 className="font-noto text-primary">Coming Soon</h1>
         </div>
     </main>
   );

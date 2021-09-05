@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Logo from "../UIs/logo.jsx";
+import {Link} from 'react-router-dom';
+
 export default class navbar extends Component {
   render() {
     return (
-      <div>
         <nav className="navbar navbar-dark bg-faded navbar-expand-lg">
           <div className="container-fluid">
             <a href="/" className="navbar-brand router-link-exact-active router-link-active" target="_self">
@@ -21,8 +22,7 @@ export default class navbar extends Component {
             </button>
             <div
               id="nav-collapse"
-              className="navbar-collapse collapse"
-              style={{ display: "none" }}
+              className="navbar-collapse collapse justify-content-end"
             >
               <ul className="navbar-nav ml-auto align-items-center">
                 <li className="navbar-text p-0 pr-2">
@@ -71,35 +71,35 @@ export default class navbar extends Component {
                   </div>
                 </li>
                 <li className="nav-item">
-                  <a
+                  <Link
                     target="_self"
-                    href="/logIn"
+                    to="/logIn"
                      className="nav-link">
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/categories" className="nav-link" target="_self">
+                  <Link to="/categories" className="nav-link" target="_self">
                     Categories
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/news" className="nav-link" target="_self">
+                  <Link to="/news" className="nav-link" target="_self">
                     News
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/#about-us" className="nav-link" target="_self">
+                  <Link to="/#about-us" className="nav-link" target="_self">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/contactUs" className="nav-link" target="_self">
+                  <Link to="/contactUs" className="nav-link" target="_self">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li data-count="0" className="nav-item cart-icon">
-                  <a target="_self" href="#" className="nav-link">
+                  <Link target="_self" to="#" className="nav-link">
                     <svg
                       aria-hidden="true"
                       width="16"
@@ -112,13 +112,12 @@ export default class navbar extends Component {
                         <path d="M528.1 301.3c-2.5 10.9-12.2 18.7-23.4 18.7h-293.1l6.5 32h268.4c15.4 0 26.8 14.3 23.4 29.3l-5.5 24.3c18.7 9.1 31.6 28.2 31.6 50.4 0 30.9-25.1 56-56 56s-56-25.1-56-56c0-15.7 6.4-29.8 16.8-40h-209.6c10.4 10.2 16.8 24.3 16.8 40 0 30.9-25.1 56-56 56s-56-25.1-56-56c0-20.8 11.3-38.9 28.1-48.6l-70.2-343.4h-69.9c-13.3 0-24-10.7-24-24v-16c0-13.3 10.7-24 24-24h102.5c11.4 0 21.2 8 23.5 19.2l9.2 44.8h392.8c15.4 0 26.8 14.3 23.4 29.3z"></path>
                       </g>
                     </svg>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-      </div>
     );
   }
 }

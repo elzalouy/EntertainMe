@@ -1,22 +1,20 @@
 import "./App.css";
+import  'bootstrap/dist/css/bootstrap.min.css';
 import Routes from "./Routes";
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import Navbar from "../components/navabr/navbar";
 import Laoding from "../components/Loading/Laoding";
-import Swiper from "swiper/swiper-bundle.esm.browser";
 
-
-class App extends Routes {
-    
+class App extends Routes {    
   render() {
     return (
       <React.Fragment>
-        <Navbar />
         {this.state.isLoading ? (
           <Laoding></Laoding>
-        ) : (
-          <BrowserRouter>
+          ) : (
+            <BrowserRouter>
+            <Navbar />
             <Switch>{this.state.Routes.map((item) => item.Route)}</Switch>
           </BrowserRouter>
         )}
