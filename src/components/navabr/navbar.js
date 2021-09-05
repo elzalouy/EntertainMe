@@ -13,16 +13,16 @@ export default class navbar extends Component {
             <button
               type="button"
               aria-label="Toggle navigation"
-              aria-controls="nav-collapse"
+              aria-controls="navcollapse"
               aria-expanded="false"
               className="navbar-toggler"
-              data-target="#nav-collapse"
+              data-target="#navcollapse"
               data-toggle="collapse">
               <span className="navbar-toggler-icon"></span>
             </button>
             <div
-              id="nav-collapse"
-              className="navbar-collapse collapse justify-content-end"
+              id="navcollapse"
+              className="collapse navbar-collapse  justify-content-end"
             >
               <ul className="navbar-nav ml-auto align-items-center">
                 <li className="navbar-text p-0 pr-2">
@@ -118,6 +118,7 @@ export default class navbar extends Component {
             </div>
           </div>
         </nav>
+        
     );
   }
 }
