@@ -1,51 +1,53 @@
 import React from "react";
 // note : Don't change swiper version until check if the new version is working with others correctly
-import {Swiper} from 'swiper/react';
-import artistImg from "../../assets/artist.png";
+import {Swiper,SwiperSlide} from 'swiper/react';
+import artistImg from '../../assets/artist.png';
+import artistImg1 from '../../assets/artist1.png';
+import artistImg2 from '../../assets/artist2.png';
 const Artists = () => {
     const artists = [
     {
       artist_name: "AL-Sharif",
       artist_description:
         "Purveyor of deep, infectious dance grooves and a feel-good atmosphere!",
-      image: "/src/assets/artist.png",
+      image: artistImg,
     },
     {
       artist_name: "Hassan Ramzy",
       artist_description:
         "Hassan Ramzy is a growing Egyptian musician who mainly plays guitar an...",
-      image: "/src/assets/artist.png",
+      image: artistImg1,
     },
     {
       artist_name: "Khaled El Agaty",
       artist_description:
         "Khaled El Agaty was raised in a musical atmosphere and it grew in him ...",
-      image: "/src/assets/artist.png",
+      image: artistImg2,
       className: "",
     },
     {
       artist_name: "Funk OFF",
       artist_description:
         "Funk Off is a funk, disco, blues, rock and pop band based in Cairo, Eg...",
-      image: "/src/assets/artist.png",
+      image: artistImg2,
     },
     {
       artist_name: "Abyusif",
       artist_description:
         " Rapper/Producer Youssef Altay (aka Abyusif) is a bit of a favourite of...",
-      image: "/src/assets/artist.png",
+      image: artistImg2,
     },
     {
       artist_name: "Omar Etman",
       artist_description:
         "A local songwriter/busker from Cairo,Egypt, known for his knack for im...",
-      image: "/src/assets/artist.png",
+      image: artistImg2,
     },
     {
       artist_name: "Abo El Anwar",
       artist_description:
         "Abo El Anwar, based in Cairo, Egypt. He has been rapping since his ea...",
-      image: "/src/assets/artist.png",
+      image:  artistImg2,
     },
   ];
   return (
@@ -72,27 +74,21 @@ const Artists = () => {
           </g>
         </svg>
       </h1>
-      <Swiper slidesPerView='auto' spaceBetween='10'  className="swiper-container">
+      <Swiper autoplay={true} slidesPerView={5} spaceBetween={10}>
         <div className="swiper-wrapper" >
-          {artists.map((item) => {
+          {artists.map((item,index) => {
+            console.log(item.image)
             return (
-              <React.Fragment key={(artists.indexOf(item) + 1).toString()}>
-                <div
-                  className="swiper-slide featured-artist text-normal"
-                  data-swiper-slide-index={(
-                    artists.indexOf(item) + 1
-                  ).toString()}
-                  style={{
-                    backgroundImage: `url(${artistImg})`,
-                    marginRight: "10px",
-                  }}
-                >
+              <SwiperSlide  key={index.toString()} virtualIndex={index} className='featured-artist text-normal' 
+              style={{
+                backgroundImage: `url(${item.image})`,
+                marginRight: "10px",
+              }}>
                   <div className="artist-info">
-                    <h2 className="font-noto text-normal">Hassan Ramzy</h2>
+                    <h2 className="font-noto text-normal">{item.artist_name}</h2>
                     <div className="d-flex justify-content-between align-items-center mb-2">
                       <p className="artist-description text-white m-0">
-                        Hassan Ramzy is a growing Egyptian musician who mainly
-                        plays guitar an...
+                        {item.artist_description}
                       </p>
                       <svg
                         width="1em"
@@ -116,8 +112,7 @@ const Artists = () => {
                       </svg>
                     </div>
                   </div>
-                </div>
-              </React.Fragment>
+              </SwiperSlide>
             );
           })}
         </div>

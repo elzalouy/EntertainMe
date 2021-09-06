@@ -489,8 +489,8 @@ body {
   left: 0;
 }
 #featured-artists .swiper-container .featured-artist:hover {
-  height: 300px;
-  width: 350px;
+  height: 300px !important;
+  width: 350px !important;
 }
 #featured-artists .swiper-container .featured-artist:hover:after {
   opacity: 1;
@@ -1557,4 +1557,16 @@ button.swiper-pagination-bullet {
 }
 .text-normal{
   color:#f70 !important;
+}
+.border-normal{
+  border-color: #f70 !important;
+}
+.btn-normal{
+  background-color: #f70 !important;
+  color:white !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+.bg-normal{
+  background-color: #f70 !important;
 }
