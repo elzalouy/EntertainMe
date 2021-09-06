@@ -489,8 +489,8 @@ body {
   left: 0;
 }
 #featured-artists .swiper-container .featured-artist:hover {
-  height: 300px;
-  width: 350px;
+  height: 300px !important;
+  width: 350px !important;
 }
 #featured-artists .swiper-container .featured-artist:hover:after {
   opacity: 1;

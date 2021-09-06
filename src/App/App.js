@@ -7,11 +7,13 @@ import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import Navbar from "../components/UIs/navabr/navbar";
 import Laoding from "../components/Loading/Laoding";
-
+import { Provider } from "react-redux";
+import store from '../store'
 class App extends Routes {    
   render() {
     return (
       <React.Fragment>
+        <Provider store={store}>
         {this.state.isLoading ? (
           <Laoding></Laoding>
           ) : (
@@ -20,6 +22,7 @@ class App extends Routes {
             <Switch>{this.state.Routes.map((item) => item.Route)}</Switch>
           </BrowserRouter>
         )}
+        </Provider>
       </React.Fragment>
     );
   }

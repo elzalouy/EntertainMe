@@ -1,4 +1,5 @@
 import React from "react";
+import BookEvent from "../BookEvent/BookEvent";
 import AboutUs from "./AboutUs";
 import Artists from "./Artists";
 
@@ -46,6 +47,7 @@ const Home = () => {
                 <button
                   type="button"
                   className="btn lets-go font-noto text-primary btn-light rounded-0"
+                  data-toggle="modal" data-target="#booking-modal"
                 >
                   Let's go
                 </button>
@@ -55,6 +57,7 @@ const Home = () => {
         </div>
         <Artists/>
         <AboutUs />
+        <BookEvent/>
       </div>
     </React.Fragment>
   );
