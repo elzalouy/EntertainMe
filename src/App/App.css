@@ -1558,3 +1558,47 @@ button.swiper-pagination-bullet {
 .text-normal{
   color:#f70 !important;
 }
+#single-category-page .category-navbar .category-navbar-left .search {
+  position: relative;
+  border: 1px solid hsla(0,0%,100%,.336);
+  border-radius: 25px;
+  overflow: hidden;
+}
+#single-category-page .category-navbar .category-navbar-left .search input {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+#single-category-page .category-navbar .category-navbar-left .search .search-icon {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#single-category-page .category-navbar .category-navbar-right .category-filter-btns>div {
+  cursor: pointer;
+  transition: all .3s ease;
+  text-align: center;
+}
+#single-category-page .category-navbar .category-navbar-right .category-filter-btns>div:last-child {
+  width: 130px;
+}
+#single-category-page .category-navbar .category-navbar-right {
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+}
+#single-category-page .category-artist .artist-actions .b-icon.bi {
+  vertical-align: middle!important;
+}
+#single-category-page .category-artist .artist-about:after {
+  content: "See more...";
+  color: var(--primary);
+  margin-top: 10px;
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  font-size: .7rem;
+  display: block;
+}

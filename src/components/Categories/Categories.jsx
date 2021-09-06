@@ -14,7 +14,7 @@ const Categories = () => {
             <div className="categories-page w-100">
                 <h1 className="categories-title">Categories</h1> 
                 <div className="categories-container">
-                    <a href="/categories/1" className="category d-flex align-items-end justify-content-center" style={{backgroundImage:'url('+category1+')'}}>
+                    <a href="/categoryDetails" className="category d-flex align-items-end justify-content-center" style={{backgroundImage:'url('+category1+')'}}>
                         <div className="category-title">DJS</div>
                     </a>
                     <a href="/categories/3" className="category d-flex align-items-end justify-content-center" style={{backgroundImage:'url('+category2+')'}}>

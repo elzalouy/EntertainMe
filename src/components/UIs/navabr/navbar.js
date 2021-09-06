@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logo from "../UIs/logo.jsx";
+import Logo from "../logo.jsx";
 import {Link} from 'react-router-dom';
 
 export default class navbar extends Component {
