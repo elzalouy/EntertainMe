@@ -1,12 +1,9 @@
 import React from "react";
 const News = () => {
- 
   return (
-    <main>
-        <div id="news-page" className="flex-center">
-            <h1 className="font-noto text-primary">Coming Soon</h1>
-        </div>
-    </main>
+    <div id="news-page" className="d-flex justify-content-center align-items-center" >
+            <h1 className="font-noto text-normal">Coming Soon</h1>
+    </div>
   );
 };
 

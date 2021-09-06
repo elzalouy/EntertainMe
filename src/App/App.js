@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Routes from "./Routes";
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
-import Navbar from "../components/navabr/navbar";
+import Navbar from "../components/UIs/navabr/navbar";
 import Laoding from "../components/Loading/Laoding";
 
 class App extends Routes {    

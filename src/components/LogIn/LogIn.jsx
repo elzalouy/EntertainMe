@@ -32,7 +32,7 @@ const LogIn = () => {
                                             <label for="remember" className="custom-control-label" style={{color:"#f70"}}>Remember Me</label>
                                         </div>
                                         </div> 
-                                        <a href="https://www.entertainme.co/password/reset" className="btn btn-link">
+                                        <a href="https://www.entertainme.co/password/reset" className="btn btn-link text-normal">
                                             Forgot Your Password?
                                         </a>
                                     </div> 
