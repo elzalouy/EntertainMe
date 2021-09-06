@@ -1555,3 +1555,6 @@ button.swiper-pagination-bullet {
   bottom: -10px;
   width: 60%;
 }
+.text-normal{
+  color:#f70 !important;
+}

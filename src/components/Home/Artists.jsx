@@ -50,7 +50,7 @@ const Artists = () => {
   ];
   return (
     <section id="featured-artists">
-      <h1 className="font-noto text-primary ml-3">
+      <h1 className="font-noto text-normal ml-3">
         Featured Artists{" "}
         <svg
           width="1em"
@@ -78,18 +78,17 @@ const Artists = () => {
             return (
               <React.Fragment key={(artists.indexOf(item) + 1).toString()}>
                 <div
-                  className="swiper-slide featured-artist text-primary"
+                  className="swiper-slide featured-artist text-normal"
                   data-swiper-slide-index={(
                     artists.indexOf(item) + 1
                   ).toString()}
-                  
                   style={{
                     backgroundImage: `url(${artistImg})`,
                     marginRight: "10px",
                   }}
                 >
                   <div className="artist-info">
-                    <h2 className="font-noto text-primary">Hassan Ramzy</h2>
+                    <h2 className="font-noto text-normal">Hassan Ramzy</h2>
                     <div className="d-flex justify-content-between align-items-center mb-2">
                       <p className="artist-description text-white m-0">
                         Hassan Ramzy is a growing Egyptian musician who mainly
@@ -104,7 +103,7 @@ const Artists = () => {
                         alt="icon"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        className="bi-triangle-fill triangle b-icon bi text-primary"
+                        className="bi-triangle-fill triangle b-icon bi text-normal"
                         style={{ fontSize: "300%" }}
                       >
                         <g>
