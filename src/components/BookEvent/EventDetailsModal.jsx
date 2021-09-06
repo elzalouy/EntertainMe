@@ -36,7 +36,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__477"
                         />
-                        <label className="custom-control-label" for="__BVID__477">
+                        <label className="custom-control-label" htmlFor="__BVID__477">
                           {" "}
                           Sound{" "}
                         </label>
@@ -52,7 +52,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__478"
                         />
-                        <label className="custom-control-label" for="__BVID__478">
+                        <label className="custom-control-label" htmlFor="__BVID__478">
                           {" "}
                           Led Screens{" "}
                         </label>
@@ -68,7 +68,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__479"
                         />
-                        <label className="custom-control-label" for="__BVID__479">
+                        <label className="custom-control-label" htmlFor="__BVID__479">
                           {" "}
                           Stage Management{" "}
                         </label>
@@ -84,7 +84,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__480"
                         />
-                        <label className="custom-control-label" for="__BVID__480">
+                        <label className="custom-control-label" htmlFor="__BVID__480">
                           {" "}
                           Ushers{" "}
                         </label>
@@ -100,7 +100,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__481"
                         />
-                        <label className="custom-control-label" for="__BVID__481">
+                        <label className="custom-control-label" htmlFor="__BVID__481">
                           {" "}
                           Permits{" "}
                         </label>
@@ -116,7 +116,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__482"
                         />
-                        <label className="custom-control-label" for="__BVID__482">
+                        <label className="custom-control-label" htmlFor="__BVID__482">
                           {" "}
                           Venu Rental{" "}
                         </label>
@@ -132,7 +132,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__483"
                         />
-                        <label className="custom-control-label" for="__BVID__483">
+                        <label className="custom-control-label" htmlFor="__BVID__483">
                           {" "}
                           Location Renting{" "}
                         </label>
@@ -148,7 +148,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__484"
                         />
-                        <label className="custom-control-label" for="__BVID__484">
+                        <label className="custom-control-label" htmlFor="__BVID__484">
                           {" "}
                           Walkie Talkies{" "}
                         </label>
@@ -164,7 +164,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__485"
                         />
-                        <label className="custom-control-label" for="__BVID__485">
+                        <label className="custom-control-label" htmlFor="__BVID__485">
                           {" "}
                           Light{" "}
                         </label>
@@ -180,7 +180,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__486"
                         />
-                        <label className="custom-control-label" for="__BVID__486">
+                        <label className="custom-control-label" htmlFor="__BVID__486">
                           {" "}
                           Mojo Barriers{" "}
                         </label>
@@ -196,7 +196,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__487"
                         />
-                        <label className="custom-control-label" for="__BVID__487">
+                        <label className="custom-control-label" htmlFor="__BVID__487">
                           {" "}
                           Photography{" "}
                         </label>
@@ -212,7 +212,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__488"
                         />
-                        <label className="custom-control-label" for="__BVID__488">
+                        <label className="custom-control-label" htmlFor="__BVID__488">
                           {" "}
                           Security{" "}
                         </label>
@@ -228,7 +228,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__489"
                         />
-                        <label className="custom-control-label" for="__BVID__489">
+                        <label className="custom-control-label" htmlFor="__BVID__489">
                           {" "}
                           Social Media Coverage{" "}
                         </label>
@@ -244,7 +244,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__490"
                         />
-                        <label className="custom-control-label" for="__BVID__490">
+                        <label className="custom-control-label" htmlFor="__BVID__490">
                           {" "}
                           Catering{" "}
                         </label>
@@ -260,7 +260,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__491"
                         />
-                        <label className="custom-control-label" for="__BVID__491">
+                        <label className="custom-control-label" htmlFor="__BVID__491">
                           {" "}
                           AR (Augmented Reality){" "}
                         </label>
@@ -276,7 +276,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__492"
                         />
-                        <label className="custom-control-label" for="__BVID__492">
+                        <label className="custom-control-label" htmlFor="__BVID__492">
                           {" "}
                           Other{" "}
                         </label>
@@ -292,7 +292,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__493"
                         />
-                        <label className="custom-control-label" for="__BVID__493">
+                        <label className="custom-control-label" htmlFor="__BVID__493">
                           {" "}
                           Stage{" "}
                         </label>
@@ -308,7 +308,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__494"
                         />
-                        <label className="custom-control-label" for="__BVID__494">
+                        <label className="custom-control-label" htmlFor="__BVID__494">
                           {" "}
                           Generators{" "}
                         </label>
@@ -324,7 +324,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__495"
                         />
-                        <label className="custom-control-label" for="__BVID__495">
+                        <label className="custom-control-label" htmlFor="__BVID__495">
                           {" "}
                           Videography{" "}
                         </label>
@@ -340,7 +340,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__496"
                         />
-                        <label className="custom-control-label" for="__BVID__496">
+                        <label className="custom-control-label" htmlFor="__BVID__496">
                           {" "}
                           On Ground Operations Team{" "}
                         </label>
@@ -356,7 +356,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__497"
                         />
-                        <label className="custom-control-label" for="__BVID__497">
+                        <label className="custom-control-label" htmlFor="__BVID__497">
                           {" "}
                           Seating arrangements{" "}
                         </label>
@@ -372,7 +372,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__498"
                         />
-                        <label className="custom-control-label" for="__BVID__498">
+                        <label className="custom-control-label" htmlFor="__BVID__498">
                           {" "}
                           VR (Virtual Reality){" "}
                         </label>
@@ -388,7 +388,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="item"
                           id="__BVID__499"
                         />
-                        <label className="custom-control-label" for="__BVID__499">
+                        <label className="custom-control-label" htmlFor="__BVID__499">
                           {" "}
                           3D Mapping{" "}
                         </label>
@@ -409,7 +409,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Counters/Desk"
                           id="__BVID__500"
                         />
-                        <label className="custom-control-label" for="__BVID__500">
+                        <label className="custom-control-label" htmlFor="__BVID__500">
                           Counters/Desk
                         </label>
                       </div>
@@ -424,7 +424,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Trusses"
                           id="__BVID__501"
                         />
-                        <label className="custom-control-label" for="__BVID__501">
+                        <label className="custom-control-label" htmlFor="__BVID__501">
                           Trusses
                         </label>
                       </div>
@@ -439,7 +439,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Flags"
                           id="__BVID__502"
                         />
-                        <label className="custom-control-label" for="__BVID__502">
+                        <label className="custom-control-label" htmlFor="__BVID__502">
                           Flags
                         </label>
                       </div>
@@ -454,7 +454,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Uniforms"
                           id="__BVID__503"
                         />
-                        <label className="custom-control-label" for="__BVID__503">
+                        <label className="custom-control-label" htmlFor="__BVID__503">
                           Uniforms
                         </label>
                       </div>
@@ -469,7 +469,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Flyers"
                           id="__BVID__504"
                         />
-                        <label className="custom-control-label" for="__BVID__504">
+                        <label className="custom-control-label" htmlFor="__BVID__504">
                           Flyers
                         </label>
                       </div>
@@ -484,7 +484,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Brochures"
                           id="__BVID__505"
                         />
-                        <label className="custom-control-label" for="__BVID__505">
+                        <label className="custom-control-label" htmlFor="__BVID__505">
                           Brochures
                         </label>
                       </div>
@@ -499,7 +499,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Booths"
                           id="__BVID__506"
                         />
-                        <label className="custom-control-label" for="__BVID__506">
+                        <label className="custom-control-label" htmlFor="__BVID__506">
                           Booths
                         </label>
                       </div>
@@ -514,7 +514,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Backdrop"
                           id="__BVID__507"
                         />
-                        <label className="custom-control-label" for="__BVID__507">
+                        <label className="custom-control-label" htmlFor="__BVID__507">
                           Backdrop
                         </label>
                       </div>
@@ -529,7 +529,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Decorations"
                           id="__BVID__508"
                         />
-                        <label className="custom-control-label" for="__BVID__508">
+                        <label className="custom-control-label" htmlFor="__BVID__508">
                           Decorations
                         </label>
                       </div>
@@ -544,7 +544,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Branded Car/Truck"
                           id="__BVID__509"
                         />
-                        <label className="custom-control-label" for="__BVID__509">
+                        <label className="custom-control-label" htmlFor="__BVID__509">
                           Branded Car/Truck
                         </label>
                       </div>
@@ -559,7 +559,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Directional Signs"
                           id="__BVID__510"
                         />
-                        <label className="custom-control-label" for="__BVID__510">
+                        <label className="custom-control-label" htmlFor="__BVID__510">
                           Directional Signs
                         </label>
                       </div>
@@ -574,7 +574,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Giveaways"
                           id="__BVID__511"
                         />
-                        <label className="custom-control-label" for="__BVID__511">
+                        <label className="custom-control-label" htmlFor="__BVID__511">
                           Giveaways
                         </label>
                       </div>
@@ -589,7 +589,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Gate"
                           id="__BVID__512"
                         />
-                        <label className="custom-control-label" for="__BVID__512">
+                        <label className="custom-control-label" htmlFor="__BVID__512">
                           Gate
                         </label>
                       </div>
@@ -604,7 +604,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Mockups"
                           id="__BVID__513"
                         />
-                        <label className="custom-control-label" for="__BVID__513">
+                        <label className="custom-control-label" htmlFor="__BVID__513">
                           Mockups
                         </label>
                       </div>
@@ -619,7 +619,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Bracelets"
                           id="__BVID__514"
                         />
-                        <label className="custom-control-label" for="__BVID__514">
+                        <label className="custom-control-label" htmlFor="__BVID__514">
                           Bracelets
                         </label>
                       </div>
@@ -634,7 +634,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Banners"
                           id="__BVID__515"
                         />
-                        <label className="custom-control-label" for="__BVID__515">
+                        <label className="custom-control-label" htmlFor="__BVID__515">
                           Banners
                         </label>
                       </div>
@@ -649,7 +649,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Printed Invitations"
                           id="__BVID__516"
                         />
-                        <label className="custom-control-label" for="__BVID__516">
+                        <label className="custom-control-label" htmlFor="__BVID__516">
                           Printed Invitations
                         </label>
                       </div>
@@ -664,7 +664,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                           value="Other"
                           id="__BVID__517"
                         />
-                        <label className="custom-control-label" for="__BVID__517">
+                        <label className="custom-control-label" htmlFor="__BVID__517">
                           Other
                         </label>
                       </div>
@@ -745,7 +745,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         aria-required="true"
                         className="form-control text-break text-wrap border-0 bg-transparent h-auto pl-1 m-0 text-muted"
                         id="__BVID__524__value_"
-                        for="__BVID__524"
+                        htmlFor="__BVID__524"
                       ></label>
                     </div>
                   </div>{" "}
@@ -759,7 +759,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                       required="required"
                       aria-required="true"
                       className="border-dark border rounded-0 bg-transparent text-muted form-control"
-                      maxlength="7"
+                      maxLength="7"
                       id="__BVID__527"
                     />
                   </div>{" "}
@@ -783,7 +783,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         />
                         <label
                           className="custom-control-label"
-                          for="__BVID__528__BV_option_0_"
+                          htmlFor="__BVID__528__BV_option_0_"
                         >
                           <span>Indoor</span>
                         </label>
@@ -800,7 +800,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         />
                         <label
                           className="custom-control-label"
-                          for="__BVID__528__BV_option_1_"
+                          htmlFor="__BVID__528__BV_option_1_"
                         >
                           <span>Outdoor</span>
                         </label>
@@ -817,7 +817,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                       required="required"
                       aria-required="true"
                       className="border-dark text-muted border rounded-0 bg-transparent form-control"
-                      maxlength="7"
+                      maxLength="7"
                       id="__BVID__531"
                     />{" "}
                     <div className="text-normal font-noto-m custom-control custom-checkbox">
@@ -829,7 +829,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         value="true"
                         id="__BVID__532"
                       />
-                      <label className="custom-control-label" for="__BVID__532">
+                      <label className="custom-control-label" htmlFor="__BVID__532">
                         TBD?
                       </label>
                     </div>
@@ -843,7 +843,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         required="required"
                         aria-required="true"
                         className="border-dark text-muted border rounded-0 bg-transparent form-control"
-                        maxlength="7"
+                        maxLength="7"
                         id="__BVID__533"
                       />
                     </div>{" "}
@@ -856,7 +856,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         value="true"
                         id="__BVID__534"
                       />
-                      <label className="custom-control-label" for="__BVID__534">
+                      <label className="custom-control-label" htmlFor="__BVID__534">
                         TBD?
                       </label>
                     </div>
@@ -922,6 +922,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                 <button
                   type="button"
                   className="btn d-block font-noto px-5 mr-3 btn-normal btn-lg rounded-pill"
+                  onClick={()=>onHandleChange(0)}
                 >
                   Previous
                 </button>{" "}
@@ -929,7 +930,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                   <button
                     type="submit"
                     className="btn mx-auto d-block font-noto px-5 btn-normal btn-lg rounded-pill"
-                    onClick={()=>onHandleChange(0)}
+                    onClick={()=>onHandleChange(3)}
                   >
                     Next
                   </button>

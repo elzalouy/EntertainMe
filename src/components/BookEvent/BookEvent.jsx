@@ -7,7 +7,6 @@ import {UiActions} from '../../store/Ui';
 const BookEvent = () => {
   const dispatch = useDispatch();
   const modal=useSelector(state=>state.UI.modal);
-  console.log(modal);
   const onHandleChange=(num)=>{
     dispatch(UiActions.onChangeModel([{element:'modal',value:num}]));
   }

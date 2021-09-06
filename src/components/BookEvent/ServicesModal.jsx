@@ -57,14 +57,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__233"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__233"
+                              htmlFor="__BVID__233"
                             >
                               {" "}
                               Sound{" "}
@@ -76,14 +76,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__234"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__234"
+                              htmlFor="__BVID__234"
                             >
                               {" "}
                               Led Screens{" "}
@@ -95,14 +95,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__235"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__235"
+                              htmlFor="__BVID__235"
                             >
                               {" "}
                               Stage Management{" "}
@@ -114,14 +114,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__236"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__236"
+                              htmlFor="__BVID__236"
                             >
                               {" "}
                               Ushers{" "}
@@ -133,14 +133,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__237"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__237"
+                              htmlFor="__BVID__237"
                             >
                               {" "}
                               Permits{" "}
@@ -152,14 +152,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__238"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__238"
+                              htmlFor="__BVID__238"
                             >
                               {" "}
                               Venu Rental{" "}
@@ -171,14 +171,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__239"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__239"
+                              htmlFor="__BVID__239"
                             >
                               {" "}
                               Location Renting{" "}
@@ -190,14 +190,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__240"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__240"
+                              htmlFor="__BVID__240"
                             >
                               {" "}
                               Walkie Talkies{" "}
@@ -209,14 +209,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__241"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__241"
+                              htmlFor="__BVID__241"
                             >
                               {" "}
                               Light{" "}
@@ -228,14 +228,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__242"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__242"
+                              htmlFor="__BVID__242"
                             >
                               {" "}
                               Mojo Barriers{" "}
@@ -247,14 +247,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__243"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__243"
+                              htmlFor="__BVID__243"
                             >
                               {" "}
                               Photography{" "}
@@ -266,14 +266,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__244"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__244"
+                              htmlFor="__BVID__244"
                             >
                               {" "}
                               Security{" "}
@@ -285,14 +285,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__245"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__245"
+                              htmlFor="__BVID__245"
                             >
                               {" "}
                               Social Media Coverage{" "}
@@ -304,14 +304,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__246"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__246"
+                              htmlFor="__BVID__246"
                             >
                               {" "}
                               Catering{" "}
@@ -323,14 +323,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__247"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__247"
+                              htmlFor="__BVID__247"
                             >
                               {" "}
                               AR (Augmented Reality){" "}
@@ -342,14 +342,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__248"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__248"
+                              htmlFor="__BVID__248"
                             >
                               {" "}
                               Other{" "}
@@ -361,14 +361,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__249"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__249"
+                              htmlFor="__BVID__249"
                             >
                               {" "}
                               Stage{" "}
@@ -380,14 +380,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__250"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__250"
+                              htmlFor="__BVID__250"
                             >
                               {" "}
                               Generators{" "}
@@ -399,14 +399,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__251"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__251"
+                              htmlFor="__BVID__251"
                             >
                               {" "}
                               Videography{" "}
@@ -418,14 +418,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__252"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__252"
+                              htmlFor="__BVID__252"
                             >
                               {" "}
                               On Ground Operations Team{" "}
@@ -437,14 +437,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__253"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__253"
+                              htmlFor="__BVID__253"
                             >
                               {" "}
                               Seating arrangements{" "}
@@ -456,14 +456,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__254"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__254"
+                              htmlFor="__BVID__254"
                             >
                               {" "}
                               VR (Virtual Reality){" "}
@@ -475,14 +475,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="item"
                               id="__BVID__255"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__255"
+                              htmlFor="__BVID__255"
                             >
                               {" "}
                               3D Mapping{" "}
@@ -499,14 +499,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Counters/Desk"
                               id="__BVID__256"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__256"
+                              htmlFor="__BVID__256"
                             >
                               Counters/Desk
                             </label>
@@ -517,14 +517,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Trusses"
                               id="__BVID__257"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__257"
+                              htmlFor="__BVID__257"
                             >
                               Trusses
                             </label>
@@ -535,14 +535,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Flags"
                               id="__BVID__258"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__258"
+                              htmlFor="__BVID__258"
                             >
                               Flags
                             </label>
@@ -553,14 +553,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Uniforms"
                               id="__BVID__259"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__259"
+                              htmlFor="__BVID__259"
                             >
                               Uniforms
                             </label>
@@ -571,14 +571,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Flyers"
                               id="__BVID__260"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__260"
+                              htmlFor="__BVID__260"
                             >
                               Flyers
                             </label>
@@ -589,14 +589,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Brochures"
                               id="__BVID__261"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__261"
+                              htmlFor="__BVID__261"
                             >
                               Brochures
                             </label>
@@ -607,14 +607,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Booths"
                               id="__BVID__262"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__262"
+                              htmlFor="__BVID__262"
                             >
                               Booths
                             </label>
@@ -625,14 +625,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Backdrop"
                               id="__BVID__263"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__263"
+                              htmlFor="__BVID__263"
                             >
                               Backdrop
                             </label>
@@ -643,14 +643,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Decorations"
                               id="__BVID__264"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__264"
+                              htmlFor="__BVID__264"
                             >
                               Decorations
                             </label>
@@ -661,14 +661,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Branded Car/Truck"
                               id="__BVID__265"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__265"
+                              htmlFor="__BVID__265"
                             >
                               Branded Car/Truck
                             </label>
@@ -679,14 +679,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Directional Signs"
                               id="__BVID__266"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__266"
+                              htmlFor="__BVID__266"
                             >
                               Directional Signs
                             </label>
@@ -697,14 +697,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Giveaways"
                               id="__BVID__267"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__267"
+                              htmlFor="__BVID__267"
                             >
                               Giveaways
                             </label>
@@ -715,14 +715,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Gate"
                               id="__BVID__268"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__268"
+                              htmlFor="__BVID__268"
                             >
                               Gate
                             </label>
@@ -733,14 +733,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Mockups"
                               id="__BVID__269"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__269"
+                              htmlFor="__BVID__269"
                             >
                               Mockups
                             </label>
@@ -751,14 +751,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Bracelets"
                               id="__BVID__270"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__270"
+                              htmlFor="__BVID__270"
                             >
                               Bracelets
                             </label>
@@ -769,14 +769,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Banners"
                               id="__BVID__271"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__271"
+                              htmlFor="__BVID__271"
                             >
                               Banners
                             </label>
@@ -787,14 +787,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Printed Invitations"
                               id="__BVID__272"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__272"
+                              htmlFor="__BVID__272"
                             >
                               Printed Invitations
                             </label>
@@ -805,14 +805,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="checkbox"
                               name="additional_equipment[]"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="Other"
                               id="__BVID__273"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__273"
+                              htmlFor="__BVID__273"
                             >
                               Other
                             </label>
@@ -912,7 +912,7 @@ const ServicesModal = ({onHandleChange}) => {
                             aria-required="true"
                             className="form-control text-break text-wrap border-0 bg-transparent h-auto pl-1 m-0 text-muted"
                             id="__BVID__280__value_"
-                            for="__BVID__280"
+                            htmlFor="__BVID__280"
                           ></label>
                         </div>
                       </div>{" "}
@@ -926,7 +926,7 @@ const ServicesModal = ({onHandleChange}) => {
                           required="required"
                           aria-required="true"
                           className="border-dark border rounded-0 bg-transparent text-muted form-control"
-                          maxlength="7"
+                          maxLength="7"
                           id="__BVID__283"
                         />
                       </div>{" "}
@@ -942,14 +942,14 @@ const ServicesModal = ({onHandleChange}) => {
                             <input
                               type="radio"
                               name="placement"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="indoor"
                               id="__BVID__284__BV_option_0_"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__284__BV_option_0_"
+                              htmlFor="__BVID__284__BV_option_0_"
                             >
                               <span>Indoor</span>
                             </label>
@@ -959,14 +959,14 @@ const ServicesModal = ({onHandleChange}) => {
                               type="radio"
                               name="placement"
                               required="required"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="outdoor"
                               id="__BVID__284__BV_option_1_"
                             />
                             <label
                               className="custom-control-label"
-                              for="__BVID__284__BV_option_1_"
+                              htmlFor="__BVID__284__BV_option_1_"
                             >
                               <span>Outdoor</span>
                             </label>
@@ -985,21 +985,21 @@ const ServicesModal = ({onHandleChange}) => {
                           required="required"
                           aria-required="true"
                           className="border-dark text-muted border rounded-0 bg-transparent form-control"
-                          maxlength="7"
+                          maxLength="7"
                           id="__BVID__287"
                         />{" "}
                         <div className="text-normal font-noto-m custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             name="duration_tbd"
-                            autocomplete="off"
+                            autoComplete="off"
                             className="custom-control-input"
                             value="true"
                             id="__BVID__288"
                           />
                           <label
                             className="custom-control-label"
-                            for="__BVID__288"
+                            htmlFor="__BVID__288"
                           >
                             TBD?
                           </label>
@@ -1014,7 +1014,7 @@ const ServicesModal = ({onHandleChange}) => {
                             required="required"
                             aria-required="true"
                             className="border-dark text-muted border rounded-0 bg-transparent form-control"
-                            maxlength="7"
+                            maxLength="7"
                             id="__BVID__289"
                           />
                         </div>{" "}
@@ -1022,14 +1022,14 @@ const ServicesModal = ({onHandleChange}) => {
                           <input
                             type="checkbox"
                             name="budget_tbd"
-                            autocomplete="off"
+                            autoComplete="off"
                             className="custom-control-input"
                             value="true"
                             id="__BVID__290"
                           />
                           <label
                             className="custom-control-label"
-                            for="__BVID__290"
+                            htmlFor="__BVID__290"
                           >
                             TBD?
                           </label>
@@ -1114,7 +1114,7 @@ const ServicesModal = ({onHandleChange}) => {
                       <button
                         type="submit"
                         className="btn mx-auto d-block font-noto px-5 btn-normal btn-lg rounded-pill"
-                        onClick={()=>onHandleChange(1)}
+                        onClick={()=>onHandleChange(0)}
                       >
                         Next
                       </button>
