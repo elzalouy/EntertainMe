@@ -1,9 +1,16 @@
 import React from "react";
+import {Link, Route } from 'react-router-dom';
+
 import musician1 from '../../assets/foaG.png';
 import musician2 from '../../assets/AZqU.png';
 
+
+
+
 const CategoryDetails = () => {
+    const stopEvent = (event) => event.stopPropagation();
   return (
+      
       <React.Fragment>
 
     <main>
@@ -43,7 +50,7 @@ const CategoryDetails = () => {
                 <div class="b-overlay-wrap position-relative">
                     <div class="row">
                         <div class="mb-3 col-md-4 col-6">
-                            <a href="/artists/1" class="category-artist text-decoration-none">
+                            <a  class="category-artist text-decoration-none">
                                 <div class="artist-info">
                                     <div class="artist-image">
                                         <img alt=""  src={musician1} class=""/>
@@ -61,7 +68,7 @@ const CategoryDetails = () => {
                                             <path d="M504.7 320h-293.1l6.5 32h268.4c15.4 0 26.8 14.3 23.4 29.3l-5.5 24.3c18.7 9.1 31.6 28.2 31.6 50.4 0 31.2-25.5 56.4-56.8 56-29.8-0.4-54.3-24.6-55.2-54.4-0.4-16.3 6.1-31 16.8-41.5h-209.6c10.4 10.2 16.8 24.3 16.8 40 0 31.8-26.5 57.4-58.7 55.9-28.5-1.3-51.8-24.4-53.3-52.9-1.2-22 10.4-41.5 28.1-51.6l-70.2-343.4h-69.9c-13.3 0-24-10.7-24-24v-16c0-13.3 10.7-24 24-24h102.5c11.4 0 21.2 8 23.5 19.2l9.2 44.8h392.8c15.4 0 26.8 14.3 23.4 29.3l-47.3 208c-2.5 10.9-12.2 18.7-23.4 18.7zM408 168h-48v-40c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v40h-48c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h48v40c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16v-40h48c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16z"></path>
                                         </g>
                                     </svg> 
-                                    <div class="b-overlay-wrap position-relative ml-1" data-target="modal" data-toggle="#auth-required-modal___BV_modal_outer_">
+                                    <div class="b-overlay-wrap position-relative ml-1" data-toggle="modal" data-target="#auth-required-modal">
                                         <svg width="1em" height="1em" viewBox="0 0 20 20" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-heart bg-primary p-1 action-icon b-icon bi" style={{fontSize:"225%"}}>
                                             <g>
                                                 <path fill-rule="evenodd" d="M10 4.748l-.717-.737C7.6 2.281 4.514 2.878 3.4 5.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.837-3.362.314-4.385-1.114-2.175-4.2-2.773-5.883-1.043L10 4.748zM10 17C-5.333 6.868 5.279-1.04 9.824 3.143c.06.055.119.112.176.171a3.12 3.12 0 01.176-.17C14.72-1.042 25.333 6.867 10 17z" clip-rule="evenodd"></path>
@@ -429,13 +436,13 @@ const CategoryDetails = () => {
         </main>
         
         </main>
-        <div id="scrnli_recorder_root"></div>
+        {/* <div id="scrnli_recorder_root"></div>
         <iframe src="chrome-extension://ijejnggjjphlenbhmjhhgcdpehhacaal/audio-devices.html" allow="microphone" style={{display:"none"}}></iframe>
         <div data-v-20e3b604="" class="container_selected_area" style={{cursor:"url(&quot;chrome-extension://ijejnggjjphlenbhmjhhgcdpehhacaal/assets/images/cursor-imagen.svg&quot;) 9 9, crosshair;"}}>
             <div data-v-20e3b604="" class="area"></div>
-        </div>
-        <div id="auth-required-modal___BV_modal_outer_" style={{position:"absolute", zIndex: "1040"}}>
-            <div id="auth-required-modal" role="dialog" aria-describedby="auth-required-modal___BV_modal_body_" class="modal fade show" aria-modal="true" style={{display:"block"}}>
+        </div> */}
+        {/* <div id="auth-required-modal___BV_modal_outer_" style={{position:"absolute", zIndex: "1040"}}> */}
+            <div id="auth-required-modal" class="modal fade">
                 <div class="modal-dialog modal-md modal-dialog-centered">
                     <span tabindex="0"></span>
                     <div role="document" id="auth-required-modal___BV_modal_content_" tabindex="-1" class="modal-content">
@@ -445,7 +452,7 @@ const CategoryDetails = () => {
                             </div>
                         </div>
                         <footer id="auth-required-modal___BV_modal_footer_" class="modal-footer bg-dark">
-                            <button type="button" class="btn btn-secondary">Cancel</button> 
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> 
                             <a target="_self" href="/login" class="btn btn-primary">Login</a>
                         </footer>
                     </div>
@@ -453,7 +460,7 @@ const CategoryDetails = () => {
                 </div>
             </div>
             {/* <div id="auth-required-modal___BV_modal_backdrop_" class="modal-backdrop"></div> */}
-        </div>
+        {/* </div> */}
       </React.Fragment>
   );
 };
