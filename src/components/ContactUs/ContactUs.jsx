@@ -60,7 +60,7 @@ const ContactUS = () => {
                       <div className="b-overlay-wrap position-relative d-inline-block">
                         <button
                           type="submit"
-                          className="btn font-noto px-5 btn-primary rounded-0"
+                          className="btn font-noto px-5 btn-normal rounded-0"
                         >
                           Send Message
                         </button>

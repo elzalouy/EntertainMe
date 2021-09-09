@@ -6,6 +6,7 @@ import ContactUS from "../components/ContactUs/ContactUs";
 import News from "../components/News/News";
 import Categories from "../components/Categories/Categories";
 import CategoryDetails from "../components/Categories/CategoryDetails";
+import Artist from "../components/Categories/Artist";
 
 class Routes extends Component {
   state = {
@@ -26,6 +27,10 @@ class Routes extends Component {
       {
         route:'/categoryDetails',
         Route:<Route path="/categoryDetails" key="categoryDetails"  component={CategoryDetails}/>,
+      },
+      {
+        route:'/artist',
+        Route:<Route path="/artist" key="artist"  component={Artist}/>,
       },
       {
         route:'/news',

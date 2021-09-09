@@ -74,7 +74,14 @@ const Artists = () => {
           </g>
         </svg>
       </h1>
-      <Swiper autoplay={true} slidesPerView={5} spaceBetween={10}>
+      <Swiper autoplay={true} slidesPerView={5} spaceBetween={10}
+        breakpoints={{
+          320: {
+            width: 320,
+            slidesPerView: 1
+          },
+        }}
+      >
         <div className="swiper-wrapper" >
           {artists.map((item,index) => {
             console.log(item.image)

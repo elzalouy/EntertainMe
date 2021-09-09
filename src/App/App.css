@@ -1474,6 +1474,35 @@ button.swiper-pagination-bullet {
   line-height: inherit;
   white-space: nowrap;
 }
+.text-primary {
+  color: #f70 !important;
+}
+.btn-normal {
+  color: #fff !important;
+  background-color: #f70 !important;
+  border-color: #f70 !important;
+}
+.bg-normal {
+  background-color: #f70!important;
+}
+.btn-group-sm>.btn, .btn-sm {
+  padding: .25rem .5rem !important;
+  font-size: .7875rem !important;
+  line-height: 1.5 !important;
+  border-radius: .2rem !important;
+}
+.border-normal {
+  border: 1px solid #f70!important;
+}
+.btn-outline-normal {
+  color: #f70 !important;
+  border-color: #f70 !important;
+}
+.btn-outline-normal:hover {
+  color: #fff !important;
+  background-color: #f70;
+  border-color: #f70;
+}
 .contactus-background:after {
   content: "";
   background-color: var(--primary);
@@ -1593,6 +1622,10 @@ button.swiper-pagination-bullet {
 #single-category-page .category-artist .artist-actions .b-icon.bi {
   vertical-align: middle!important;
 }
+.category-artist .artist-actions, .single-artist .artist-actions{
+  width: 150px;
+  display: flex;
+}
 #single-category-page .category-artist .artist-about:after {
   content: "See more...";
   color: var(--primary);
@@ -1602,3 +1635,90 @@ button.swiper-pagination-bullet {
   font-size: .7rem;
   display: block;
 }
+#single-artist-page .works-section-title span {
+  height: 50px;
+  width: 3px;
+  background-color: rgba(255,104,29,.19);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-right: 6px;
+}
+#single-artist-page .works-section-title span:before {
+  content: "";
+  height: 5px;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  background-color: inherit;
+  width: inherit;
+}
+#single-artist-page .works-section-title span:after {
+  content: "";
+  height: 5px;
+  position: absolute;
+  bottom: -8px;
+  background-color: inherit;
+  left: 0;
+  width: inherit;
+}
+#single-artist-page .single-artist-about {
+  min-height: 250px;
+}
+#single-artist-page .previous-events, #single-artist-page .single-artist-about {
+  background-color: rgba(33,33,33,.308);
+}
+#single-artist-page .single-artist .artist-actions .b-icon.bi {
+  vertical-align: middle!important;
+}
+#single-artist-page .previous-events .single-prev-event {
+  background-color: #f70;
+  border-radius: 2.2rem;
+  width: 132px;
+  height: 162px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+}
+#single-artist-page .previous-events .single-prev-event .dots {
+  position: absolute;
+  top: 15px;
+  fill: #121212;
+}
+.artist-works .swiper-container .swiper-button-next {
+  right: 5px;
+}
+.artist-works .swiper-container .swiper-button-prev {
+  left: 5px;
+}
+.artist-works .swiper-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+}
+.artist-works {
+  margin: 50px 0;
+  background-color: #000;
+}
+.artist-works .swiper-container .work-content img {
+  width: auto;
+  height: 100%;
+}
+.artist-works .swiper-container .work-content {
+  width: calc(100% - 6rem);
+  margin: 0 auto;
+  height: 100%;
+}
+.artist-works .swiper-container .work-content iframe {
+  width: 100%;
+  height: 100%;
+}
+.swiper-button-next, .swiper-button-prev{
+  color: #f70;
+}
+
+

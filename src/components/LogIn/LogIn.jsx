@@ -27,7 +27,7 @@ const LogIn = () => {
                                     </div> 
                                     <div className="form-group d-flex justify-content-between align-items-center">
                                         <div className="form-check">
-                                        <div className="text-primary custom-control custom-checkbox">
+                                        <div className="text-normal custom-control custom-checkbox">
                                             <input variant="primary" id="remember" type="checkbox" name="remember" autocomplete="off" className="custom-control-input" value="true"/>
                                             <label for="remember" className="custom-control-label" style={{color:"#f70"}}>Remember Me</label>
                                         </div>
@@ -37,8 +37,8 @@ const LogIn = () => {
                                         </a>
                                     </div> 
                                     <div className="form-group mb-0 d-flex">
-                                        <button type="submit" className="btn mr-3 font-noto px-5 btn-primary rounded-0">Join</button> 
-                                        <button type="button" className="btn w-75 font-noto btn-outline-primary rounded-0">New Member Registration</button>
+                                        <button type="submit" className="btn mr-3 font-noto px-5 btn-normal rounded-0">Join</button> 
+                                        <button type="button" className="btn w-75 font-noto btn-outline-normal rounded-0">New Member Registration</button>
                                     </div>
                                 </form>
                             </div>
