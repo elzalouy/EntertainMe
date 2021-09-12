@@ -78,7 +78,8 @@ const Artists = () => {
         breakpoints={{
           320: {
             width: 320,
-            slidesPerView: 1
+            slidesPerView: 1,
+            spaceBetween: 20
           },
         }}
       >
@@ -124,11 +125,6 @@ const Artists = () => {
           })}
         </div>
         <div className="swiper-pagination"></div>
-        {/* <span
-          className="swiper-notification"
-          aria-live="assertive"
-          aria-atomic="true"
-        ></span> */}
       </Swiper>
     </section>
   );

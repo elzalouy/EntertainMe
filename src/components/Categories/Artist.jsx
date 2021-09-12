@@ -2,12 +2,15 @@ import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import SwiperCore, { Autoplay, Navigation } from 'swiper';
 
 
 import musician1 from '../../assets/foaG.png';
 import slideImage1 from '../../assets/slideImage1.jpg';
 import slideImage2 from '../../assets/slideImage2.jpg';
 import slideImage3 from '../../assets/slideImage3.jpg';
+
+SwiperCore.use([Navigation]);
 
 const Artist = () => {   
     return (
@@ -63,24 +66,21 @@ const Artist = () => {
                             </div> 
                             <div class="col-md-10">
                                 <section class="artist-works">
-                                    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-                                        <div class="swiper-wrapper">
-                                            <div tag="div" class="swiper-slide swiper-slide-active"  style={{width:"920px", marginRight: "10px"}}>
+                                    <Swiper slidesPerView={1} spaceBetween={10}  navigation={true}>
+                                        <div className="swiper-wrapper" >
+                                            <SwiperSlide style={{width:"920px", marginRight: "10px"}}>
                                                 <div class="work-content">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gho0l7pV-ek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/gho0l7pV-ek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
                                                 </div>
-                                            </div>
-                                            <div tag="div" class="swiper-slide swiper-slide-next" style={{width:"920px", marginRight: "10px"}}>
+                                            </SwiperSlide>
+                                            <SwiperSlide style={{width:"920px", marginRight: "10px"}}>
                                                 <div class="work-content">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/w0uf-Xgvkgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/w0uf-Xgvkgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
                                                 </div>
-                                            </div>
-                                        </div> 
-                                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div> 
-                                        <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-                                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                    </div>
+                                            </SwiperSlide>
+                                        </div>
+                                        <div className="swiper-pagination"></div>
+                                    </Swiper>
                                 </section>
                             </div>
                         </div>
@@ -90,33 +90,28 @@ const Artist = () => {
                                 Images</h5>
                             </div> 
                             <div class="col-md-10">
-                                <section class="artist-works">
-                                    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-                                        <div class="swiper-wrapper" style={{transform:"translate3d(0px, 0px, 0px)"}}>
-                                            <div tag="div" class="swiper-slide swiper-slide-active" style={{width:"920px", marginRight: "10px"}}>
-                                                <div class="work-content">
-                                                    <img src={slideImage1} class="img-fluid mx-auto d-block"/>
-                                                </div>
+                            <section class="artist-works">
+                                <Swiper slidesPerView={1} spaceBetween={10}  navigation={true}>
+                                    <div className="swiper-wrapper" >
+                                        <SwiperSlide style={{width:"920px", marginRight: "10px"}}>
+                                            <div class="work-content">
+                                                <img src={slideImage1} class="img-fluid mx-auto d-block"/>
                                             </div>
-                                            <div tag="div" class="swiper-slide swiper-slide-next" style={{width:"920px", marginRight: "10px"}}>
-                                                <div class="work-content">
-                                                    <img src={slideImage2} class="img-fluid mx-auto d-block"/>
-                                                </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide style={{width:"920px", marginRight: "10px"}}>
+                                            <div class="work-content">
+                                                <img src={slideImage2} class="img-fluid mx-auto d-block"/>
                                             </div>
-                                            <div tag="div" class="swiper-slide" style={{width:"920px", marginRight: "10px"}}>
-                                                <div class="work-content">
-                                                    <img src={slideImage3} class="img-fluid mx-auto d-block"/>
-                                                </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide style={{width:"920px", marginRight: "10px"}}>
+                                            <div class="work-content">
+                                                <img src={slideImage3} class="img-fluid mx-auto d-block"/>
                                             </div>
-                                        </div> 
-                                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div> 
-                                        <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-                                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                                        </SwiperSlide>
                                     </div>
-                                    
-                                   
-                                </section>
+                                    <div className="swiper-pagination"></div>
+                                </Swiper>
+                            </section>
                             </div>
                         </div> 
                         <div class="row mt-2">
