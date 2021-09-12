@@ -40,15 +40,8 @@ const Artists = () => {
         </svg>
       </h1>
       <Swiper
-        autoplay={true}
-        slidesPerView={5}
         spaceBetween={10}
-        breakpoints={{
-          320: {
-            width: 320,
-            slidesPerView: 1,
-          },
-        }}
+        slidesPerView={'auto'}
       >
         <div className="swiper-wrapper">
           {artists &&
@@ -96,7 +89,6 @@ const Artists = () => {
               );
             })}
         </div>
-        <div className="swiper-pagination"></div>
         {/* <span
           className="swiper-notification"
           aria-live="assertive"
