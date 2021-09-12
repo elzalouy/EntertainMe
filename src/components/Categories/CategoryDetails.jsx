@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Route } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 
 import musician1 from '../../assets/foaG.png';
 import musician2 from '../../assets/AZqU.png';

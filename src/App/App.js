@@ -8,7 +8,8 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import Navbar from "../components/UIs/navabr/navbar";
 import Laoding from "../components/Loading/Laoding";
 import { Provider } from "react-redux";
-import store from '../store'
+import store from '../store';
+
 class App extends Routes {    
   render() {
     return (
