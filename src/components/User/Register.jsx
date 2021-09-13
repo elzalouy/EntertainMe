@@ -1,5 +1,4 @@
 import React from "react";
-import {Link } from 'react-router-dom';
 
 const Register = () => {
     return (
@@ -11,7 +10,7 @@ const Register = () => {
                         <div class="row h-100 no-gutters">
                             <div class="register-background-container justify-content-center align-items-center col-lg-6">
                                 <div class="register-background">
-                                    <img src="https://www.entertainme.co/storage/images/register_image.jpg" class="register-bg mx-auto d-block"/>
+                                    <img alt="1" src="https://www.entertainme.co/storage/images/register_image.jpg" class="register-bg mx-auto d-block"/>
                                 </div>
                             </div> 
                             <div class="col-lg-6">

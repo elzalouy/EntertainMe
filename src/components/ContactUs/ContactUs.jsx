@@ -17,8 +17,9 @@ const ContactUS = () => {
   };
   const omSubmit=async()=>{
     const result=await contactUs(email,name,message);
-    if(result.error) alert(result.error);
-    window.location.href='/';
+    if(result.error) return alert(result.error);
+    console.log(result);
+    window.location.href='/home';
   }
   return (
     <>
@@ -83,7 +84,7 @@ const ContactUS = () => {
                     <div className="form-group mb-0">
                       <div className="b-overlay-wrap position-relative d-inline-block">
                         <button
-                          type="submit"
+                          type="button"
                           className="btn font-noto px-5 btn-normal rounded-0"
                           onClick={()=>omSubmit()}
                         >

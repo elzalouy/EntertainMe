@@ -6,7 +6,7 @@ const api = process.env.REACT_APP_API + "/api/";
 /**
  * Login
  * 
- * 
+ * Login Function is reponsible for giving users a lisence to access their accounts and features that need a permission.
  * @param {email} email The user's email is required
  * @param {pasword} password The password is required
  * @returns response data and error
@@ -22,10 +22,11 @@ export const login = async (email, password) => {
   } else {
     return {
       data: null,
-      error: { key: "invalid", data: response.response.data.message },
+      error: { key: "invalid", message: response.response.data.message },
     };
   }
 };
+
 
 export const contactUs = async (email, name, message) => {
   const response = await http.post(api + "send_brief", {
@@ -33,10 +34,9 @@ export const contactUs = async (email, name, message) => {
     name,
     message,
   });
-  if(response.status && response.status===200){
+  if(response.status){
     return {data:response.data,error:null}
   }else{
-    console.log(response.response);
     return {error:response.response.data.message,data:null};
   }
 };

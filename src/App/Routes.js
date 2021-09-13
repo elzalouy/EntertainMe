@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Redirect, Route} from "react-router-dom";
 import Home from "../components/Home/Home";
-import LogIn from "../components/LogIn/LogIn";
+import LogIn from "../components/User/LogIn";
 import ContactUS from "../components/ContactUs/ContactUs";
 import News from "../components/News/News";
 import Categories from "../components/Categories/Categories";
 import CategoryDetails from "../components/Categories/CategoryDetails";
 import Artist from "../components/Categories/Artist";
-import Register from "../components/LogIn/Register";
-import ForgetPassword from "../components/LogIn/ForgetPassword";
+import Register from "../components/User/Register";
+import ForgetPassword from "../components/User/ForgetPassword";
 
 class Routes extends Component {
   state = {
