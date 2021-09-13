@@ -33,10 +33,10 @@ export const contactUs = async (email, name, message) => {
     name,
     message,
   });
-  if(response.status && response.status===200){
+  if(response.status===200){
     return {data:response.data,error:null}
   }else{
-    console.log(response.response);
-    return {error:response.response.data.message,data:null};
+    console.log(response);
+    return {error:response.data.message,data:null};
   }
 };
