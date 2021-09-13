@@ -13,9 +13,11 @@ const Categories = () => {
     const response = await httpGetCategories();
     dispatch(CategoriesActions.onChangeCategories({ data: response }));
   };
+
   useEffect(() => {
     getCategories();
   }, []);
+  
   return (
     <main>
       <div className="b-overlay-wrap position-relative">
