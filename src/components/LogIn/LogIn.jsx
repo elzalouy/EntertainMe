@@ -1,10 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import loginImg from "../../assets/login_image.jpg";
-import { login } from "../../httpService/user";
 import { UserActions } from "../../store/User";
-
+import {login} from '../../httpService/user'
 const LogIn = () => {
+  
   const dispatch = useDispatch();
   const { email, password } = useSelector((state) => state.User.login);
   const onChangeInput = (e) => {
@@ -47,11 +49,10 @@ const LogIn = () => {
                           type="email"
                           placeholder="Email address.."
                           name="email"
-                          value={email}
-                          onChange={(e) => onChangeInput(e)}
+                          value=""
                           required="required"
-                          autoComplete="email"
-                          autoFocus="autofocus"
+                          autocomplete="email"
+                          autofocus="autofocus"
                           className="form-control bg-dark border-0 font-noto-m form-control rounded-0 text-muted "
                         />
                       </div>
@@ -61,10 +62,8 @@ const LogIn = () => {
                           placeholder="Password.."
                           type="password"
                           name="password"
-                          value={password}
-                          onChange={(e) => onChangeInput(e)}
                           required="required"
-                          autoComplete="current-password"
+                          autocomplete="current-password"
                           className="form-control bg-dark border-0 font-noto-m form-control rounded-0 text-muted "
                         />
                       </div>
@@ -76,12 +75,12 @@ const LogIn = () => {
                               id="remember"
                               type="checkbox"
                               name="remember"
-                              autoComplete="off"
+                              autocomplete="off"
                               className="custom-control-input"
                               value="true"
                             />
                             <label
-                              htmlFor="remember"
+                              for="remember"
                               className="custom-control-label"
                               style={{ color: "#f70" }}
                             >
@@ -89,9 +88,12 @@ const LogIn = () => {
                             </label>
                           </div>
                         </div>
-                        <a href='/forgetPassword' className="btn btn-link text-normal">
+                        <Link
+                          to="/forgetPassword"
+                          className="btn btn-link text-normal"
+                        >
                           Forgot Your Password?
-                        </a>
+                        </Link>
                       </div>
                       <div className="form-group mb-0 d-flex">
                         <button
@@ -103,6 +105,7 @@ const LogIn = () => {
                         </button>
                         <button
                           type="button"
+                          onClick={() => (window.location.href = "/register")}
                           className="btn w-75 font-noto btn-outline-normal rounded-0"
                         >
                           New Member Registration
@@ -111,7 +114,25 @@ const LogIn = () => {
                     </form>
                   </div>
                 </div>
+                {/* <a className="btn btn-link text-normal">
+                  Forgot Your Password?
+                </a> */}
               </div>
+              {/* <div className="form-group mb-0 d-flex">
+                <button
+                  type="button"
+                  onClick={(e) => onHandleSubmit(e)}
+                  className="btn mr-3 font-noto px-5 btn-normal rounded-0"
+                >
+                  Join
+                </button>
+                <button
+                  type="button"
+                  className="btn w-75 font-noto btn-outline-normal rounded-0"
+                >
+                  New Member Registration
+                </button>
+              </div> */}
             </div>
           </div>
         </span>
