@@ -17,8 +17,9 @@ const ContactUS = () => {
   };
   const omSubmit=async()=>{
     const result=await contactUs(email,name,message);
-    if(result.error) alert(result.error);
-    window.location.href='/';
+    if(result.error) return alert(result.error);
+    console.log(result);
+    window.location.href='/home';
   }
   return (
     <>

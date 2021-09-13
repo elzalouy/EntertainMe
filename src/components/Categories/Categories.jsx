@@ -1,10 +1,4 @@
 import React, { useEffect } from "react";
-import category1 from "../../assets/jason-mowry.jpg";
-import category2 from "../../assets/melanie-van.jpg";
-import category3 from "../../assets/breakreate.jpg";
-import category4 from "../../assets/fengyou-wan.jpg";
-import category5 from "../../assets/mel-elias.jpg";
-import category6 from "../../assets/ann-fossa.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories as httpGetCategories } from "../../httpService/categories";
 import { CategoriesActions } from "../../store/Categories";
@@ -16,7 +10,6 @@ const Categories = () => {
 
   const getCategories = async () => {
     const response = await httpGetCategories();
-    console.log(response);
     dispatch(CategoriesActions.onChangeCategories({ data: response }));
   };
   useEffect(() => {
@@ -31,9 +24,10 @@ const Categories = () => {
             {categories.map((item, index) => {
                 return (
                     <a
+                    key={index}
                         href="/categoryDetails"
                         className="category d-flex align-items-end justify-content-center"
-                        style={{ backgroundImage: "url(" + item.image + ")" }}
+                        style={{ backgroundImage: `url(${api + item.image})` }}
                     >
                         <div className="category-title">{item.name}</div>
                     </a>

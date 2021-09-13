@@ -8,7 +8,6 @@ const initialState = {
         updated_at: "",
         artists_count: "",
       },
-
-    ],
+    ]
   };
   export default initialState;

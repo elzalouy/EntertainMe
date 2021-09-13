@@ -4,25 +4,34 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import loginImg from "../../assets/login_image.jpg";
 import { UserActions } from "../../store/User";
-import {login} from '../../httpService/user'
+import { login } from "../../httpService/user";
+
 const LogIn = () => {
-  
   const dispatch = useDispatch();
-  const { email, password } = useSelector((state) => state.User.login);
+  const { email, password, error } = useSelector((state) => state.User.login);
+  
   const onChangeInput = (e) => {
     e.preventDefault();
     dispatch(
       UserActions.onChangeLogin([
         { element: e.target.name, value: e.target.value },
+        { element: "error", value: "" },
       ])
     );
   };
 
-  const onHandleSubmit = async () => {
-    //call api
+  const onHandleSubmit = async (e) => {
+    e.preventDefault();
     const result = await login(email, password);
-    if(result.error) console.log(result.error);
+    if (result.error)
+      dispatch(
+        UserActions.onChangeLogin([
+          { element: "error", value: result.error.message },
+        ])
+      );
+    else window.location.href = "/home";
   };
+
   return (
     <>
       <main>
@@ -49,10 +58,11 @@ const LogIn = () => {
                           type="email"
                           placeholder="Email address.."
                           name="email"
-                          value=""
+                          value={email}
+                          onChange={(e) => onChangeInput(e)}
                           required="required"
-                          autocomplete="email"
-                          autofocus="autofocus"
+                          autoComplete="email"
+                          autoFocus="autofocus"
                           className="form-control bg-dark border-0 font-noto-m form-control rounded-0 text-muted "
                         />
                       </div>
@@ -62,10 +72,15 @@ const LogIn = () => {
                           placeholder="Password.."
                           type="password"
                           name="password"
+                          value={password}
+                          onChange={(e) => onChangeInput(e)}
                           required="required"
-                          autocomplete="current-password"
+                          autoComplete="current-password"
                           className="form-control bg-dark border-0 font-noto-m form-control rounded-0 text-muted "
                         />
+                      </div>
+                      <div className="form-group">
+                        <p style={{ color: "gray" }}>{error}</p>
                       </div>
                       <div className="form-group d-flex justify-content-between align-items-center">
                         <div className="form-check">
@@ -75,12 +90,12 @@ const LogIn = () => {
                               id="remember"
                               type="checkbox"
                               name="remember"
-                              autocomplete="off"
+                              autoComplete="off"
                               className="custom-control-input"
                               value="true"
                             />
                             <label
-                              for="remember"
+                              htmlFor="remember"
                               className="custom-control-label"
                               style={{ color: "#f70" }}
                             >
@@ -97,7 +112,7 @@ const LogIn = () => {
                       </div>
                       <div className="form-group mb-0 d-flex">
                         <button
-                          type="button"
+                          type="submit"
                           onClick={(e) => onHandleSubmit(e)}
                           className="btn mr-3 font-noto px-5 btn-normal rounded-0"
                         >
