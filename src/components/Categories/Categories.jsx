@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories as httpGetCategories } from "../../httpService/categories";
 import { CategoriesActions } from "../../store/Categories";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const api = process.env.REACT_APP;
@@ -23,14 +24,14 @@ const Categories = () => {
           <div className="categories-container">
             {categories.map((item, index) => {
                 return (
-                    <a
+                    <Link
                     key={index}
-                        href="/categoryDetails"
+                        to={"/categoryDetails/"+item.id}
                         className="category d-flex align-items-end justify-content-center"
-                        style={{ backgroundImage: `url(${api + item.image})` }}
+                        style={{ backgroundImage: `url(${ api + item.image })` }}
                     >
                         <div className="category-title">{item.name}</div>
-                    </a>
+                    </Link>
                 );
             })}
           </div>
