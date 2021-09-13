@@ -1,8 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import loginImg from "../../assets/login_image.jpg";
-
+import { UserActions } from "../../store/User";
+import {login} from '../../httpService/user'
 const LogIn = () => {
+  
   const dispatch = useDispatch();
   const { email, password } = useSelector((state) => state.User.login);
   const onChangeInput = (e) => {
@@ -110,11 +114,11 @@ const LogIn = () => {
                     </form>
                   </div>
                 </div>
-                <a className="btn btn-link text-normal">
+                {/* <a className="btn btn-link text-normal">
                   Forgot Your Password?
-                </a>
+                </a> */}
               </div>
-              <div className="form-group mb-0 d-flex">
+              {/* <div className="form-group mb-0 d-flex">
                 <button
                   type="button"
                   onClick={(e) => onHandleSubmit(e)}
@@ -128,7 +132,7 @@ const LogIn = () => {
                 >
                   New Member Registration
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </span>
