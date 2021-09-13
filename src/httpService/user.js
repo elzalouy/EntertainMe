@@ -8,6 +8,7 @@ export const login = async (email, password) => {
     password: password,
   });
   if (response.status === 200) {
+    localStorage.setItem('x-auth-token',response.data.success.token);
     return { data: response.data, error: null };
   } else {
     return {
