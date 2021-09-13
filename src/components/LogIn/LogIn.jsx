@@ -114,25 +114,7 @@ const LogIn = () => {
                     </form>
                   </div>
                 </div>
-                {/* <a className="btn btn-link text-normal">
-                  Forgot Your Password?
-                </a> */}
               </div>
-              {/* <div className="form-group mb-0 d-flex">
-                <button
-                  type="button"
-                  onClick={(e) => onHandleSubmit(e)}
-                  className="btn mr-3 font-noto px-5 btn-normal rounded-0"
-                >
-                  Join
-                </button>
-                <button
-                  type="button"
-                  className="btn w-75 font-noto btn-outline-normal rounded-0"
-                >
-                  New Member Registration
-                </button>
-              </div> */}
             </div>
           </div>
         </span>

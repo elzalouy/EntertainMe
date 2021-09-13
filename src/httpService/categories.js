@@ -8,3 +8,10 @@ export const  getCategories=async()=>{
         return response.data;
     }else{}
 }
+
+export const  getCategory=async(id)=>{
+    const response=await http.get(route+'categories/'+id);
+    if(response.status===200){
+        return response.data;
+    }else{}
+}
