@@ -3,6 +3,11 @@ const initialState={
         email:'',
         password:'',
         error:''
+    },
+    contactUs:{
+        email:'',
+        name:'',
+        message:''
     }
 };
 export default initialState;

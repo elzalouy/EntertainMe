@@ -17,6 +17,7 @@ const LogIn = () => {
   const onHandleSubmit = async () => {
     //call api
     const result = await login(email, password);
+    if(result.error) console.log(result.error);
   };
   return (
     <>
@@ -37,12 +38,7 @@ const LogIn = () => {
                 <div className="col-lg-6">
                   <div className="login-form d-flex align-items-center justify-content-center h-100 flex-column">
                     <div className="page-title h1 font-noto">LOGIN</div>
-                    <form className="w-75">
-                      <input
-                        type="hidden"
-                        name="_token"
-                        value="zZo4Y5tQ438aMPruYzCg0chO99UbdgHLwE2JXd4K"
-                      />
+                    <form className="w-75 pt-sm-3 mt-sm-3">
                       <div className="form-group ">
                         <input
                           id="email"
@@ -97,7 +93,8 @@ const LogIn = () => {
                       </div>
                       <div className="form-group mb-0 d-flex">
                         <button
-                          type="submit"
+                          type="button"
+                          onClick={(e) => onHandleSubmit(e)}
                           className="btn mr-3 font-noto px-5 btn-normal rounded-0"
                         >
                           Join
