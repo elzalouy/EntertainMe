@@ -1,8 +1,7 @@
 import React , { useEffect }from "react";
 import {Link } from 'react-router-dom';
-
+import _ from 'lodash';
 import musician1 from '../../assets/foaG.png';
-import musician2 from '../../assets/AZqU.png';
 
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory as httpGetCategory } from "../../httpService/categories";
@@ -42,7 +41,7 @@ const CategoryDetails = (props) => {
                             <div class="category-seprator d-flex align-items-end">
                                 <span></span> <span></span> <span></span>
                             </div> 
-                            <h3 class="font-noto m-0 text-normal">Musicians</h3>
+                            <h3 class="font-noto m-0 text-normal">{category.name}</h3>
                         </div> 
                         <div class="search mt-3">
                             <input type="text" class="border-0 form-control" id="__BVID__1017"/> 
@@ -68,6 +67,8 @@ const CategoryDetails = (props) => {
                 </div> 
                 <div class="b-overlay-wrap position-relative">
                     <div class="row">
+                    {category.artists.map((item, index) => {
+                        return (
                         <div class="mb-3 col-md-4 col-6">
                             <Link to="/artist" class="category-artist text-decoration-none">
                                 <div class="artist-info">
@@ -75,7 +76,7 @@ const CategoryDetails = (props) => {
                                         <img alt=""  src={musician1} class=""/>
                                     </div> 
                                     <div class="artist-about font-noto-m">
-                                        Do you love music ? Do you love crazy mode ?! Well brass sou...
+                                        {_.truncate( item.description,{'length':80,'separator':' '})}
                                     </div>
                                 </div> 
                                 <div class="artist-name my-2">
@@ -96,8 +97,11 @@ const CategoryDetails = (props) => {
                                     </div>
                                 </div>
                             </Link>
+                            
                         </div>
-                        <div class="mb-3 col-md-4 col-6">
+                        );
+                    })}
+                        {/* <div class="mb-3 col-md-4 col-6">
                             <a href="/artists/257" class="category-artist text-decoration-none">
                                 <div class="artist-info">
                                     <div class="artist-image">
@@ -420,8 +424,8 @@ const CategoryDetails = (props) => {
                                         </div></div>
                                         </a>
                         </div>  
-                            <div class="mb-3 col-md-4 col-6">
-                                <a href="/artists/676" class="category-artist text-decoration-none">
+                        <div class="mb-3 col-md-4 col-6">
+                            <a href="/artists/676" class="category-artist text-decoration-none">
                                 <div class="artist-info">
                                     <div class="artist-image">
                                         <img alt=""  src={musician1} class=""/>
@@ -448,7 +452,7 @@ const CategoryDetails = (props) => {
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
