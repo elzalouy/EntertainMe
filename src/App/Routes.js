@@ -7,6 +7,8 @@ import News from "../components/News/News";
 import Categories from "../components/Categories/Categories";
 import CategoryDetails from "../components/Categories/CategoryDetails";
 import Artist from "../components/Categories/Artist";
+import Register from "../components/LogIn/Register";
+import ForgetPassword from "../components/LogIn/ForgetPassword";
 
 class Routes extends Component {
   state = {
@@ -19,6 +21,14 @@ class Routes extends Component {
       {
         route:'/login',
         Route: <Route path="/logIn" key="logIn"  component={LogIn} />,
+      },
+      {
+        route:'/register',
+        Route:<Route path="/register" key="register"  component={Register}/>,
+      },
+      {
+        route:'/forgetPassword',
+        Route:<Route path="/forgetPassword" key="forgetPassword"  component={ForgetPassword}/>,
       },
       {
         route:'/categories',

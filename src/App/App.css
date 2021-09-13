@@ -1720,5 +1720,9 @@ button.swiper-pagination-bullet {
 .swiper-button-next, .swiper-button-prev{
   color: #f70;
 }
-
+.custom-control-input:checked~.custom-control-label:before {
+  color: #fff;
+  border-color: #f70 !important;
+  background-color: #f70 !important;
+}
 
