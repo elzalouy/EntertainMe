@@ -16,10 +16,11 @@ const LogIn = () => {
     );
   };
 
-  const onHandleSubmit=async()=>{
-      //call api
-    const result= await login(email,password);
-  }
+  const onHandleSubmit = async () => {
+    //call api
+    const result = await login(email, password);
+    if(result.error) console.log(result.error);
+  };
   return (
     <>
       <main>
@@ -39,7 +40,7 @@ const LogIn = () => {
                 <div className="col-lg-6">
                   <div className="login-form d-flex align-items-center justify-content-center h-100 flex-column">
                     <div className="page-title h1 font-noto">LOGIN</div>
-                    <form className="w-75">
+                    <form className="w-75 pt-sm-3 mt-sm-3">
                       <div className="form-group ">
                         <input
                           id="email"
@@ -88,14 +89,14 @@ const LogIn = () => {
                             </label>
                           </div>
                         </div>
-                        <a className="btn btn-link text-normal">
+                        <a href='/forgetPassword' className="btn btn-link text-normal">
                           Forgot Your Password?
                         </a>
                       </div>
                       <div className="form-group mb-0 d-flex">
                         <button
-                        type="button"
-                          onClick={(e)=>onHandleSubmit(e)}
+                          type="button"
+                          onClick={(e) => onHandleSubmit(e)}
                           className="btn mr-3 font-noto px-5 btn-normal rounded-0"
                         >
                           Join
