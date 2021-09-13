@@ -2,6 +2,7 @@ import React , { useEffect }from "react";
 import {Link } from 'react-router-dom';
 import _ from 'lodash';
 import musician1 from '../../assets/foaG.png';
+import music from '../../assets/channels4.jpg'
 
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory as httpGetCategory } from "../../httpService/categories";
@@ -69,18 +70,22 @@ const CategoryDetails = (props) => {
                     <div class="row">
                     {category.artists.map((item, index) => {
                         return (
-                        <div class="mb-3 col-md-4 col-6">
+                        <div class="mb-3 col-md-4 col-6" key={index}>
                             <Link to="/artist" class="category-artist text-decoration-none">
                                 <div class="artist-info">
                                     <div class="artist-image">
-                                        <img alt=""  src={musician1} class=""/>
+                                        {item.image ? <img alt=""  src= {`(${ api + item.image })`} class=""/>
+                                        :
+                                        <img alt=""  src={music} class=""/>
+                                        }
+                                        
                                     </div> 
                                     <div class="artist-about font-noto-m">
                                         {_.truncate( item.description,{'length':80,'separator':' '})}
                                     </div>
                                 </div> 
                                 <div className="artist-name my-2">
-                                    <h5 className="m-0 font-noto text-light">Brass Sound Band</h5>
+                                    <h5 className="m-0 font-noto text-light">{item.name}</h5>
                                 </div> 
                                 <div className="artist-actions mt-1">
                                     <svg aria-hidden="true" width="36" height="32" viewBox="0 0 576 512" focusable="false" className="bg-normal p-1 action-icon fa-icon" style={{fontSize:"2.25em"}}>
