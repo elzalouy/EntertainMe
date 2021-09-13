@@ -10,7 +10,6 @@ axios.interceptors.response.use(null, (error) => {
     alert(error);
     Promise.reject(error);
   }
-  console.log(error);
   return error;
 });
 const http = {

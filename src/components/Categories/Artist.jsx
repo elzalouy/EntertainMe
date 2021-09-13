@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 
 
 
@@ -31,7 +30,7 @@ const Artist = () => {
                                 <div class="single-artist text-decoration-none">
                                     <div class="artist-info">
                                         <div class="artist-image">
-                                        <img alt=""  src={musician1} class=""/>
+                                        <img alt="1"  src={musician1} class=""/>
                                         </div>
                                     </div> 
                                     <div class="artist-actions mt-3 align-items-center">
@@ -67,12 +66,12 @@ const Artist = () => {
                                         <div class="swiper-wrapper">
                                             <div tag="div" class="swiper-slide swiper-slide-active"  style={{width:"920px", marginRight: "10px"}}>
                                                 <div class="work-content">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gho0l7pV-ek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                                    <iframe title="1" width="560" height="315" src="https://www.youtube.com/embed/gho0l7pV-ek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
                                                 </div>
                                             </div>
                                             <div tag="div" class="swiper-slide swiper-slide-next" style={{width:"920px", marginRight: "10px"}}>
                                                 <div class="work-content">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/w0uf-Xgvkgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                                    <iframe title="2" width="560" height="315" src="https://www.youtube.com/embed/w0uf-Xgvkgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
                                                 </div>
                                             </div>
                                         </div> 
@@ -95,17 +94,17 @@ const Artist = () => {
                                         <div class="swiper-wrapper" style={{transform:"translate3d(0px, 0px, 0px)"}}>
                                             <div tag="div" class="swiper-slide swiper-slide-active" style={{width:"920px", marginRight: "10px"}}>
                                                 <div class="work-content">
-                                                    <img src={slideImage1} class="img-fluid mx-auto d-block"/>
+                                                    <img alt="2" src={slideImage1} class="img-fluid mx-auto d-block"/>
                                                 </div>
                                             </div>
                                             <div tag="div" class="swiper-slide swiper-slide-next" style={{width:"920px", marginRight: "10px"}}>
                                                 <div class="work-content">
-                                                    <img src={slideImage2} class="img-fluid mx-auto d-block"/>
+                                                    <img alt="3" src={slideImage2} class="img-fluid mx-auto d-block"/>
                                                 </div>
                                             </div>
                                             <div tag="div" class="swiper-slide" style={{width:"920px", marginRight: "10px"}}>
                                                 <div class="work-content">
-                                                    <img src={slideImage3} class="img-fluid mx-auto d-block"/>
+                                                    <img alt="4" src={slideImage3} class="img-fluid mx-auto d-block"/>
                                                 </div>
                                             </div>
                                         </div> 

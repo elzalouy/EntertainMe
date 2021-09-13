@@ -4,17 +4,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { getFeaturedArtists } from "../../httpService/artists";
 import { ArtistsActions } from "../../store/Artists";
 const Artists = () => {
-  const api=process.env.REACT_APP;
+  const api = process.env.REACT_APP;
   const dispatch = useDispatch();
   const artists = useSelector((state) => state.Artists.featuredArtists);
-  
-  const getArtists=async()=>{
-    const response= await getFeaturedArtists();
-    dispatch(ArtistsActions.onChangeFeaturedArtists({data:response}))
-  }
+
+  const getArtists = async () => {
+    const response = await getFeaturedArtists();
+    dispatch(ArtistsActions.onChangeFeaturedArtists({ data: response }));
+  };
+
   useEffect(() => {
-       getArtists();
-  }, [])
+    getArtists();
+  }, []);
+
   return (
     <section id="featured-artists">
       <h1 className="font-noto text-normal ml-3">
@@ -46,14 +48,13 @@ const Artists = () => {
         <div className="swiper-wrapper">
           {artists &&
             artists.map((item, index) => {
-              console.log(api + item.image_url);
               return (
                 <SwiperSlide
                   key={index.toString()}
                   virtualIndex={index}
                   className="featured-artist text-normal"
                   style={{
-                    backgroundImage: `url(${api+item.image_url})`,
+                    backgroundImage: `url(${api + item.image_url})`,
                     marginRight: "10px",
                   }}
                 >
@@ -61,7 +62,7 @@ const Artists = () => {
                     <h2 className="font-noto text-normal">{item.name}</h2>
                     <div className="d-flex justify-content-between align-items-center mb-2">
                       <p className="artist-description text-white m-0">
-                        {item.description}
+                        {item.description}+
                       </p>
                       <svg
                         width="1em"
