@@ -26,7 +26,7 @@ const Categories = () => {
                 return (
                     <Link
                     key={index}
-                        to={"/categoryDetails/"+item.id}
+                        to={`/categoryDetails/${item.id}/${item.name}`}
                         className="category d-flex align-items-end justify-content-center"
                         style={{ backgroundImage: `url(${ api + item.image })` }}
                     >

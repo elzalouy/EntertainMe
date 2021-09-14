@@ -36,7 +36,7 @@ class Routes extends Component {
       },
       {
         route:'/categoryDetails',
-        Route:<Route path="/categoryDetails/:id" key="categoryDetails"  component={CategoryDetails}/>,
+        Route:<Route path="/categoryDetails/:id/:name" key="categoryDetails"  component={CategoryDetails}/>,
       },
       {
         route:'/artist',

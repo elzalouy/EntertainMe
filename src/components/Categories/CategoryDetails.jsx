@@ -36,7 +36,7 @@ const CategoryDetails = (props) => {
                   <div className="category-seprator d-flex align-items-end">
                     <span></span> <span></span> <span></span>
                   </div>
-                  <h3 className="font-noto m-0 text-normal">{category.name}</h3>
+                  <h3 className="font-noto m-0 text-normal">{props.match.params.name}</h3>
                 </div>
                 <div className="search mt-3">
                   <input
