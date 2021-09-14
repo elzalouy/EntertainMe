@@ -1,8 +1,5 @@
 import React from "react";
 
-
-
-
 import musician1 from '../../assets/foaG.png';
 import slideImage1 from '../../assets/slideImage1.jpg';
 import slideImage2 from '../../assets/slideImage2.jpg';
