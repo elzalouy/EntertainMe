@@ -11,14 +11,13 @@ const CategoryDetails = (props) => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.Categories.category);
 
-  const getCategory = async () => {
-    // get category by id
-    const response = await httpGetCategory(props.match.params.id);
-    dispatch(CategoriesActions.onChangeCategory({ data: response }));
-  };
+  
   useEffect(() => {
-    getCategory();
-  }, []);
+    async function fetch() {
+      dispatch(CategoriesActions.onChangeCategory({ data: await httpGetCategory(props.match.params.id) }));
+    }
+    fetch();
+  }, [dispatch,props.match.params.id]);
 
   return (
     <React.Fragment>

@@ -8,14 +8,12 @@ const Artists = () => {
   const dispatch = useDispatch();
   const artists = useSelector((state) => state.Artists.featuredArtists);
 
-  const getArtists = async () => {
-    const response = await getFeaturedArtists();
-    dispatch(ArtistsActions.onChangeFeaturedArtists({ data: response }));
-  };
-
   useEffect(() => {
-    getArtists();
-  }, []);
+    const fetch=async ()=>{
+      dispatch(ArtistsActions.onChangeFeaturedArtists({ data: await getFeaturedArtists() }));
+    }
+    fetch();
+  }, [dispatch]);
 
   return (
     <section id="featured-artists">

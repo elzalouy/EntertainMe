@@ -9,14 +9,12 @@ const Categories = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.Categories.categories);
 
-  const getCategories = async () => {
-    const response = await httpGetCategories();
-    dispatch(CategoriesActions.onChangeCategories({ data: response }));
-  };
-
   useEffect(() => {
-    getCategories();
-  }, []);
+    async function fetch() {
+      dispatch(CategoriesActions.onChangeCategories({ data: await httpGetCategories() }));
+    }
+    fetch();
+  }, [dispatch]);
   
   return (
     <main>
