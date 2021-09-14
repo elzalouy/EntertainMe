@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Swiper,SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { getFeaturedArtists } from "../../httpService/artists";
 import { ArtistsActions } from "../../store/Artists";
 import Artist from "./Artist";
@@ -63,7 +63,7 @@ const Artists = () => {
               );
             })
           ) : (
-            <React.Fragment>No Data right now</React.Fragment>
+              <h1>No Data right now</h1>
           )}
         </div>
       </Swiper>

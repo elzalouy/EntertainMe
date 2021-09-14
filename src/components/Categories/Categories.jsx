@@ -22,7 +22,7 @@ const Categories = () => {
         <div className="categories-page w-100">
           <h1 className="categories-title">Categories</h1>
           <div className="categories-container">
-            {categories.length>0 ? categories.map((item, index) => {
+            {categories && categories.length>0 ? categories.map((item, index) => {
                 return (
                     <Link
                     key={index}
