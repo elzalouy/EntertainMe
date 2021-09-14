@@ -6,7 +6,7 @@ import musician1 from "../../assets/foaG.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory as httpGetCategory } from "../../httpService/categories";
 import { CategoriesActions } from "../../store/Categories";
-
+import Empty from '../UIs/Empty';
 const CategoryDetails = (props) => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.Categories.category);
@@ -174,7 +174,7 @@ const CategoryDetails = (props) => {
                     );
                   })
                 ) : (
-                  <React.Fragment>No Data now</React.Fragment>
+                  <Empty/>
                 )}
               </div>
             </div>

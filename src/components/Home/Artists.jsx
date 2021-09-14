@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getFeaturedArtists } from "../../httpService/artists";
 import { ArtistsActions } from "../../store/Artists";
+import Empty from "../UIs/Empty";
 import Artist from "./Artist";
 const Artists = () => {
   const api = process.env.REACT_APP;
@@ -44,10 +45,10 @@ const Artists = () => {
           </g>
         </svg>
       </h1>
-      <Swiper spaceBetween={10} slidesPerView={"auto"}>
-        <div className="swiper-wrapper">
-          {artists && artists.length > 0 ? (
-            artists.map((item, index) => {
+      {artists && artists.length > 0 ? (
+        <Swiper  spaceBetween={10} slidesPerView={"auto"}>
+          <div className="swiper-wrapper">
+            {artists.map((item, index) => {
               return (
                 <SwiperSlide
                   key={index.toString()}
@@ -61,12 +62,12 @@ const Artists = () => {
                   <Artist item={item} />
                 </SwiperSlide>
               );
-            })
-          ) : (
-              <h1>No Data right now</h1>
-          )}
-        </div>
-      </Swiper>
+            })}
+          </div>
+        </Swiper>
+      ) : (
+        <Empty/>
+      )}
     </section>
   );
 };
