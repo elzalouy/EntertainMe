@@ -9,13 +9,13 @@ const Categories = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.Categories.categories);
 
-  const getCategories = async () => {
-    const response = await httpGetCategories();
-    dispatch(CategoriesActions.onChangeCategories({ data: response }));
-  };
   useEffect(() => {
-    getCategories();
-  }, []);
+    async function fetch() {
+      dispatch(CategoriesActions.onChangeCategories({ data: await httpGetCategories() }));
+    }
+    fetch();
+  }, [dispatch]);
+  
   return (
     <main>
       <div className="b-overlay-wrap position-relative">
@@ -26,7 +26,7 @@ const Categories = () => {
                 return (
                     <Link
                     key={index}
-                        to={"/categoryDetails/"+item.id}
+                        to={`/categoryDetails/${item.id}/${item.name}`}
                         className="category d-flex align-items-end justify-content-center"
                         style={{ backgroundImage: `url(${ api + item.image })` }}
                     >
