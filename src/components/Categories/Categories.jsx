@@ -22,7 +22,7 @@ const Categories = () => {
         <div className="categories-page w-100">
           <h1 className="categories-title">Categories</h1>
           <div className="categories-container">
-            {categories.map((item, index) => {
+            {categories.length>0 ? categories.map((item, index) => {
                 return (
                     <Link
                     key={index}
@@ -33,7 +33,7 @@ const Categories = () => {
                         <div className="category-title">{item.name}</div>
                     </Link>
                 );
-            })}
+            }):<React.Fragment>No Categories now</React.Fragment>}
           </div>
         </div>
       </div>
