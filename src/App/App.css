@@ -1352,7 +1352,6 @@ button.swiper-pagination-bullet {
 #register-page-container .register-form .page-title {
   font-size: 5.5rem;
   color: #2d2d2d;
-  position: absolute;
   left: 0;
   top: 1rem;
   text-transform: uppercase;

@@ -54,14 +54,12 @@ const Artist = (props) => {
                 <div className="single-artist text-decoration-none">
                   <div className="artist-info">
                     <div className="artist-image">
-                      
-                      {
-                              artist.image?
-                              <img alt="" src={`(${ api + artist.image })`} className="" />
-                              :
-                              <img alt="" src={music} className="" />
-
-                            }
+                        {
+                          artist.image?
+                          <img alt="" src={`(${ api + artist.image })`} className="" />
+                          :
+                          <img alt="" src={music} className="" />
+                        }
                     </div>
                   </div>
                   <div className="artist-actions mt-3 align-items-center">
@@ -284,7 +282,7 @@ const Artist = (props) => {
                     <div className="d-flex flex-wrap">
                     {artist.events.map((item, index) => {
                       return (
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
+                      <div className="mb-3 mr-3 text-light font-noto single-prev-event" key={index}>
                         <svg
                           width="1em"
                           height="1em"

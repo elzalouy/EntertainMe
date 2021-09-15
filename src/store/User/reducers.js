@@ -26,8 +26,24 @@ export const onChangeContactUs = (state, action) => {
   });
 };
 
+/**
+ * onChangeRegister
+ * 
+ * handle changing state of the registeration page
+ * 
+ * @param {sate} state State to be changed
+ * @param {action} action Action to be executed on the state
+ */
+export const onChangeRegister=(state,action)=>{
+  action.payload.forEach(item => {
+    state.register[item.element]=item.value;
+  });
+}
+
 const exports = {
-  onChangeLogin: onChangeLogin,
-  onChangeContactUs: onChangeContactUs,
+  onChangeLogin,
+  onChangeContactUs,
+  onChangeRegister
 };
+
 export default exports;
