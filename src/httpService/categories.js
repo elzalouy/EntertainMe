@@ -1,16 +1,25 @@
 import http from './httpHandler';
 const route=process.env.REACT_APP_API+'/api/';
 
-export const  getCategories=async()=>{
+export const getCategories=async()=>{
     const response=await http.get(route+'categories');
     if(response.status===200){
         return response.data;
     }else{}
 }
 
-export const  getCategory=async(id)=>{
+export const getCategory=async(id)=>{
     const response=await http.get(route+'categories/'+id);
     if(response.status===200){
         return response.data;
     }else{}
+}
+
+export const getArtist=async(id)=>{
+    const response=await http.get(route+'artists/'+id);
+    if(response.status===200){
+        return response.data;
+    }else{
+        console.log(response.response.data)
+    }
 }

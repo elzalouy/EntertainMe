@@ -1,11 +1,28 @@
-import React from "react";
+import React , { useEffect } from "react";
 
 import musician1 from "../../assets/foaG.png";
+import music from "../../assets/channels4.jpg";
 import slideImage1 from "../../assets/slideImage1.jpg";
 import slideImage2 from "../../assets/slideImage2.jpg";
 import slideImage3 from "../../assets/slideImage3.jpg";
 
-const Artist = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { getArtist as httpGetArtist } from "../../httpService/categories";
+import { CategoriesActions } from "../../store/Categories";
+
+const Artist = (props) => {
+  const api = process.env.REACT_APP;
+    const dispatch = useDispatch();
+    const artist = useSelector((state) => state.Categories.artist);
+
+    useEffect(() => {
+        async function fetch() {
+            dispatch(CategoriesActions.onChangeArtist({ data: await httpGetArtist(props.match.params.id) }));
+        }
+        console.log(artist);
+        fetch();
+        
+    }, [dispatch,props.match.params.id]);
   return (
     <main>
       <main id="single-artist-page">
@@ -22,22 +39,29 @@ const Artist = () => {
                 <span></span> <span></span> <span></span>
               </div>
               <a
-                href="/categories/3"
+                href={`/categoryDetails/${artist.category.id}/${artist.category.name}`}
                 className="font-noto m-0 h3 text-decoration-none text-light"
               >
-                Musicians
+                {artist.category.name}
               </a>
               <div className="category-seprator d-flex align-items-end">
                 <span></span> <span></span> <span></span>
               </div>
-              <h3 className="font-noto m-0 text-normal">Brass Sound Band</h3>
+              <h3 className="font-noto m-0 text-normal">{artist.name}</h3>
             </div>
             <div className="row mt-3">
               <div className="col-md-4">
                 <div className="single-artist text-decoration-none">
                   <div className="artist-info">
                     <div className="artist-image">
-                      <img alt="1" src={musician1} className="" />
+                      
+                      {
+                              artist.image?
+                              <img alt="" src={`(${ api + artist.image })`} className="" />
+                              :
+                              <img alt="" src={music} className="" />
+
+                            }
                     </div>
                   </div>
                   <div className="artist-actions mt-3 align-items-center">
@@ -76,7 +100,7 @@ const Artist = () => {
                   </div>
                 </div>
                 <h2 className="text-center mt-3 font-noto text-light">
-                  Brass Sound Band
+                  {artist.name}
                 </h2>
               </div>
               <div className="col-md-8">
@@ -84,13 +108,13 @@ const Artist = () => {
                   <div className="card-body">
                     <h3 className="text-normal font-noto">About</h3>
                     <p className="text-light font-noto-m">
-                      Do you love music ? Do you love crazy mode ?! Well brass
-                      sound gives you both
+                      {artist.description}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="row mt-2">
               <div className="col-md-2">
                 <h5 className="text-normal font-noto-m works-section-title">
@@ -258,6 +282,8 @@ const Artist = () => {
                 <div className="card rounded-0 previous-events  h-100 px-lg-3">
                   <div className="card-body">
                     <div className="d-flex flex-wrap">
+                    {artist.events.map((item, index) => {
+                      return (
                       <div className="mb-3 mr-3 text-light font-noto single-prev-event">
                         <svg
                           width="1em"
@@ -278,184 +304,11 @@ const Artist = () => {
                             ></path>
                           </g>
                         </svg>
-                        <span>Cairo Opera House</span>
+                        <span>{item.name}</span>
                       </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Cairo University</span>
-                      </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Misr University for Science Technology</span>
-                      </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Cairo Opera House</span>
-                      </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Cairo University</span>
-                      </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Misr University for Science Technology</span>
-                      </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Cairo Opera House</span>
-                      </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Cairo University</span>
-                      </div>
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event">
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>Misr University for Science Technology</span>
-                      </div>
+                       );
+                      })}
+                      
                     </div>
                   </div>
                 </div>

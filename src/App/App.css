@@ -1675,12 +1675,13 @@ button.swiper-pagination-bullet {
   background-color: #f70;
   border-radius: 2.2rem;
   width: 132px;
-  height: 162px;
+  height: auto;
+  /* height: 162px; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 15px;
+  padding: 2rem 15px;
   position: relative;
 }
 #single-artist-page .previous-events .single-prev-event .dots {
