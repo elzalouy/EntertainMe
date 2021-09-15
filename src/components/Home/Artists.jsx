@@ -6,7 +6,8 @@ import { ArtistsActions } from "../../store/Artists";
 import Empty from "../UIs/Empty";
 import Artist from "./Artist";
 const Artists = () => {
-  const api = process.env.REACT_APP;
+  const api = process.env.REACT_APP_IMAGE_URL;
+  console.log(api);
   const dispatch = useDispatch();
   const artists = useSelector((state) => state.Artists.featuredArtists);
 
@@ -46,7 +47,7 @@ const Artists = () => {
         </svg>
       </h1>
       {artists && artists.length > 0 ? (
-        <Swiper  spaceBetween={10} slidesPerView={"auto"}>
+        <Swiper spaceBetween={10} slidesPerView={"auto"}>
           <div className="swiper-wrapper">
             {artists.map((item, index) => {
               return (
@@ -66,7 +67,7 @@ const Artists = () => {
           </div>
         </Swiper>
       ) : (
-        <Empty/>
+        <Empty />
       )}
     </section>
   );

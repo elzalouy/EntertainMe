@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Empty from "../UIs/Empty";
 
 const Categories = () => {
-  const api = process.env.REACT_APP;
+  const api = process.env.REACT_APP_IMAGE_URL;
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.Categories.categories);
 

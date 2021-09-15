@@ -6,6 +6,7 @@ axios.interceptors.response.use(null, (error) => {
     error.response &&
     error.response.status >= 400 &&
     error.response.status < 500;
+    // if it's not app error
   if (!expectedError) {
     alert(error);
     Promise.reject(error);
