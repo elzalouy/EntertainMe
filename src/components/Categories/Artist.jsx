@@ -1,6 +1,5 @@
 import React , { useEffect } from "react";
 
-import musician1 from "../../assets/foaG.png";
 import music from "../../assets/channels4.jpg";
 import slideImage1 from "../../assets/slideImage1.jpg";
 import slideImage2 from "../../assets/slideImage2.jpg";
@@ -19,10 +18,8 @@ const Artist = (props) => {
         async function fetch() {
             dispatch(CategoriesActions.onChangeArtist({ data: await httpGetArtist(props.match.params.id) }));
         }
-        console.log(artist);
         fetch();
-        
-    }, [dispatch,props.match.params.id]);
+    }, [dispatch,props.match.params.id,artist]);
   return (
     <main>
       <main id="single-artist-page">

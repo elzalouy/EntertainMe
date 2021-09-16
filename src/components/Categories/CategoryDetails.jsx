@@ -1,7 +1,6 @@
 import React , { useEffect }from "react";
 import {Link } from 'react-router-dom';
 import _ from 'lodash';
-import musician1 from '../../assets/foaG.png';
 import music from "../../assets/channels4.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
