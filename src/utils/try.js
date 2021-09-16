@@ -3,5 +3,6 @@ module.exports= function (fun) {
         return fun;
     } catch (error) {
         alert(error);
+        return;
     }
 }

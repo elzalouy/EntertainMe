@@ -8,6 +8,7 @@ const initialState = {
     email: "",
     name: "",
     message: "",
+    error:""
   },
   register: {
     first_name: "",
