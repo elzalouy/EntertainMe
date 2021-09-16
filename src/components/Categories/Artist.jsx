@@ -1,4 +1,4 @@
-import React , { useEffect } from "react";
+import React, { useEffect } from "react";
 
 import music from "../../assets/channels4.jpg";
 import slideImage1 from "../../assets/slideImage1.jpg";
@@ -7,19 +7,25 @@ import slideImage3 from "../../assets/slideImage3.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getArtist as httpGetArtist } from "../../httpService/categories";
-import { CategoriesActions } from "../../store/Categories";
+import { ArtistsActions } from "../../store/Artists";
 
 const Artist = (props) => {
   const api = process.env.REACT_APP;
-    const dispatch = useDispatch();
-    const artist = useSelector((state) => state.Categories.artist);
+  const dispatch = useDispatch();
+  // get (state) artist
+  const artist = useSelector((state) => state.Artists.artist);
 
-    useEffect(() => {
-        async function fetch() {
-            dispatch(CategoriesActions.onChangeArtist({ data: await httpGetArtist(props.match.params.id) }));
-        }
-        fetch();
-    }, [dispatch,props.match.params.id,artist]);
+  // set (state) artist
+  useEffect(() => {
+    async function fetch() {
+      dispatch(
+        ArtistsActions.onChangeArtist({
+          data: await httpGetArtist(props.match.params.id),
+        })
+      );
+    }
+    fetch();
+  }, [dispatch, props.match.params.id]);
   return (
     <main>
       <main id="single-artist-page">
@@ -51,12 +57,15 @@ const Artist = (props) => {
                 <div className="single-artist text-decoration-none">
                   <div className="artist-info">
                     <div className="artist-image">
-                        {
-                          artist.image?
-                          <img alt="" src={`(${ api + artist.image })`} className="" />
-                          :
-                          <img alt="" src={music} className="" />
-                        }
+                      {artist.image ? (
+                        <img
+                          alt=""
+                          src={`(${api + artist.image})`}
+                          className=""
+                        />
+                      ) : (
+                        <img alt="" src={music} className="" />
+                      )}
                     </div>
                   </div>
                   <div className="artist-actions mt-3 align-items-center">
@@ -277,33 +286,35 @@ const Artist = (props) => {
                 <div className="card rounded-0 previous-events  h-100 px-lg-3">
                   <div className="card-body">
                     <div className="d-flex flex-wrap">
-                    {artist.events.map((item, index) => {
-                      return (
-                      <div className="mb-3 mr-3 text-light font-noto single-prev-event" key={index}>
-                        <svg
-                          width="1em"
-                          height="1em"
-                          viewBox="0 0 20 20"
-                          focusable="false"
-                          role="img"
-                          alt="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="bi-three-dots dots b-icon bi"
-                        >
-                          <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
-                            <path
-                              fillRule="evenodd"
-                              d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                              clipRule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span>{item.name}</span>
-                      </div>
-                       );
+                      {artist.events.map((item, index) => {
+                        return (
+                          <div
+                            className="mb-3 mr-3 text-light font-noto single-prev-event"
+                            key={index}
+                          >
+                            <svg
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 20 20"
+                              focusable="false"
+                              role="img"
+                              alt="icon"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              className="bi-three-dots dots b-icon bi"
+                            >
+                              <g transform="translate(10 10) scale(9 9) translate(-10 -10)">
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
+                                  clipRule="evenodd"
+                                ></path>
+                              </g>
+                            </svg>
+                            <span>{item.name}</span>
+                          </div>
+                        );
                       })}
-                      
                     </div>
                   </div>
                 </div>
