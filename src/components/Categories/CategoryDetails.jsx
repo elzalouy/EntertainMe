@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import _ from "lodash";
-import musician1 from "../../assets/foaG.png";
+import React , { useEffect }from "react";
+import {Link } from 'react-router-dom';
+import _ from 'lodash';
+import musician1 from '../../assets/foaG.png';
+import music from "../../assets/channels4.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory as httpGetCategory } from "../../httpService/categories";
 import { CategoriesActions } from "../../store/Categories";
 import Empty from '../UIs/Empty';
 const CategoryDetails = (props) => {
+  const api = process.env.REACT_APP;
   const dispatch = useDispatch();
   const category = useSelector((state) => state.Categories.category);
 
@@ -109,12 +111,17 @@ const CategoryDetails = (props) => {
                     return (
                       <div className="mb-3 col-md-4 col-6" key={index}>
                         <Link
-                          to="/artist"
+                          to={`/artist/${item.id}/${item.name}`}
                           className="category-artist text-decoration-none"
                         >
                           <div className="artist-info">
                             <div className="artist-image">
-                              <img alt="" src={musician1} className="" />
+                            {
+                              item.image?
+                              <img alt="" src={`(${ api + item.image })`} className="" />
+                              :
+                              <img alt="" src={music} className="" />
+                            }
                             </div>
                             <div className="artist-about font-noto-m">
                               {_.truncate(item.description, {
@@ -125,7 +132,10 @@ const CategoryDetails = (props) => {
                           </div>
                           <div className="artist-name my-2">
                             <h5 className="m-0 font-noto text-light">
-                              Brass Sound Band
+                              {_.truncate(item.name, {
+                                  length: 20,
+                                  separator: " ",
+                              })}
                             </h5>
                           </div>
                           <div className="artist-actions mt-1">

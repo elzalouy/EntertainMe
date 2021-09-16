@@ -9,10 +9,26 @@ export const getCategories = _try(async () => {
   }
 });
 
+export const getCategories = _try(async () => {
+  const response = await http.get(route + "categories");
+  if (response.status === 200) {
+    return response.data;
+  } else {
+  }
+});
 export const getCategory = _try(async (id) => {
   const response = await http.get(route + "categories/" + id);
   if (response.status === 200) {
     return response.data;
   } else {
+  }
+});
+
+export const getArtist =_try( async (id) => {
+  const response = await http.get(route + "artists/" + id);
+  if (response.status === 200) {
+    return response.data;
+  } else {
+    console.log(response.response.data);
   }
 });

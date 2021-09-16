@@ -40,7 +40,7 @@ class Routes extends Component {
       },
       {
         route:'/artist',
-        Route:<Route path="/artist" key="artist"  component={Artist}/>,
+        Route:<Route path="/artist/:id/:name" key="artist"  component={Artist}/>,
       },
       {
         route:'/news',
