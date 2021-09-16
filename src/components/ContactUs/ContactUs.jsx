@@ -6,7 +6,7 @@ import { contactUs } from "../../httpService/user";
 import { UserActions } from "../../store/User";
 const ContactUS = () => {
   const dispatch = useDispatch();
-  const { email, name, message } = useSelector((state) => state.User.contactUs);
+  const { email, name, message,error } = useSelector((state) => state.User.contactUs);
 
   const onChangeInput = (e) => {
     dispatch(
@@ -17,8 +17,12 @@ const ContactUS = () => {
   };
   const omSubmit = async () => {
     const result = await contactUs(email, name, message);
-    if (result.error) return alert(result.error);
-    console.log(result);
+    if (result.error)
+      return dispatch(
+        UserActions.onChangeContactUs([
+          { element: "error", value: result.error.message },
+        ])
+      );
     window.location.href = "/home";
   };
   return (
@@ -82,6 +86,9 @@ const ContactUS = () => {
                           onChange={(e) => onChangeInput(e)}
                         ></textarea>
                       </div>
+                      <div className="form-group">
+                        <p style={{ color: "gray" }}>{error}</p>
+                      </div>
                       <div className="form-group mb-0">
                         <div className="b-overlay-wrap position-relative d-inline-block">
                           <button
@@ -93,6 +100,7 @@ const ContactUS = () => {
                           </button>
                         </div>
                       </div>
+                      
                     </form>
                   </div>
                   <iframe

@@ -16,14 +16,10 @@ export const onChangeCategory = (state, action) => {
   state.category = action.payload.data;
 };
 
-export const onChangeArtist= (state, action) => {
-  state.artist = action.payload.data;
-};
 
 const exports = {
   onChangeCategories,
   onChangeCategory,
-  onChangeArtist,
 };
 
 export default exports;
