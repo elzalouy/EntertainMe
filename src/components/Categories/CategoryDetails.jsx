@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import _, { filter } from "lodash";
-import musician1 from "../../assets/foaG.png";
+import _ from "lodash";
 import music from "../../assets/channels4.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory as httpGetCategory } from "../../httpService/categories";
 import { CategoriesActions } from "../../store/Categories";
-import Empty from "../UIs/Empty";
 
 const CategoryDetails = (props) => {
   const api = process.env.REACT_APP;
@@ -17,9 +15,6 @@ const CategoryDetails = (props) => {
   const [internationArtists, setInternationalArtists] = useState([]);
   const [active, setActive] = useState('1');
 
-  const toggleClass = () => {
-    setActive(!active);
-  };
 
   useEffect(() => {
     async function fetch() {
@@ -36,7 +31,7 @@ const CategoryDetails = (props) => {
     const data = category.artists.filter((item) => item.international === 1);
     console.log(data);
     setInternationalArtists(data);
-  }, [iternational]);
+  }, [iternational,category.artists]);
 
   return (
     <React.Fragment>
@@ -101,13 +96,13 @@ const CategoryDetails = (props) => {
                 <div className="category-filter-btns border-normal d-flex mr-2">
                   <div
                     className={`text-center font-noto h5 p-1 px-3 m-0 ${
-                      active == '1'  ? "bg-normal text-light" : ""}`}
+                      active === '1'  ? "bg-normal text-light" : ""}`}
                     onClick={() => {setActive('1'); setIternational(0)}}>
                     Local
                   </div>
                   <div
                     className={`text-center font-noto h5 p-1 m-0 ${
-                      active == '2' ? "bg-normal text-light" : ""}`}
+                      active === '2' ? "bg-normal text-light" : ""}`}
                     onClick={() => {setActive('2'); setIternational(1)}}
                   >
                     Intenational
@@ -125,9 +120,8 @@ const CategoryDetails = (props) => {
             </div>
             <div className="b-overlay-wrap position-relative">
               <div className="row">
-              {active == '1'? 
+              {active === '1'? 
               category.artists.map((item, index) => {
-
                 return (
                   <React.Fragment>
                   <div className="mb-3 col-md-4 col-6" key={index}>
