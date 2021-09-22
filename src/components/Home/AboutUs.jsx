@@ -5,7 +5,7 @@ const AboutUs = () => {
         <div className="row w-100 justify-content-center">
         <section id="about-us">
           <h1 className="font-noto aboutus-title">Our History</h1>
-          <p className="text-muted ml-4">
+          <p className="text-muted ml-4" style={{fontWeight:"400"}}>
             Entertainme focuses on customizing the ideal event and entertainment
             solution services for their clients. We are a dedicated service
             filled with decades of industry insights and international

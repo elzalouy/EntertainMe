@@ -8,13 +8,13 @@ const Home = () => {
     <React.Fragment>
       <div className="home-page">
         <div className="home-hero-container container-fluid">
-          <div className="row h-100">
+          <div className="row h-100 align-items-center">
             <div className="flex-center col-md-6">
               <div
                 id="start-journy"
                 className="d-flex flex-column">
                 <h1 className="text-white font-noto">START YOUR JOURNEY</h1>{" "}
-                <p className="text-white mt-auto font-weight-bold">
+                <p className="text-white mt-3 font-weight-bold">
                   It is difficult to plan an event when you’re not sure where to
                   book the entertainment, or where to find the musicians,
                   comedians, or even magicians. Click here, and choose from the
@@ -23,7 +23,7 @@ const Home = () => {
                 </p>{" "}
                 <a
                   href="/categories"
-                  className="btn lets-go text-primary btn-light rounded-0"
+                  className="btn lets-go font-noto text-primary btn-light rounded-0"
                   target="_self"
                 >
                   Let's go

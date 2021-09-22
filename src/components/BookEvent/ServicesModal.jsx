@@ -19,12 +19,10 @@ const ServicesModal = ({onHandleChange}) => {
           role="document"
           id="booking-modal"
           tabIndex="-1"
-          className="modal-content bg-transparent border-0"
-        >
+          className="modal-content bg-transparent border-0">
           <div
             id="booking-modal"
-            className="modal-body book-modal-body border border-normal"
-          >
+            className="modal-body book-modal-body border-normal" >
             <div id="booking-form-popup">
               <form>
                 <div className="booking-steps">

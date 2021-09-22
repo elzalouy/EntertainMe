@@ -59,6 +59,7 @@ const Artists = () => {
                     backgroundImage: `url(${api + item.image_url})`,
                     marginRight: "10px",
                   }}
+                  onClick={()=>{window.location.href=`/artist/${item.id}/${item.name}`}}
                 >
                   <Artist item={item} />
                 </SwiperSlide>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Logo from "../logo.jsx";
 import {Link} from 'react-router-dom';
+import BookEvent from "../../BookEvent/BookEvent.jsx";
 
 export default class navbar extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class navbar extends Component {
         <nav className="navbar navbar-dark bg-faded navbar-expand-lg">
           <div className="container-fluid">
             <a href="/" className="navbar-brand router-link-exact-active router-link-active" target="_self">
-              <Logo width="200" height="40"/>
+              <Logo width="200" height="22"/>
             </a>
             <button
               type="button"
@@ -22,7 +23,7 @@ export default class navbar extends Component {
             </button>
             <div
               id="navcollapse"
-              className="collapse navbar-collapse  justify-content-end"
+              className="collapse navbar-collapse justify-content-end"
             >
               <ul className="navbar-nav ml-auto align-items-center">
                 <li className="navbar-text p-0 pr-2">
@@ -98,8 +99,8 @@ export default class navbar extends Component {
                     Contact Us
                   </Link>
                 </li>
-                <li data-count="0" className="nav-item cart-icon">
-                  <Link target="_self" to="#" className="nav-link">
+                <li data-count="0" className="nav-item cart-icon" data-toggle="modal" data-target="#booking-modal">
+                  <Link target="_self" to="" className="nav-link">
                     <svg
                       aria-hidden="true"
                       width="16"
