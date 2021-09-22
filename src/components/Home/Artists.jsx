@@ -6,8 +6,6 @@ import { ArtistsActions } from "../../store/Artists";
 import Empty from "../UIs/Empty";
 import Artist from "./Artist";
 const Artists = () => {
-  const api = process.env.REACT_APP_IMAGE_URL;
-  console.log(api);
   const dispatch = useDispatch();
   const artists = useSelector((state) => state.Artists.featuredArtists);
 
@@ -56,7 +54,7 @@ const Artists = () => {
                   virtualIndex={index}
                   className="featured-artist text-normal"
                   style={{
-                    backgroundImage: `url(${api + item.image_url})`,
+                    backgroundImage: `url(${item.image_url})`,
                     marginRight: "10px",
                   }}
                   onClick={()=>{window.location.href=`/artist/${item.id}/${item.name}`}}

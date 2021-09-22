@@ -16,7 +16,7 @@ const initialState = {
     email: "",
     password: "",
     password_confirmation: "",
-    type: 0,
+    type: "user",
     error:''
   },
 };

@@ -9,7 +9,6 @@ const Categories = () => {
   const api = process.env.REACT_APP_API;
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.Categories.categories);
-
   useEffect(() => {
     async function fetch() {
       dispatch(
@@ -30,6 +29,7 @@ const Categories = () => {
               <h1 className="categories-title">Categories</h1>
               <div className="categories-container">
                 {categories.map((item, index) => {
+                  console.log(api+ item.image)
                   return (
                     <Link
                       key={index}

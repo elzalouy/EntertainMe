@@ -2,12 +2,11 @@ import React from "react";
 
 const Artist = ({item}) => {
   return (
-    
       <div className="artist-info">
         <h2 className="font-noto text-normal">{item.name}</h2>
         <div className="d-flex justify-content-between align-items-center mb-2">
           <p className="artist-description text-white m-0">
-            {item.description}+
+            {item.description}
           </p>
           <svg
             width="1em"
