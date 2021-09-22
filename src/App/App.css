@@ -1736,7 +1736,7 @@ button.swiper-pagination-bullet {
   font-weight: 700;
 }
 .login-form .form-control, .login-form button, .register-form .form-control, .register-form button,
-.contactus-form .form-control, .contactus-form button, .login-form .btn-link{
+.contactus-form .form-control, .contactus-form button, .login-form .btn-link, #booking-form-popup .form-control{
   font-size: 0.9rem;
 }
 .form-group .form-control:focus{
@@ -1776,4 +1776,12 @@ button.swiper-pagination-bullet {
 }
 .custom-control-input:focus~.custom-control-label:before {
   box-shadow: 0 0 0 0.2rem rgb(255 119 0 / 25%) !important;
+}
+#booking-form-popup .booking-steps .booking-step .custom-radio .custom-control-label:after {
+  background: none;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
