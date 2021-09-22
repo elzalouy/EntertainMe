@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
+
 const EventDetailsModal = ({onHandleChange}) => {
+  const [date, setDate] = useState(new Date());
+
+
     return ( 
         
           <form>
@@ -48,7 +56,9 @@ const EventDetailsModal = ({onHandleChange}) => {
                 <div className="form-row mb-2">
                   <div className="col-4">
                     <p className="font-noto-m text-normal mb-2">Event Date</p>{" "}
-                    <div role="group"
+                    <DatePicker className="dateInput bg-transparent border border-dark rounded-0 form-control" selected={date}  dateFormat="MM/dd/yyyy" 
+                     onChange={(date) => setDate(date)} useWeekdaysShort={true}/>
+                    {/* <div role="group"
                       className="dropdown b-form-datepicker date-field text-muted border-dark border rounded-0 bg-transparent b-form-btn-label-control form-control d-flex p-0 h-auto align-items-stretch"
                       type="text"
                       id="__BVID__524__outer_"
@@ -63,6 +73,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         id="__BVID__524"
                       ></button>
                       <input type="hidden" name="date" value="" />
+                      
                       <div
                         role="dialog"
                         tabIndex="-1"
@@ -78,7 +89,7 @@ const EventDetailsModal = ({onHandleChange}) => {
                         id="__BVID__524__value_"
                         htmlFor="__BVID__524"
                       ></label>
-                    </div>
+                    </div> */}
                   </div>{" "}
                   <div className="col-4">
                     <p className="font-noto-m text-normal mb-2">
