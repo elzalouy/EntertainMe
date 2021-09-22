@@ -3,7 +3,7 @@ const EventDetailsModal = ({onHandleChange}) => {
     return ( 
         <div
         id="booking-modal"
-        className="modal-body book-modal-body border border-normal"
+        className="modal-body book-modal-body border-normal"
       >
         <div id="booking-form-popup">
           <form>

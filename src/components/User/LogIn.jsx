@@ -63,7 +63,7 @@ const LogIn = () => {
                           required="required"
                           autoComplete="email"
                           autoFocus="autofocus"
-                          className="form-control bg-dark border-0 font-noto-m form-control rounded-0 text-muted "
+                          className="form-control bg-dark border-0 font-noto-m rounded-0 text-muted "
                         />
                       </div>
                       <div className="form-group">
@@ -86,12 +86,12 @@ const LogIn = () => {
                         <div className="form-check">
                           <div className="text-normal custom-control custom-checkbox">
                             <input
-                              variant="primary"
+                              // variant="primary"
                               id="remember"
                               type="checkbox"
                               name="remember"
                               autoComplete="off"
-                              className="custom-control-input"
+                              className="custom-control-input outlineNone"
                               value="true"
                             />
                             <label
