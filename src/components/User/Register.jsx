@@ -17,14 +17,21 @@ const Register = () => {
 
   const onHandleSubmit = async (e) => {
     e.preventDefault();
-    const result = await httpRegister(register);
-    if (result.error.key)
+    const result = await httpRegister({
+      first_name: register.first_name,
+      last_name: register.last_name,
+      email: register.email,
+      password: register.password,
+      password_confirmation: register.password_confirmation,
+      type: "user",
+    });
+    if (result.error)
       return dispatch(
         UserActions.onChangeRegister([
           { element: "error", value: result.error.message },
         ])
       );
-    // window.location.href='/home';
+    window.location.href='/home';
   };
 
   return (
@@ -136,7 +143,9 @@ const Register = () => {
                         />
                       </div>
                       <div className="form-group">
-                        <p style={{ color: "gray" }}>{register && register.error}</p>
+                        <p style={{ color: "gray" }}>
+                          {register && register.error}
+                        </p>
                       </div>
                       <div className="form-group mb-0">
                         <button

@@ -19,7 +19,7 @@ export const login = _try(async (email, password) => {
   const result = handleServerError(response);
   if (result) return { data: null, error: result };
   if (response.status === 200) {
-    localStorage.setItem("x-auth-token", response.data.success.token);
+    localStorage.setItem("x-auth-token", response.data.token);
     return { data: response.data, error: null };
   } else {
     return {
@@ -46,6 +46,7 @@ export const contactUs = _try(async (email, name, message) => {
   const handleError = handleServerError(response);
   if (handleError) return { data: null, error: handleError };
   if (response.status === 200) {
+    localStorage.setItem("x-auth-token", response.data.token);
     return { data: response.data, error: null };
   } else {
     return { error: response.response.data.message, data: null };
@@ -54,7 +55,8 @@ export const contactUs = _try(async (email, name, message) => {
 
 /**
  * Register
- * Call API endpoint named 'register' to http reuest to the API server and handle registeration
+ *
+ * Call API endpoint named 'register' as an http request to the API server and handle registeration
  * @param {data} data Data reuired to register a new user {email,password,password_confirmation,first_name,last_name}
  */
 export const register = _try(async (data) => {
@@ -62,7 +64,7 @@ export const register = _try(async (data) => {
   const result = handleServerError(response);
   if (result) return { data: null, error: result };
   if (response.status === 200) {
-    await localStorage.setItem("x-auth-token", response.data.success.token);
+    localStorage.setItem("x-auth-token", response.data.token);
     return { data: response.data.user, error: null };
   } else {
     return {
@@ -76,4 +78,17 @@ export const register = _try(async (data) => {
       },
     };
   }
+});
+
+export const authed = _try(() => {
+  let token = localStorage.getItem("x-auth-token");
+  if (token) {
+    return true;
+  }
+  return false;
+});
+
+export const logout = _try(() => {
+  localStorage.removeItem("x-auth-token");
+  return true;
 });
