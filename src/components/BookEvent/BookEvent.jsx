@@ -1,22 +1,24 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
 import EventDetailsModal from "./EventDetailsModal";
 import ServicesModal from "./ServicesModal";
-import {UiActions} from '../../store/Ui';
 import ContactModal from "./ContactModal";
-
 const BookEvent = () => {
-  const dispatch = useDispatch();
-  const modal=useSelector(state=>state.UI.modal);
-  const onHandleChange=(num)=>{
-    dispatch(UiActions.onChangeModel([{element:'modal',value:num}]));
-    console.log(num);
-  }
+  const [Modal, setModal] = useState(0);
+  const onHandleChange = (e, num) => {
+    e.preventDefault();
+    setModal(num);
+  };
+
   return (
-    <div id="booking-modal" role="dialog" aria-labelledby="booking-modal" aria-describedby="booking-modal"
-      className="modal fade" aria-hidden="true" aria-modal="true"
+    <div
+      id="booking-modal"
+      role="dialog"
+      aria-labelledby="booking-modal"
+      aria-describedby="booking-modal"
+      className="modal fade"
+      aria-hidden="true"
+      aria-modal="true"
       tabIndex="-1"
-      // style={{display: "block", paddingLeft:  "5px"}}
     >
       <div className="modal-dialog modal-lg modal-dialog-centered">
         <span tabIndex="0"></span>
@@ -24,28 +26,23 @@ const BookEvent = () => {
           role="document"
           id="booking-modal"
           tabIndex="-1"
-          className="modal-content bg-transparent border-0">
+          className="modal-content bg-transparent border-0"
+        >
           <div
             id="booking-modal"
-            className="modal-body book-modal-body border-normal" >
-              <div id="booking-form-popup">
-                <React.Fragment>
-                  {/* {modal===0?<ServicesModal onHandleChange={onHandleChange}/>:<EventDetailsModal onHandleChange={onHandleChange}/>} */}
-                  {modal===0?<EventDetailsModal onHandleChange={onHandleChange}/>:<EventDetailsModal onHandleChange={onHandleChange}/>}
-                  {/* {modal===0?<ContactModal onHandleChange={onHandleChange}/>:<ContactModal onHandleChange={onHandleChange}/>} */}
-                </React.Fragment>
-              </div>
-                <div className="steps-buttons">
-                <div className="step-button bg-normal"></div>
-                <div className="step-button"></div>
-                <div className="step-button"></div>
-              </div>
+            className="modal-body book-modal-body border-normal"
+          >
+            <div id="booking-form-popup">
+              {Modal === 0 && <ServicesModal setModal={onHandleChange} />}
+              {Modal === 1 && <EventDetailsModal setModal={onHandleChange} />}
+              {Modal === 2 && (
+                <ContactModal setModal={onHandleChange}/>
+              )}
             </div>
           </div>
         </div>
-        <span tabIndex="0"></span>
       </div>
-    // </div>
+    </div>
   );
 };
 

@@ -12,10 +12,10 @@ export const onChangeCategories = (state, action) => {
   state.categories = action.payload.data;
 };
 
+
 export const onChangeCategory = (state, action) => {
   state.category = action.payload.data;
 };
-
 
 const exports = {
   onChangeCategories,
