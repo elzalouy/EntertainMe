@@ -40,7 +40,8 @@ const ContactModal = ({ setModal }) => {
     const result = validateEvent(data);
     if (result) return dispatch(EventsActions.onHandleError(result.error));
     const response = await requestOrder(data);
-    console.log(response);
+    if(response.error) return dispatch(EventsActions.onHandleError(result.error));
+    window.location.reload();
   };
   return (
     <form>
