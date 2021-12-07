@@ -10,6 +10,7 @@ import Artist from "../components/Categories/Artist";
 import Register from "../components/User/Register";
 import ForgetPassword from "../components/User/ForgetPassword";
 import { authed } from "../httpService/user";
+import Black from "../components/ContactUs/Black";
 
 class Routes extends Component {
   state = {
@@ -89,6 +90,14 @@ class Routes extends Component {
         Route: (
           <Route path="/contactUs" key="contactUs" component={ContactUS} />
         ),
+      },
+      {
+        route: "/black",
+        Route: <Route path="/black" key="black" component={Black} />,
+      },
+      {
+        route: "redirect",
+        Route: <Redirect from="/" to="/home" />,
       },
     ],
   };

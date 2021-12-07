@@ -9,8 +9,6 @@ import Navbar from "../components/UIs/navabr/navbar";
 import Laoding from "../components/Loading/Laoding";
 import { Provider } from "react-redux";
 import store from "../store";
-import Black from "../components/ContactUs/Black";
-import { Route } from "react-router-dom";
 
 class App extends Routes {
   render() {
@@ -23,7 +21,6 @@ class App extends Routes {
             <BrowserRouter>
               <Navbar />
               <Switch>{this.state.Routes.map((item) => item.Route)}</Switch>
-              <Route path="/black" key="black" component={Black} />
             </BrowserRouter>
           )}
         </Provider>
