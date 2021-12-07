@@ -90,10 +90,6 @@ class Routes extends Component {
           <Route path="/contactUs" key="contactUs" component={ContactUS} />
         ),
       },
-      {
-        route: "/tohome",
-        Route: <Redirect from="/" key="/redirect" to="/home" />,
-      },
     ],
   };
   componentDidMount() {

@@ -8,21 +8,24 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import Navbar from "../components/UIs/navabr/navbar";
 import Laoding from "../components/Loading/Laoding";
 import { Provider } from "react-redux";
-import store from '../store';
+import store from "../store";
+import Black from "../components/ContactUs/Black";
+import { Route } from "react-router-dom";
 
-class App extends Routes {   
+class App extends Routes {
   render() {
     return (
       <React.Fragment>
         <Provider store={store}>
-        {this.state.isLoading ? (
-          <Laoding></Laoding>
+          {this.state.isLoading ? (
+            <Laoding></Laoding>
           ) : (
             <BrowserRouter>
-            <Navbar />
-            <Switch>{this.state.Routes.map((item) => item.Route)}</Switch>
-          </BrowserRouter>
-        )}
+              <Navbar />
+              <Switch>{this.state.Routes.map((item) => item.Route)}</Switch>
+              <Route path="/black" key="black" component={Black} />
+            </BrowserRouter>
+          )}
         </Provider>
       </React.Fragment>
     );

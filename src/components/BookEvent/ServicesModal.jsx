@@ -80,7 +80,7 @@ const ServicesModal = ({ setModal }) => {
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
                 name="additional_info"
-                value={bookEvent.additional_info}
+                value={bookEvent?.additional_info}
                 onChange={(e) => onHandleChange(e, "", "")}
               ></textarea>
             </div>
@@ -132,7 +132,7 @@ const ServicesModal = ({ setModal }) => {
                         value="Counters/Desk"
                         id={item + index}
                         checked={
-                          bookEvent.production_items.indexOf(item) >= 0
+                          bookEvent?.production_items?.indexOf(item) >= 0
                             ? true
                             : false
                         }

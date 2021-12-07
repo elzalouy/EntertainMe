@@ -33,6 +33,7 @@
     "sass": "^1.38.2",
     "scss": "^0.2.4",
     "swiper": "^6.8.4",
+    "tawkto-react": "^2.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
