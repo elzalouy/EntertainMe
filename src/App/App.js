@@ -19,8 +19,16 @@ class App extends Routes {
             <Laoding></Laoding>
           ) : (
             <BrowserRouter>
-              <Navbar />
-              <Switch>{this.state.Routes.map((item) => item.Route)}</Switch>
+              <Switch>
+                {this.state.Routes.map(({ route, Route }) => {
+                  return (
+                    <>
+                      {route !== "/black" && <Navbar />}
+                      {Route}
+                    </>
+                  );
+                })}
+              </Switch>
             </BrowserRouter>
           )}
         </Provider>
