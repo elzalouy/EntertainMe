@@ -8,6 +8,8 @@ import slideImage3 from "../../assets/slideImage3.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtist as httpGetArtist } from "../../httpService/categories";
 import { ArtistsActions } from "../../store/Artists";
+import { setFavourite } from "../../httpService/favourites";
+import { FavoritesActions } from "../../store/Favorites";
 
 const Artist = (props) => {
   const api = process.env.REACT_APP;
@@ -26,6 +28,12 @@ const Artist = (props) => {
     }
     fetch();
   }, [dispatch, props.match.params.id]);
+  const onHandleLike = async () => {
+    let result = await setFavourite(props?.match?.params?.id);
+    if (result.data) {
+      dispatch(FavoritesActions.setFavorite(result.data));
+    }
+  };
   return (
     <main>
       <main id="single-artist-page">
@@ -70,6 +78,7 @@ const Artist = (props) => {
                   </div>
                   <div className="artist-actions mt-3 align-items-center">
                     <div
+                      onClick={() => onHandleLike()}
                       className="b-overlay-wrap position-relative ml-1"
                       data-toggle="modal"
                       data-target="#auth-required-modal"

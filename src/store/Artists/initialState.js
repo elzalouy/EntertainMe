@@ -45,6 +45,7 @@ const initialState = {
       updated_at: "",
     },
   },
-
+  searchArtists: [],
+  FilterSelectedArtists: [],
 };
 export default initialState;

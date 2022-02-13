@@ -11,3 +11,14 @@ export const requestOrder = _try(async (data) => {
   if (response.data) return { error: null, data: response.data };
   return { data: response.data, error: null };
 });
+
+export const getEventsByUser = async () => {
+  const token = localStorage.getItem("x-auth-token");
+  let response = await http.get(route + "order", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  if (response.status === 200) return { data: response.data, error: null };
+  else return { data: null, error: response.response.data };
+};

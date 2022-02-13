@@ -19,8 +19,8 @@ export const login = _try(async (email, password) => {
   const result = handleServerError(response);
   if (result) return { data: null, error: result };
   if (response.status === 200) {
-    localStorage.setItem("x-auth-token", response.data.token);
-    return { data: response.data, error: null };
+    localStorage.setItem("x-auth-token", response?.data?.data?.token);
+    return { data: response.data.data, error: null };
   } else {
     return {
       data: null,
@@ -46,7 +46,6 @@ export const contactUs = _try(async (email, name, message) => {
   const handleError = handleServerError(response);
   if (handleError) return { data: null, error: handleError };
   if (response.status === 200) {
-    localStorage.setItem("x-auth-token", response.data.token);
     return { data: response.data, error: null };
   } else {
     return { error: response.response.data.message, data: null };
@@ -64,7 +63,7 @@ export const register = _try(async (data) => {
   const result = handleServerError(response);
   if (result) return { data: null, error: result };
   if (response.status === 200) {
-    localStorage.setItem("x-auth-token", response.data.token);
+    localStorage.setItem("x-auth-token", response.data.data.token);
     return { data: response.data.user, error: null };
   } else {
     return {
@@ -92,3 +91,24 @@ export const logout = _try(() => {
   localStorage.removeItem("x-auth-token");
   return true;
 });
+
+export const forgetPassword = async (email) => {
+  const response = await http.post(api + "password/forget", { email: email });
+  const result = handleServerError(response);
+  if (result) return { data: null, error: result };
+  if (response.response)
+    return { error: response.response.data.errors.email[0], data: null };
+  if (response?.data?.success)
+    return { data: response.data.success, error: null };
+};
+export const resetPassword = async (data) => {
+  if (data.password !== data.confirm_password)
+    return { data: null, error: "Password not matches confirm password" };
+  const response = await http.post(api + "password/reset", data);
+  const result = handleServerError(response);
+  if (result) return { data: null, error: result };
+  if (response.response)
+    return { error: response.response.data.error.code[0], data: null };
+  if (response?.data?.success)
+    return { data: response.data.success, error: null };
+};

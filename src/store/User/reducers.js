@@ -28,22 +28,37 @@ export const onChangeContactUs = (state, action) => {
 
 /**
  * onChangeRegister
- * 
+ *
  * handle changing state of the registeration page
- * 
+ *
  * @param {sate} state State to be changed
  * @param {action} action Action to be executed on the state
  */
-export const onChangeRegister=(state,action)=>{
-  action.payload.forEach(item => {
-    state.register[item.element]=item.value;
+export const onChangeRegister = (state, action) => {
+  action.payload.forEach((item) => {
+    state.register[item.element] = item.value;
   });
-}
-
+};
+export const onSetRegister = (state, action) => {
+  state.register = action.payload;
+};
+export const onResetPassword = (state, action) => {
+  action.payload.forEach((item) => {
+    state.forgetPassword[item.element] = item.value;
+  });
+};
+export const onChangeItems = (state, action) => {
+  action.payload.forEach((item) => {
+    state[item.element] = item.value;
+  });
+};
 const exports = {
   onChangeLogin,
   onChangeContactUs,
-  onChangeRegister
+  onChangeRegister,
+  onResetPassword,
+  onChangeItems,
+  onSetRegister,
 };
 
 export default exports;

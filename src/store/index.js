@@ -4,6 +4,7 @@ import ArtistsSlice from "./Artists";
 import CategoriesSlice from "./Categories";
 import UserSlice from "./User";
 import EventsSlice from "./Events";
+import Favorites from "./Favorites";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     Categories: CategoriesSlice,
     User: UserSlice,
     Events: EventsSlice,
+    Favorites: Favorites,
   },
 });
 

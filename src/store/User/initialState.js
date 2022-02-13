@@ -3,12 +3,14 @@ const initialState = {
     email: "",
     password: "",
     error: "",
+    remember: false,
+    secure: true,
   },
   contactUs: {
     email: "",
     name: "",
     message: "",
-    error:""
+    error: "",
   },
   register: {
     first_name: "",
@@ -17,7 +19,18 @@ const initialState = {
     password: "",
     password_confirmation: "",
     type: "user",
-    error:''
+    error: "",
+    secure: true,
   },
+  forgetPassword: {
+    email: "",
+    code: "",
+    password: "",
+    password_confirmation: "",
+    error: "",
+    secure: false,
+  },
+  fbLogin: {},
+  googleLogin: {},
 };
 export default initialState;

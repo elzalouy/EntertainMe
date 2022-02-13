@@ -14,10 +14,14 @@ export const onChangeFeaturedArtists = (state, action) => {
 export const onChangeArtist = (state, action) => {
   state.artist = action.payload.data;
 };
+export const onHandleChangeItems = (state, action) => {
+  state[action.payload.element] = action.payload.value;
+};
 
 const exports = {
   onChangeFeaturedArtists,
   onChangeArtist,
+  onHandleChangeItems,
 };
 
 export default exports;

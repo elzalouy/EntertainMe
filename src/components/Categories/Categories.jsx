@@ -29,7 +29,6 @@ const Categories = () => {
               <h1 className="categories-title">Categories</h1>
               <div className="categories-container">
                 {categories.map((item, index) => {
-                  console.log(api+ item.image)
                   return (
                     <Link
                       key={index}

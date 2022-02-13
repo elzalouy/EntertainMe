@@ -1,18 +1,19 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import BookEvent from "../BookEvent/BookEvent";
+import Cart from "../Cart/Cart";
 import AboutUs from "./AboutUs";
 import Artists from "./Artists";
 
 const Home = () => {
+  const { modalName } = useSelector((state) => state.UI);
   return (
     <React.Fragment>
       <div className="home-page">
         <div className="home-hero-container container-fluid">
           <div className="row h-100 align-items-center">
             <div className="flex-center col-md-6">
-              <div
-                id="start-journy"
-                className="d-flex flex-column">
+              <div id="start-journy" className="d-flex flex-column">
                 <h1 className="text-white font-noto">START YOUR JOURNEY</h1>{" "}
                 <p className="text-white mt-3 font-weight-bold">
                   It is difficult to plan an event when you’re not sure where to
@@ -29,7 +30,7 @@ const Home = () => {
                   Let's go
                 </a>
               </div>
-            </div>{" "}
+            </div>
             <div className="flex-center col-md-6">
               <div id="letus-do-thework" className="d-flex flex-column">
                 <h1 className="text-white font-noto">
@@ -46,7 +47,8 @@ const Home = () => {
                 <button
                   type="button"
                   className="btn lets-go font-noto text-primary btn-light rounded-0"
-                  data-toggle="modal" data-target="#booking-modal"
+                  data-toggle="modal"
+                  data-target="#booking-modal"
                 >
                   Let's go
                 </button>
@@ -54,11 +56,12 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Artists/>
+        <Artists />
         <AboutUs />
-        <BookEvent/>
+        {modalName === "cart" ? <Cart /> : <BookEvent />}
       </div>
     </React.Fragment>
   );
 };
+
 export default Home;

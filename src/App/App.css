@@ -3,7 +3,7 @@
 body {
   margin: 0;
   /* font-family: Almarai, sans-serif !important; */
-  font-family: 'Almarai' !important;
+  font-family: "Almarai" !important;
   font-size: 0.9rem !important;
   /* font-weight: 400 !important; */
   line-height: 1.6 !important;
@@ -48,12 +48,15 @@ body {
 }
 
 @font-face {
-  font-family: 'Almarai';
+  font-family: "Almarai";
   font-style: normal;
   /* font-weight: 700; */
   font-display: swap;
   src: url(https://fonts.googleapis.com/css2?family=Almarai&display=swap);
-  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41,
+    U+FB50-FDFF, U+FE80-FEFC, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
+    U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 .main-loading {
@@ -189,7 +192,7 @@ body {
   .results-container
   .search-results
   .result-artist[data-v-36959b50]:hover {
-  background-color: var(--primary);
+  background-color: "#f70";
 }
 .global-search .results-container .search-tip[data-v-36959b50] {
   border-top: 1px solid hsla(0, 0%, 100%, 0.336);
@@ -430,9 +433,6 @@ body {
   opacity: 0;
 }
 
-
-
-
 #featured-artists {
   margin: 100px 0;
 }
@@ -443,7 +443,7 @@ body {
   align-items: flex-end;
 }
 #featured-artists .swiper-container .featured-artist {
-  height: 200px ;
+  height: 200px;
   width: 250px;
   background-color: var(--primary);
   position: relative;
@@ -552,7 +552,7 @@ body {
 }
 .home-page #about-us {
   margin: 50px 0;
-  font-family: 'Almarai', sans-serif;
+  font-family: "Almarai", sans-serif;
 }
 .home-page #about-us .aboutus-title {
   background-color: var(--primary);
@@ -1467,12 +1467,12 @@ button.swiper-pagination-bullet {
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 .navbar-brand {
   display: inline-block;
-  padding-top: .32rem;
-  padding-bottom: .32rem;
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
   margin-right: 1rem;
   font-size: 1.125rem;
   line-height: inherit;
@@ -1487,16 +1487,17 @@ button.swiper-pagination-bullet {
   border-color: #f70 !important;
 }
 .bg-normal {
-  background-color: #f70!important;
+  background-color: #f70 !important;
 }
-.btn-group-sm>.btn, .btn-sm {
-  padding: .25rem .5rem !important;
-  font-size: .7875rem !important;
+.btn-group-sm > .btn,
+.btn-sm {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.7875rem !important;
   line-height: 1.5 !important;
-  border-radius: .2rem !important;
+  border-radius: 0.2rem !important;
 }
 .border-normal {
-  border: 1px solid #f70!important;
+  border: 1px solid #f70 !important;
 }
 .btn-outline-normal {
   color: #f70 !important;
@@ -1539,11 +1540,11 @@ button.swiper-pagination-bullet {
   z-index: 2;
   margin-bottom: 10px;
   font-size: 1.5rem;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 .categories-page .categories-container {
   display: grid;
-  grid-template-columns: repeat(6,minmax(195px,1fr));
+  grid-template-columns: repeat(6, minmax(195px, 1fr));
   grid-template-rows: 50vh;
   align-content: center;
   gap: 20px;
@@ -1558,7 +1559,7 @@ button.swiper-pagination-bullet {
   background-position: 50%;
   color: #fff;
   text-align: center;
-  transition: all .3s cubic-bezier(.075,.4,.2,1);
+  transition: all 0.3s cubic-bezier(0.075, 0.4, 0.2, 1);
   cursor: pointer;
   position: relative;
   text-decoration: none;
@@ -1570,10 +1571,8 @@ button.swiper-pagination-bullet {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: linear-gradient(
-0deg
-,#f97501,rgba(249,117,1,0));
-  transition: all .3s ease;
+  background: linear-gradient(0deg, #f97501, rgba(249, 117, 1, 0));
+  transition: all 0.3s ease;
 }
 .categories-page .categories-container .category:hover {
   height: calc(100% + 100px);
@@ -1588,12 +1587,12 @@ button.swiper-pagination-bullet {
   bottom: -10px;
   width: 60%;
 }
-.text-normal{
-  color:#f70 !important;
+.text-normal {
+  color: #f70 !important;
 }
 #single-category-page .category-navbar .category-navbar-left .search {
   position: relative;
-  border: 1px solid hsla(0,0%,100%,.336);
+  border: 1px solid hsla(0, 0%, 100%, 0.336);
   border-radius: 25px;
   overflow: hidden;
 }
@@ -1603,19 +1602,31 @@ button.swiper-pagination-bullet {
   height: 100%;
   color: #fff;
 }
-#single-category-page .category-navbar .category-navbar-left .search .search-icon {
+#single-category-page
+  .category-navbar
+  .category-navbar-left
+  .search
+  .search-icon {
   position: absolute;
   right: 5px;
   top: 0;
   bottom: 0;
   margin: auto;
 }
-#single-category-page .category-navbar .category-navbar-right .category-filter-btns>div {
+#single-category-page
+  .category-navbar
+  .category-navbar-right
+  .category-filter-btns
+  > div {
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   text-align: center;
 }
-#single-category-page .category-navbar .category-navbar-right .category-filter-btns>div:last-child {
+#single-category-page
+  .category-navbar
+  .category-navbar-right
+  .category-filter-btns
+  > div:last-child {
   width: 130px;
 }
 #single-category-page .category-navbar .category-navbar-right {
@@ -1624,9 +1635,10 @@ button.swiper-pagination-bullet {
   align-items: flex-end;
 }
 #single-category-page .category-artist .artist-actions .b-icon.bi {
-  vertical-align: middle!important;
+  vertical-align: middle !important;
 }
-.category-artist .artist-actions, .single-artist .artist-actions{
+.category-artist .artist-actions,
+.single-artist .artist-actions {
   width: 150px;
   display: flex;
 }
@@ -1636,13 +1648,13 @@ button.swiper-pagination-bullet {
   margin-top: 10px;
   font-family: Noto Sans KR;
   font-weight: 700;
-  font-size: .7rem;
+  font-size: 0.7rem;
   display: block;
 }
 #single-artist-page .works-section-title span {
   height: 50px;
   width: 3px;
-  background-color: rgba(255,104,29,.19);
+  background-color: rgba(255, 104, 29, 0.19);
   position: relative;
   display: inline-block;
   margin-bottom: 15px;
@@ -1669,11 +1681,12 @@ button.swiper-pagination-bullet {
 #single-artist-page .single-artist-about {
   min-height: 250px;
 }
-#single-artist-page .previous-events, #single-artist-page .single-artist-about {
-  background-color: rgba(33,33,33,.308);
+#single-artist-page .previous-events,
+#single-artist-page .single-artist-about {
+  background-color: rgba(33, 33, 33, 0.308);
 }
 #single-artist-page .single-artist .artist-actions .b-icon.bi {
-  vertical-align: middle!important;
+  vertical-align: middle !important;
 }
 #single-artist-page .previous-events .single-prev-event {
   background-color: #f70;
@@ -1722,29 +1735,37 @@ button.swiper-pagination-bullet {
   width: 100%;
   height: 100%;
 }
-.swiper-button-next, .swiper-button-prev{
+.swiper-button-next,
+.swiper-button-prev {
   color: #f70;
 }
-.custom-control-input:checked~.custom-control-label:before {
+.custom-control-input:checked ~ .custom-control-label:before {
   color: #fff;
   border-color: #f70 !important;
   background-color: #f70 !important;
 }
-.btn.focus, .btn:focus{
+.btn.focus,
+.btn:focus {
   box-shadow: 0 0 0 0.2rem rgb(255 139 38 / 50%) !important;
 }
-.login-form .page-title{
+.login-form .page-title {
   font-weight: 700;
 }
-.login-form .form-control, .login-form button, .register-form .form-control, .register-form button,
-.contactus-form .form-control, .contactus-form button, .login-form .btn-link, #booking-form-popup .form-control{
+.login-form .form-control,
+.login-form button,
+.register-form .form-control,
+.register-form button,
+.contactus-form .form-control,
+.contactus-form button,
+.login-form .btn-link,
+#booking-form-popup .form-control {
   font-size: 0.9rem;
 }
-.form-group .form-control:focus{
+.form-group .form-control:focus {
   border-color: #f70;
   box-shadow: 0 0 0 0.2rem rgb(255 139 38 / 50%) !important;
 }
-#news-page h1{
+#news-page h1 {
   font-size: 2.25rem;
 }
 
@@ -1753,32 +1774,39 @@ button.swiper-pagination-bullet {
   border-radius: 50px;
   padding: 35px !important;
 }
-.book-modal-body textarea{
+.book-modal-body textarea {
   font-size: 0.9rem;
 }
-.custom-checkbox.b-custom-control-sm, .input-group-sm .custom-checkbox {
-  font-size: .7875rem;
+.custom-checkbox.b-custom-control-sm,
+.input-group-sm .custom-checkbox {
+  font-size: 0.7875rem;
   line-height: 1.5;
   padding-left: 1.3125rem;
 }
-.custom-checkbox.b-custom-control-sm .custom-control-label:before, .input-group-sm .custom-checkbox .custom-control-label:before {
-  top: .153125rem;
+.custom-checkbox.b-custom-control-sm .custom-control-label:before,
+.input-group-sm .custom-checkbox .custom-control-label:before {
+  top: 0.153125rem;
   left: -1.3125rem;
-  width: .875rem;
-  height: .875rem;
-  border-radius: .2rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.2rem;
 }
-.custom-checkbox.b-custom-control-sm .custom-control-label:after, .input-group-sm .custom-checkbox .custom-control-label:after {
-  top: .153125rem;
+.custom-checkbox.b-custom-control-sm .custom-control-label:after,
+.input-group-sm .custom-checkbox .custom-control-label:after {
+  top: 0.153125rem;
   left: -1.3125rem;
-  width: .875rem;
-  height: .875rem;
+  width: 0.875rem;
+  height: 0.875rem;
   background-size: 50% 50%;
 }
-.custom-control-input:focus~.custom-control-label:before {
+.custom-control-input:focus ~ .custom-control-label:before {
   box-shadow: 0 0 0 0.2rem rgb(255 119 0 / 25%) !important;
 }
-#booking-form-popup .booking-steps .booking-step .custom-radio .custom-control-label:after {
+#booking-form-popup
+  .booking-steps
+  .booking-step
+  .custom-radio
+  .custom-control-label:after {
   background: none;
 }
 .flex-center {
@@ -1786,7 +1814,7 @@ button.swiper-pagination-bullet {
   justify-content: center;
   align-items: center;
 }
-.react-datepicker-popper{
+.react-datepicker-popper {
   z-index: 2 !important;
 }
 .react-datepicker__day {
@@ -1796,17 +1824,17 @@ button.swiper-pagination-bullet {
   line-height: 1 !important;
   margin: 3px auto !important;
   padding: 9px 0 !important;
-  border-radius: 50%!important;
+  border-radius: 50% !important;
 }
-.react-datepicker__day--selected, .react-datepicker__day--keyboard-selected {
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
   background: #cc5f00 !important;
-  
 }
-.react-datepicker__day:hover{
+.react-datepicker__day:hover {
   color: #fff;
   background-color: #f70 !important;
 }
 
-.react-datepicker__day--selected:focus{
-    box-shadow: 0 0 0 0.2rem rgb(255 139 38 / 50%);
+.react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 0.2rem rgb(255 139 38 / 50%);
 }

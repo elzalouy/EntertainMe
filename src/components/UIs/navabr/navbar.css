@@ -1,0 +1,8 @@
+.result-artist {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.result-artist:hover {
+  background-color: #f70 !important;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getFeaturedArtists } from "../../httpService/artists";
@@ -8,7 +8,7 @@ import Artist from "./Artist";
 const Artists = () => {
   const dispatch = useDispatch();
   const artists = useSelector((state) => state.Artists.featuredArtists);
-
+  const [uri] = useState(process.env.REACT_APP_IMAGE_URI);
   useEffect(() => {
     const fetch = async () => {
       dispatch(
@@ -19,7 +19,6 @@ const Artists = () => {
     };
     fetch();
   }, [dispatch]);
-
   return (
     <section id="featured-artists">
       <h1 className="font-noto text-normal ml-3">
@@ -31,7 +30,6 @@ const Artists = () => {
           focusable="false"
           role="img"
           alt="icon"
-          xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           className="bi-triangle-fill b-icon bi"
         >
@@ -54,10 +52,12 @@ const Artists = () => {
                   virtualIndex={index}
                   className="featured-artist text-normal"
                   style={{
-                    backgroundImage: `url(${item.image_url})`,
+                    backgroundImage: `url(${uri}${item.image})`,
                     marginRight: "10px",
                   }}
-                  onClick={()=>{window.location.href=`/artist/${item.id}/${item.name}`}}
+                  onClick={() => {
+                    window.location.href = `/artist/${item.id}/${item.name}`;
+                  }}
                 >
                   <Artist item={item} />
                 </SwiperSlide>

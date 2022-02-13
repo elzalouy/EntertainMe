@@ -23,8 +23,10 @@
     "popper.js": "^1.16.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
-    "react-datepicker": "^4.2.1",
+    "react-datepicker": "^4.5.0",
     "react-dom": "^17.0.2",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.2.2",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
@@ -60,7 +62,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@types/swiper": "^5.4.3"
-  }
+  "devDependencies": {}
 }

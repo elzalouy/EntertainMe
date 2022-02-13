@@ -79,7 +79,10 @@ const LogIn = () => {
                         />
                       </div>
                       <div className="form-group">
-                        <p style={{ color: "gray" }}>{error}</p>
+                        <p style={{ color: "gray" }}>
+                          {error.length > 0 &&
+                            "the email or password are incorrect"}
+                        </p>
                       </div>
                       <div className="form-group d-flex justify-content-between align-items-center">
                         <div className="form-check">

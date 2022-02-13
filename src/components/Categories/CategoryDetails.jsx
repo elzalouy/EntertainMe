@@ -6,6 +6,9 @@ import music from "../../assets/channels4.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory as httpGetCategory } from "../../httpService/categories";
 import { CategoriesActions } from "../../store/Categories";
+import { authed } from "../../httpService/user";
+import { removeFavourite, setFavourite } from "../../httpService/favourites";
+import { FavoritesActions } from "../../store/Favorites";
 
 const CategoryDetails = (props) => {
   const api = process.env.REACT_APP;
@@ -14,27 +17,45 @@ const CategoryDetails = (props) => {
   const [internationArtists, setInternationalArtists] = useState([]);
   const [active1, setActive1] = useState(0);
   const [active2, setActive2] = useState(0);
-
+  const { favourites } = useSelector((state) => state.Favorites);
   useEffect(() => {
     async function fetch() {
-      dispatch(
-        CategoriesActions.onChangeCategory({
-          data: await httpGetCategory(props.match.params.id),
-        })
-      );
+      let result = await httpGetCategory(props.match.params.id);
+      if (result)
+        dispatch(
+          CategoriesActions.onChangeCategory({
+            data: result,
+          })
+        );
     }
     fetch();
   }, [dispatch, props.match.params.id]);
 
   useEffect(() => {
-    var data1 = category.artists.filter(
+    var data1 = category?.artists?.data?.filter(
       (item) => item.international === active1
     );
-    data1 = data1.filter((item) => item.mainstream === active2);
-    console.log(data1);
+    data1 = data1?.filter((item) => item.mainstream === active2);
     setInternationalArtists(data1);
   }, [active1, active2, category.artists]);
-
+  const onHandleLike = async () => {
+    if (authed()) {
+      let itemIndex = favourites?.findIndex(
+        (item) => item === props?.match?.params?.id
+      );
+      if (itemIndex >= 0) {
+        let result = await removeFavourite(props?.match?.params?.id);
+        if (result.data) {
+          dispatch(FavoritesActions.removeFavourite(result.data));
+        }
+      } else {
+        let result = await setFavourite(props?.match?.params?.id);
+        if (result.data) {
+          dispatch(FavoritesActions.setFavorite(result.data.item));
+        }
+      }
+    }
+  };
   return (
     <React.Fragment>
       <main>
@@ -144,37 +165,36 @@ const CategoryDetails = (props) => {
                     return (
                       <React.Fragment>
                         <div className="mb-3 col-md-4 col-6" key={index}>
-                          <Link
-                            to={`/artist/${item.id}/${item.name}`}
-                            className="category-artist text-decoration-none"
-                          >
-                            <div className="artist-info">
-                              <div className="artist-image">
-                                {item.image ? (
-                                  <img
-                                    alt=""
-                                    src={`(${api + item.image})`}
-                                    className=""
-                                  />
-                                ) : (
-                                  <img alt="" src={music} className="" />
-                                )}
+                          <div className="category-artist text-decoration-none">
+                            <Link to={`/artist/${item.id}/${item.name}`}>
+                              <div className="artist-info">
+                                <div className="artist-image">
+                                  {item.image ? (
+                                    <img
+                                      alt=""
+                                      src={`(${api + item.image})`}
+                                      className=""
+                                    />
+                                  ) : (
+                                    <img alt="" src={music} className="" />
+                                  )}
+                                </div>
+                                <div className="artist-about font-noto-m">
+                                  {_.truncate(item.description, {
+                                    length: 80,
+                                    separator: " ",
+                                  })}
+                                </div>
                               </div>
-                              <div className="artist-about font-noto-m">
-                                {_.truncate(item.description, {
-                                  length: 80,
-                                  separator: " ",
-                                })}
+                              <div className="artist-name my-2">
+                                <h5 className="m-0 font-noto text-light">
+                                  {_.truncate(item.name, {
+                                    length: 20,
+                                    separator: " ",
+                                  })}
+                                </h5>
                               </div>
-                            </div>
-                            <div className="artist-name my-2">
-                              <h5 className="m-0 font-noto text-light">
-                                {_.truncate(item.name, {
-                                  length: 20,
-                                  separator: " ",
-                                })}
-                              </h5>
-                            </div>
+                            </Link>
                             <div className="artist-actions mt-1">
                               <svg
                                 aria-hidden="true"
@@ -191,32 +211,42 @@ const CategoryDetails = (props) => {
                               </svg>
                               <div
                                 className="b-overlay-wrap position-relative ml-1"
-                                data-toggle="modal"
-                                data-target="#auth-required-modal"
+                                onClick={() => onHandleLike()}
+                                data-toggle={!authed() && "modal"}
+                                data-target={
+                                  !authed() && "#auth-required-modal"
+                                }
                               >
-                                <svg
-                                  width="1em"
-                                  height="1em"
-                                  viewBox="0 0 20 20"
-                                  focusable="false"
-                                  role="img"
-                                  alt="icon"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="currentColor"
-                                  className="bi-heart bg-normal p-1 action-icon b-icon bi"
-                                  style={{ fontSize: "225%" }}
-                                >
-                                  <g>
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M10 4.748l-.717-.737C7.6 2.281 4.514 2.878 3.4 5.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.837-3.362.314-4.385-1.114-2.175-4.2-2.773-5.883-1.043L10 4.748zM10 17C-5.333 6.868 5.279-1.04 9.824 3.143c.06.055.119.112.176.171a3.12 3.12 0 01.176-.17C14.72-1.042 25.333 6.867 10 17z"
-                                      clipRule="evenodd"
-                                    ></path>
-                                  </g>
-                                </svg>
+                                {favourites?.length > 0 &&
+                                favourites.findIndex(
+                                  (i) => i?.artist_id === item?.id
+                                ) >= 0 ? (
+                                  <i class="fas fa-heart" color="#212529"></i>
+                                ) : (
+                                  <svg
+                                    width="1em"
+                                    height="1em"
+                                    viewBox="0 0 20 20"
+                                    focusable="false"
+                                    role="img"
+                                    alt="icon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    className="bi-heart bg-normal p-1 action-icon b-icon bi"
+                                    style={{ fontSize: "225%" }}
+                                  >
+                                    <g>
+                                      <path
+                                        fillRule="evenodd"
+                                        d="M10 4.748l-.717-.737C7.6 2.281 4.514 2.878 3.4 5.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.837-3.362.314-4.385-1.114-2.175-4.2-2.773-5.883-1.043L10 4.748zM10 17C-5.333 6.868 5.279-1.04 9.824 3.143c.06.055.119.112.176.171a3.12 3.12 0 01.176-.17C14.72-1.042 25.333 6.867 10 17z"
+                                        clipRule="evenodd"
+                                      ></path>
+                                    </g>
+                                  </svg>
+                                )}
                               </div>
                             </div>
-                          </Link>
+                          </div>
                         </div>
                       </React.Fragment>
                     );
@@ -224,16 +254,16 @@ const CategoryDetails = (props) => {
                 ) : (
                   <React.Fragment>
                     <div className="row">
-                      <h4 class="text-normal text-center my-3">
-                      Sorry no Artists found in 
-                      {active1 === 0 ? " Local " : " International "} and 
-                      {active2 === 0 ? " Alternative " : " Mainstream "}
-                       filters, please adjust the filters and try again.</h4>
+                      <h4 className="text-normal text-center my-3">
+                        Sorry no Artists found in
+                        {active1 === 0 ? " Local " : " International "} and
+                        {active2 === 0 ? " Alternative " : " Mainstream "}
+                        filters, please adjust the filters and try again.
+                      </h4>
                     </div>
                   </React.Fragment>
                 )}
               </div>
-
             </div>
           </div>
         </main>

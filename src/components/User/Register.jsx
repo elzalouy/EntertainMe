@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { UserActions } from "../../store/User";
 import { register as httpRegister } from "../../httpService/user";
+import ReactFacebookLogin from "react-facebook-login";
+import ReactGoogleLogin from "react-google-login";
 const Register = () => {
   const dispatch = useDispatch();
   const register = useSelector((state) => state.User.register);
@@ -31,9 +33,25 @@ const Register = () => {
           { element: "error", value: result.error.message },
         ])
       );
-    window.location.href='/home';
+    window.location.href = "/home";
   };
-
+  const onGoogleLogin = (callBack) => {
+    dispatch(
+      UserActions.onSetRegister({
+        first_name: callBack?.Du?.VX,
+        last_name: callBack?.Du?.iW,
+        email: callBack.Du?.tv,
+        password: "",
+        password_confirmation: "",
+        type: "user",
+        error: "",
+        secure: true,
+      })
+    );
+  };
+  const onFacebookLogin = (callBack) => {
+    console.log(callBack);
+  };
   return (
     <>
       <main>
@@ -54,18 +72,21 @@ const Register = () => {
                   <div className="register-form d-flex align-items-center justify-content-center h-100 flex-column">
                     <div className="page-title h1 font-noto">Register</div>
                     <div className="w-75 mb-4">
-                      <button
-                        type="button"
-                        className="btn facebook font-noto border-0 btn-secondary btn-block rounded-0"
-                      >
-                        Facbook
-                      </button>
-                      <button
-                        type="button"
-                        className="btn gmail font-noto border-0 btn-secondary btn-block rounded-0"
-                      >
-                        G Mail
-                      </button>
+                      <ReactFacebookLogin
+                        appId={process.env.REACT_APP_FACEBOOK_ID}
+                        fields="name,email,picture"
+                        callback={onFacebookLogin}
+                        cssClass="btn facebook font-noto border-0 btn-secondary btn-block rounded-0"
+                      />
+                    </div>
+                    <div className="w-75 mb-4">
+                      <ReactGoogleLogin
+                        clientId={process.env.REACT_APP_GOOGLE_ID}
+                        onSuccess={onGoogleLogin}
+                        cookiePolicy="single_host_origin"
+                        buttonText="Login with Google"
+                        className="btn gmail font-noto border-0 btn-secondary justify-content-center btn-block rounded-0"
+                      />
                     </div>
                     <form className="w-75">
                       <input
