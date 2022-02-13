@@ -2,11 +2,11 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/js/bootstrap.min.js";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import Navbar from "../components/UIs/navabr/Navbar";
 import Laoding from "../components/Loading/Laoding";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
 import Home from "../components/Home/Home";
 import LogIn from "../components/User/LogIn";
@@ -26,8 +26,6 @@ import { getFavourites } from "../httpService/favourites";
 import { FavoritesActions } from "../store/Favorites";
 
 const App = () => {
-  const aboutusRef = useRef(null);
-  const { page } = useSelector((state) => state.UI);
   const [state, setState] = useState({
     isLoading: true,
     Routes: [

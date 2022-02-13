@@ -51,6 +51,18 @@ const Register = () => {
   };
   const onFacebookLogin = (callBack) => {
     console.log(callBack);
+    // dispatch(
+    //   UserActions.onSetRegister({
+    //     first_name: callBack?.Du?.VX,
+    //     last_name: callBack?.Du?.iW,
+    //     email: callBack.Du?.tv,
+    //     password: "",
+    //     password_confirmation: "",
+    //     type: "user",
+    //     error: "",
+    //     secure: true,
+    //   })
+    // );
   };
   return (
     <>
