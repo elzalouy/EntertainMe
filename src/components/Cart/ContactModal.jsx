@@ -18,30 +18,32 @@ const ContactModal = ({ setModal }) => {
   const onHandleSubmit = async (e) => {
     let data = {
       additional_info: cart.additional_info,
-      budget: cart.budget,
-      duration: cart.duration,
+      budget: parseInt(cart.budget),
+      duration: parseInt(cart.duration),
       address: cart.address,
-      date: new Date(cart.date),
+      date: new Date(cart.date).toISOString(),
       description: cart.description,
       placement: cart.placement,
-      guests: cart.guests,
+      guests: parseInt(cart.guests),
       additional_equipment: cart.additional_equipment,
       artists: cart.artists,
       name: cart.name,
       email: cart.email,
       phone_number: cart.phone_number,
       production_items: cart.production_items,
-      type: "booking",
       budget_tbd: cart.budget_tbd ? 1 : 0,
       duration_tbd: cart.duration_tbd ? 1 : 0,
       event_name: cart.event_name,
     };
     const result = validateEvent(data);
+    data.type = "booking";
     if (result) return dispatch(EventsActions.onHandleError(result.error));
-    const response = await requestOrder(data);
-    if (response.error)
-      return dispatch(EventsActions.onHandleError(result.error));
-    window.location.reload();
+    else {
+      const response = await requestOrder(data);
+      if (response.error)
+        return dispatch(EventsActions.onHandleError(result.error));
+      else window.location.href = "/home";
+    }
   };
   return (
     <form>

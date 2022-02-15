@@ -6,7 +6,9 @@ import { contactUs } from "../../httpService/user";
 import { UserActions } from "../../store/User";
 const ContactUS = () => {
   const dispatch = useDispatch();
-  const { email, name, message,error } = useSelector((state) => state.User.contactUs);
+  const { email, name, message, error } = useSelector(
+    (state) => state.User.contactUs
+  );
 
   const onChangeInput = (e) => {
     dispatch(
@@ -16,7 +18,7 @@ const ContactUS = () => {
     );
   };
   const omSubmit = async () => {
-    const result = await contactUs(email, name, message);
+    const result = await contactUs({ email, name, message });
     if (result.error)
       return dispatch(
         UserActions.onChangeContactUs([
@@ -43,7 +45,9 @@ const ContactUS = () => {
               <div className="col-lg-6">
                 <div className="contactus-form d-flex align-items-center justify-content-center h-100 flex-column">
                   <div className="row w-100 justify-content-center align-items-center">
-                    <div className="page-title h1 font-noto">Contact Us</div>
+                    <div className="page-title h1 font-noto mb-5">
+                      Contact Us
+                    </div>
                     <form method="POST" className=" w-75">
                       <div className="form-group mb-1">
                         <input
@@ -100,7 +104,6 @@ const ContactUS = () => {
                           </button>
                         </div>
                       </div>
-                      
                     </form>
                   </div>
                   <iframe

@@ -13,7 +13,7 @@ interface event {
   budget_tbd: boolean;
   duration_tbd: boolean;
   address: string;
-  date: string;
+  date: any;
   description: string;
   placement: string;
   guests: number;
@@ -49,7 +49,7 @@ const bookEventState: BookEventState = {
     budget_tbd: false,
     duration_tbd: false,
     address: "",
-    date: "",
+    date: undefined,
     description: "",
     placement: "",
     guests: 0,

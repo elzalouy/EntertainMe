@@ -43,5 +43,35 @@ const initialState = {
       },
     ],
   },
+  selectedArtists: [
+    {
+      id: "",
+      name: "",
+      image: "",
+      category_id: "",
+      country_id: "",
+      created_at: "",
+      updated_at: "",
+      description: "",
+      price_ranges: "",
+      mainstream: "",
+      international: "",
+      featured: "",
+      image_url: "",
+      tags: [
+        {
+          id: "",
+          name: "",
+          created_at: "",
+          updated_at: "",
+          pivot: {
+            artist_id: "",
+            tag_id: "",
+          },
+        },
+      ],
+    },
+  ],
+  artists: [],
 };
 export default initialState;

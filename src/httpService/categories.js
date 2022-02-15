@@ -9,12 +9,12 @@ export const getCategories = _try(async () => {
   } else {
   }
 });
-export const getCategory = _try(async (id) => {
-  const response = await http.get(route + "categories/" + id);
+
+export const getCategory = _try(async (id, page) => {
+  const response = await http.get(route + "categories/" + id + "?page=" + page);
   if (response.status === 200) {
     return response.data;
-  } else {
-  }
+  } else return null;
 });
 
 export const getArtist = _try(async (id) => {

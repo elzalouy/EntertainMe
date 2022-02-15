@@ -20,13 +20,20 @@ const Navbar = () => {
     setSearchValue(text);
     if (text.length % 2 === 0) {
       let result = await search(text);
-      if (result) setSearchResult(result.artists);
+      if (result) {
+        setSearchResult(result.artists);
+        setFocus(true);
+      }
     }
   };
   const setModal = () => {
     dispatch(
       UiActions.onChangeModel([{ element: "modalName", value: "cart" }])
     );
+  };
+  const onOpenArtist = (item) => {
+    console.log(`/artist/${item?.id}/${item?.name}`);
+    window.location.href = `/artist/${item?.id}/${item?.name}`;
   };
   return (
     <nav className="navbar navbar-dark bg-faded navbar-expand-lg">
@@ -56,7 +63,11 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto align-items-center">
             <li className="navbar-text p-0 pr-2">
               <div data-v-36959b50="" className="global-search">
-                <div data-v-36959b50="" className="search-input-container">
+                <div
+                  data-v-36959b50=""
+                  className="search-input-container"
+                  onFocus={() => setFocus(true)}
+                >
                   <input
                     data-v-36959b50=""
                     type="text"
@@ -65,8 +76,6 @@ const Navbar = () => {
                     id="__BVID__12"
                     value={searchValue}
                     onChange={(e) => onHandleSearch(e.target.value)}
-                    onBlur={() => setFocus(false)}
-                    onFocus={() => setFocus(true)}
                   />
                   <svg
                     data-v-36959b50=""
@@ -107,22 +116,27 @@ const Navbar = () => {
                     searchResult &&
                     searchResult.length > 0 ? (
                       <>
-                        <div className="search-results">
+                        <div
+                          className="search-results"
+                          onBlur={() => setFocus(false)}
+                          onMouseLeave={() => setFocus(false)}
+                        >
                           {searchResult?.map((item, index) => (
-                            <div
-                              onClick={() => {
-                                window.location.href = `/artist/${item?.id}`;
-                              }}
-                              key={index}
-                              className="result-artist border-bottom-primary router-link-exact-active router-link-active"
-                            >
-                              <h5 className="m-0">{item?.name}</h5>
+                            <div onClick={() => onOpenArtist(item)} key={index}>
+                              <div className="result-artist border-bottom-primary router-link-exact-active router-link-active">
+                                <h5 className="m-0">{item?.name}</h5>
+                              </div>
                             </div>
                           ))}
                         </div>
                       </>
                     ) : (
-                      <div data-v-36959b50="" className="search-tip">
+                      <div
+                        data-v-36959b50=""
+                        className="search-tip"
+                        onBlur={() => setFocus(false)}
+                        onMouseLeave={() => setFocus(false)}
+                      >
                         Search by name or category (ie: solo, violin, acoustic,
                         band, etc..)
                       </div>

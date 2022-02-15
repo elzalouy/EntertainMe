@@ -2,8 +2,8 @@
 
 body {
   margin: 0;
-  /* font-family: Almarai, sans-serif !important; */
-  font-family: "Almarai" !important;
+  font-family: Almarai, sans-serif !important;
+  /* font-family: "Almarai" !important; */
   font-size: 0.9rem !important;
   /* font-weight: 400 !important; */
   line-height: 1.6 !important;
@@ -41,14 +41,14 @@ body {
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Almarai", sans-serif;
+  /* --font-family-sans-serif: "Almarai", sans-serif; */
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   box-sizing: border-box;
 }
 
 @font-face {
-  font-family: "Almarai";
+  font-family: "Almarai", sans-serif;
   font-style: normal;
   /* font-weight: 700; */
   font-display: swap;
@@ -1359,7 +1359,6 @@ button.swiper-pagination-bullet {
   left: 0;
   top: 1rem;
   text-transform: uppercase;
-  position: absolute;
 }
 @media (max-width: 992px) {
   #contactus-page-container .contactus-form .page-title,
@@ -1488,6 +1487,19 @@ button.swiper-pagination-bullet {
 }
 .bg-normal {
   background-color: #f70 !important;
+}
+.bg-dark {
+  background-color: "#212529";
+}
+.dark {
+  color: #000;
+}
+.border-dark {
+  border-width: "2px";
+  border-color: #000;
+}
+.color-normal {
+  color: #f70 !important;
 }
 .btn-group-sm > .btn,
 .btn-sm {

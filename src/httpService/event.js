@@ -4,8 +4,11 @@ import handleServerError from "./handleServerError";
 const route = process.env.REACT_APP_API + "/api/";
 
 export const requestOrder = _try(async (data) => {
-  const response = await http.post(route + "order", data);
-  console.log(response);
+  let headers, token;
+  headers = {};
+  token = localStorage.getItem("x-auth-token");
+  if (token) headers = { Authorization: `Bearer ${token}` };
+  const response = await http.post(route + "order", data, { headers: headers });
   const result = handleServerError(response);
   if (result) return { error: result, data: null };
   if (response.data) return { error: null, data: response.data };

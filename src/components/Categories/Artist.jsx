@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import music from "../../assets/channels4.jpg";
 import slideImage1 from "../../assets/slideImage1.jpg";
@@ -8,16 +8,15 @@ import slideImage3 from "../../assets/slideImage3.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtist as httpGetArtist } from "../../httpService/categories";
 import { ArtistsActions } from "../../store/Artists";
-import { setFavourite } from "../../httpService/favourites";
-import { FavoritesActions } from "../../store/Favorites";
-
+import { onSetDisLiked, onSetLiked } from "../../store/Favorites/actions";
+import "./categories.css";
 const Artist = (props) => {
-  const api = process.env.REACT_APP;
+  const [api] = useState(process.env.REACT_APP_IMAGE_URI);
   const dispatch = useDispatch();
-  // get (state) artist
-  const artist = useSelector((state) => state.Artists.artist);
 
-  // set (state) artist
+  const artist = useSelector((state) => state.Artists.artist);
+  const { favourites } = useSelector((state) => state.Favorites);
+  const { logged } = useSelector((state) => state.UI);
   useEffect(() => {
     async function fetch() {
       dispatch(
@@ -28,11 +27,11 @@ const Artist = (props) => {
     }
     fetch();
   }, [dispatch, props.match.params.id]);
-  const onHandleLike = async () => {
-    let result = await setFavourite(props?.match?.params?.id);
-    if (result.data) {
-      dispatch(FavoritesActions.setFavorite(result.data));
-    }
+  const onHandleLike = () => {
+    dispatch(onSetLiked(props?.match?.params?.id, logged));
+  };
+  const onDisLike = () => {
+    dispatch(onSetDisLiked(props?.match?.params?.id, logged));
   };
   return (
     <main>
@@ -50,25 +49,25 @@ const Artist = (props) => {
                 <span></span> <span></span> <span></span>
               </div>
               <a
-                href={`/categoryDetails/${artist.category.id}/${artist.category.name}`}
+                href={`/categoryDetails/${artist?.category.id}/${artist?.category.name}`}
                 className="font-noto m-0 h3 text-decoration-none text-light"
               >
-                {artist.category.name}
+                {artist?.category.name}
               </a>
               <div className="category-seprator d-flex align-items-end">
                 <span></span> <span></span> <span></span>
               </div>
-              <h3 className="font-noto m-0 text-normal">{artist.name}</h3>
+              <h3 className="font-noto m-0 text-normal">{artist?.name}</h3>
             </div>
             <div className="row mt-3">
               <div className="col-md-4">
                 <div className="single-artist text-decoration-none">
                   <div className="artist-info">
                     <div className="artist-image">
-                      {artist.image ? (
+                      {artist?.image ? (
                         <img
                           alt=""
-                          src={`(${api + artist.image})`}
+                          src={`${api + artist.image}`}
                           className=""
                         />
                       ) : (
@@ -78,31 +77,36 @@ const Artist = (props) => {
                   </div>
                   <div className="artist-actions mt-3 align-items-center">
                     <div
-                      onClick={() => onHandleLike()}
                       className="b-overlay-wrap position-relative ml-1"
-                      data-toggle="modal"
-                      data-target="#auth-required-modal"
+                      data-toggle={!logged && "modal"}
+                      data-target={!logged && "#auth-required-modal"}
                     >
-                      <svg
-                        width="1em"
-                        height="1em"
-                        viewBox="0 0 20 20"
-                        focusable="false"
-                        role="img"
-                        alt="icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        className="bi-heart bg-normal p-1 action-icon b-icon bi"
-                        style={{ fontSize: "225%" }}
-                      >
-                        <g>
-                          <path
-                            fillRule="evenodd"
-                            d="M10 4.748l-.717-.737C7.6 2.281 4.514 2.878 3.4 5.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.837-3.362.314-4.385-1.114-2.175-4.2-2.773-5.883-1.043L10 4.748zM10 17C-5.333 6.868 5.279-1.04 9.824 3.143c.06.055.119.112.176.171a3.12 3.12 0 01.176-.17C14.72-1.042 25.333 6.867 10 17z"
-                            clipRule="evenodd"
-                          ></path>
-                        </g>
-                      </svg>
+                      {favourites &&
+                      favourites.findIndex(
+                        (item) => item.artist_id === artist.id
+                      ) >= 0 ? (
+                        <div onClick={() => onDisLike()}>
+                          <div
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              fontSize: "18px",
+                            }}
+                            className="bi-heart-fill bg-normal p-1 action-icon b-icon bi"
+                          ></div>
+                        </div>
+                      ) : (
+                        <div onClick={() => onHandleLike()}>
+                          <div
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              fontSize: "18px",
+                            }}
+                            className="bi-heart bg-normal p-1 action-icon b-icon bi"
+                          ></div>
+                        </div>
+                      )}
                     </div>
                     <button
                       type="button"
@@ -113,7 +117,7 @@ const Artist = (props) => {
                   </div>
                 </div>
                 <h2 className="text-center mt-3 font-noto text-light">
-                  {artist.name}
+                  {artist?.name}
                 </h2>
               </div>
               <div className="col-md-8">
@@ -121,13 +125,12 @@ const Artist = (props) => {
                   <div className="card-body">
                     <h3 className="text-normal font-noto">About</h3>
                     <p className="text-light font-noto-m">
-                      {artist.description}
+                      {artist?.description}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-
             <div className="row mt-2">
               <div className="col-md-2">
                 <h5 className="text-normal font-noto-m works-section-title">
@@ -295,7 +298,7 @@ const Artist = (props) => {
                 <div className="card rounded-0 previous-events  h-100 px-lg-3">
                   <div className="card-body">
                     <div className="d-flex flex-wrap">
-                      {artist.events.map((item, index) => {
+                      {artist?.events.map((item, index) => {
                         return (
                           <div
                             className="mb-3 mr-3 text-light font-noto single-prev-event"
@@ -332,42 +335,6 @@ const Artist = (props) => {
           </div>
         </div>
       </main>
-      <div id="auth-required-modal" className="modal fade">
-        <div className="modal-dialog modal-md modal-dialog-centered">
-          <span tabIndex="0"></span>
-          <div
-            role="document"
-            id="auth-required-modal___BV_modal_content_"
-            tabIndex="-1"
-            className="modal-content"
-          >
-            <div
-              id="auth-required-modal___BV_modal_body_"
-              className="modal-body bg-dark text-light"
-            >
-              <div className="font-noto text-center h4">
-                <strong>Login</strong> required to do this action
-              </div>
-            </div>
-            <footer
-              id="auth-required-modal___BV_modal_footer_"
-              className="modal-footer bg-dark"
-            >
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <a target="_self" href="/login" className="btn btn-normal">
-                Login
-              </a>
-            </footer>
-          </div>
-          <span tabIndex="0"></span>
-        </div>
-      </div>
     </main>
   );
 };

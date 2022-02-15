@@ -1,11 +1,11 @@
-const initialState = {
+const emptyState = {
   favourites: [
     {
       id: null,
       artist_id: null,
       user_id: null,
-      created_at: "",
-      updated_at: "",
+      created_at: '',
+      updated_at: '',
     },
   ],
   likedArtists: [],
@@ -13,4 +13,4 @@ const initialState = {
   selectedCategory: [],
   selectedLikedArtists: [],
 };
-export default initialState;
+export default emptyState;

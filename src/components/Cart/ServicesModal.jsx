@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { search as httpSearch } from "../../httpService/artists";
 import { ArtistsActions } from "../../store/Artists";
 import { EventsActions } from "../../store/Events";
+import {
+  addArtistToCart,
+  onRemoveArtistFromCart,
+} from "../../store/Events/actions";
 const additional_equipment = [
   "Sound",
   "Led Screens",
@@ -57,6 +61,7 @@ const ServicesModal = ({ setModal }) => {
   const { searchArtists, FilterSelectedArtists } = useSelector(
     (state) => state.Artists
   );
+
   const onHandleSearch = async (text) => {
     setsearchActive(true);
     setsearch(text);
@@ -88,28 +93,11 @@ const ServicesModal = ({ setModal }) => {
       );
   };
   const onSelectArtist = (item) => {
-    let selected = [...FilterSelectedArtists];
-    let index = selected.findIndex((i) => i.id === item.id);
-    if (index < 0) {
-      selected.push(item);
-    }
-    dispatch(
-      ArtistsActions.onHandleChangeItems({
-        element: "FilterSelectedArtists",
-        value: selected,
-      })
-    );
+    dispatch(addArtistToCart(FilterSelectedArtists, item));
     setsearchActive(false);
   };
   const onRemoveArtist = (item) => {
-    let artists = [...FilterSelectedArtists];
-    artists = artists.filter((i) => i !== item);
-    dispatch(
-      ArtistsActions.onHandleChangeItems({
-        element: "FilterSelectedArtists",
-        value: artists,
-      })
-    );
+    dispatch(onRemoveArtistFromCart(FilterSelectedArtists, item));
   };
   return (
     <form>

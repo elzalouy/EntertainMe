@@ -37,21 +37,16 @@ export const login = _try(async (email, password) => {
  * @returns {data} data  if the Response is ok (status code 200)
  * @returns {error} error if the response is a bad request (status code 400)
  */
-export const contactUs = _try(async (email, name, message) => {
-  const response = await http.post(api + "send_brief", {
-    email,
-    name,
-    message,
-  });
+export const contactUs = _try(async (data) => {
+  const response = await http.post(api + "send_brief", data);
   const handleError = handleServerError(response);
   if (handleError) return { data: null, error: handleError };
-  if (response.status === 200) {
-    return { data: response.data, error: null };
+  if (response.data) {
+    return { data: response?.data, error: null };
   } else {
     return { error: response.response.data.message, data: null };
   }
 });
-
 /**
  * Register
  *

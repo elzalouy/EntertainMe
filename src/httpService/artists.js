@@ -23,3 +23,12 @@ export const search = _try(async (query) => {
     return response.data;
   } else return null;
 });
+
+export const getArtist = _try(async (id) => {
+  const response = await http.get(route + "artists/" + id);
+  if (response.status === 200) {
+    return response.data;
+  } else {
+    return null;
+  }
+});

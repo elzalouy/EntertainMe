@@ -21,7 +21,7 @@ const ResetPasswordCode = (props) => {
   };
   const onSubmit = async () => {
     let result = await resetPassword({
-      code: code,
+      code: parseInt(code),
       password: password,
       confirm_password: password_confirmation,
     });

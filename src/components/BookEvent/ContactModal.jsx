@@ -18,30 +18,34 @@ const ContactModal = ({ setModal }) => {
   const onHandleSubmit = async (e) => {
     e.preventDefault();
     let data = {
-      additional_info: bookEvent.additional_info,
-      budget: bookEvent.budget,
-      duration: bookEvent.duration,
-      address: bookEvent.address,
-      date: new Date(bookEvent.date),
-      description: bookEvent.description,
-      placement: bookEvent.placement,
-      guests: bookEvent.guests,
-      additional_equipment: bookEvent.additional_equipment,
-      artists: bookEvent.artists,
-      name: bookEvent.name,
-      email: bookEvent.email,
-      phone_number: bookEvent.phone_number,
-      production_items: bookEvent.production_items,
-      type: "booking",
-      budget_tbd: bookEvent.budget_tbd ? 1 : 0,
-      duration_tbd: bookEvent.duration_tbd ? 1 : 0,
-      event_name: bookEvent.event_name,
+      additional_info: bookEvent?.additional_info,
+      budget: parseInt(bookEvent?.budget),
+      duration: parseInt(bookEvent?.duration),
+      address: bookEvent?.address,
+      date: new Date(bookEvent?.date).toISOString(),
+      description: bookEvent?.description,
+      placement: bookEvent?.placement,
+      guests: parseInt(bookEvent?.guests),
+      additional_equipment: bookEvent?.additional_equipment,
+      artists: bookEvent?.artists,
+      name: bookEvent?.name,
+      email: bookEvent?.email,
+      phone_number: bookEvent?.phone_number,
+      production_items: bookEvent?.production_items,
+      budget_tbd: bookEvent?.budget_tbd ? 1 : 0,
+      duration_tbd: bookEvent?.duration_tbd ? 1 : 0,
+      event_name: bookEvent?.event_name,
     };
     const result = validateEvent(data);
+    data.type = "booking";
+    console.log(result, data);
     if (result) return dispatch(EventsActions.onHandleError(result.error));
-    const response = await requestOrder(data);
-    if(response.error) return dispatch(EventsActions.onHandleError(result.error));
-    window.location.reload();
+    else {
+      const response = await requestOrder(data);
+      if (response.error)
+        return dispatch(EventsActions.onHandleError(result.error));
+      else window.location.href = "/home";
+    }
   };
   return (
     <form>

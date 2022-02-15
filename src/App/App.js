@@ -2,11 +2,12 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import Navbar from "../components/UIs/navabr/Navbar";
 import Laoding from "../components/Loading/Laoding";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
 import Home from "../components/Home/Home";
 import LogIn from "../components/User/LogIn";
@@ -20,14 +21,13 @@ import ForgetPassword from "../components/User/ForgetPassword";
 import { authed } from "../httpService/user";
 import Black from "../components/ContactUs/Black";
 import ResetPasswordCode from "../components/User/ResetPasswordCode";
-import { getEventsByUser } from "../httpService/event";
-import { EventsActions } from "../store/Events";
-import { getFavourites } from "../httpService/favourites";
-import { FavoritesActions } from "../store/Favorites";
+import { checkUser, onGetUserFav } from "../store/Ui/actions";
+import AuthModal from "../components/Modal/AuthModal";
+import { onGetCategories } from "../store/Categories/actions";
 
 const App = () => {
-  const [state, setState] = useState({
-    isLoading: true,
+  const { logged, authModal, loading } = useSelector((state) => state.UI);
+  const [state] = useState({
     Routes: [
       {
         route: "/",
@@ -129,32 +129,20 @@ const App = () => {
   });
   const dispatch = useDispatch();
   useEffect(() => {
-    const fetch = async () => {
-      let bookings, favourites;
-      let logged = authed();
-      if (logged) {
-        // Set Selected Booking by default and Get User Bookings
-        bookings = await getEventsByUser();
-        if (bookings.data) {
-          dispatch(
-            EventsActions.onChangeUserItems([
-              { element: "userBookings", data: bookings.data },
-            ])
-          );
-        }
-        favourites = await getFavourites();
-        dispatch(FavoritesActions.changeFavourites(favourites.data));
-      }
-      let routes = [...state?.Routes];
-      setState({ isLoading: false, Routes: routes });
-    };
     setTimeout(() => {
-      fetch();
-    }, 2000);
-  }, [dispatch, state.Routes]);
+      dispatch(onGetCategories());
+      dispatch(checkUser());
+    }, 1000);
+  }, [dispatch]);
+  useEffect(() => {
+    if (logged) {
+      dispatch(onGetUserFav());
+    }
+  }, [dispatch, logged]);
   return (
     <React.Fragment>
-      {state.isLoading ? (
+      {authModal && <AuthModal />}
+      {loading ? (
         <Laoding></Laoding>
       ) : (
         <BrowserRouter>

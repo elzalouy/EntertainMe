@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { EventsActions } from "../../store/Events";
 const EventDetailsModal = ({ setModal }) => {
   const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state.Events.cart);
+  const { cart } = useSelector((state) => state.Events);
   const [startDate, setStartDate] = useState(new Date());
   const onHandleChange = (e) => {
     if (e.target.type === "checkbox")
@@ -26,9 +26,7 @@ const EventDetailsModal = ({ setModal }) => {
   };
   const onHandleChangeDate = (value) => {
     setStartDate(value);
-    dispatch(
-      EventsActions.onHandleCart([{ element: "date", value: value.valueOf() }])
-    );
+    dispatch(EventsActions.onHandleCart([{ element: "date", value: value }]));
   };
   return (
     <form>
@@ -45,7 +43,7 @@ const EventDetailsModal = ({ setModal }) => {
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
                 value={cart?.event_name}
-                onChange={onHandleChange}
+                onChange={(e) => onHandleChange(e)}
               />
             </div>
           </fieldset>{" "}
@@ -59,7 +57,7 @@ const EventDetailsModal = ({ setModal }) => {
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
                 value={cart?.address}
-                onChange={onHandleChange}
+                onChange={(e) => onHandleChange(e)}
               />
             </div>
           </fieldset>{" "}
@@ -73,7 +71,7 @@ const EventDetailsModal = ({ setModal }) => {
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
                 value={cart?.description}
-                onChange={onHandleChange}
+                onChange={(e) => onHandleChange(e)}
               />
             </div>
           </fieldset>
@@ -96,7 +94,7 @@ const EventDetailsModal = ({ setModal }) => {
                 className="border-dark border rounded-0 bg-transparent text-muted form-control"
                 maxLength="7"
                 value={cart?.geusts}
-                onChange={onHandleChange}
+                onChange={(e) => onHandleChange(e)}
               />
             </div>{" "}
             <div className="d-flex align-items-end justify-content-center col-4">
@@ -114,7 +112,7 @@ const EventDetailsModal = ({ setModal }) => {
                     autoComplete="off"
                     className="custom-control-input"
                     value="indoor"
-                    onChange={onHandleChange}
+                    onChange={(e) => onHandleChange(e)}
                     id="__BVID__528__BV_option_0_"
                   />
                   <label
@@ -132,7 +130,7 @@ const EventDetailsModal = ({ setModal }) => {
                     className="custom-control-input"
                     name="placement"
                     value="outdoor"
-                    onChange={onHandleChange}
+                    onChange={(e) => onHandleChange(e)}
                     id="__BVID__528__BV_option_1_"
                   />
                   <label
@@ -156,7 +154,7 @@ const EventDetailsModal = ({ setModal }) => {
                 maxLength="7"
                 name="duration"
                 value={cart?.duration}
-                onChange={onHandleChange}
+                onChange={(e) => onHandleChange(e)}
               />{" "}
               <div className="text-normal font-noto-m custom-control custom-checkbox">
                 <input
@@ -165,7 +163,7 @@ const EventDetailsModal = ({ setModal }) => {
                   id="__BVID__532"
                   name="duration_tbd"
                   checked={cart?.duration_tbd}
-                  onChange={onHandleChange}
+                  onChange={(e) => onHandleChange(e)}
                 />
                 <label className="custom-control-label" htmlFor="__BVID__532">
                   TBD?
@@ -184,7 +182,7 @@ const EventDetailsModal = ({ setModal }) => {
                   id="__BVID__533"
                   name="budget"
                   value={cart?.budget}
-                  onChange={onHandleChange}
+                  onChange={(e) => onHandleChange(e)}
                 />
               </div>{" "}
               <div className="text-normal font-noto-m custom-control custom-checkbox">
@@ -195,7 +193,7 @@ const EventDetailsModal = ({ setModal }) => {
                   id="__BVID__534"
                   name="budget_tbd"
                   checked={cart?.budget_tbd}
-                  onChange={onHandleChange}
+                  onChange={(e) => onHandleChange(e)}
                 />
                 <label className="custom-control-label" htmlFor="__BVID__534">
                   TBD?
