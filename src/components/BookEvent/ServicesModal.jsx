@@ -79,12 +79,12 @@ const ServicesModal = ({ setModal }) => {
                 wrap="soft"
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
-                name="additional_info"
-                value={bookEvent?.additional_info}
+                name="type"
+                value={bookEvent?.type}
                 onChange={(e) => onHandleChange(e, "", "")}
               ></textarea>
             </div>
-          </fieldset>{" "}
+          </fieldset>
           <div className="additional-services my-3">
             <p className="text-normal font-noto-m">Additional Services</p>{" "}
             <div className="form-row border border-dark p-3">

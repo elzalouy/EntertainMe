@@ -7,7 +7,7 @@ import { requestOrder } from "../../httpService/event";
 
 const ContactModal = ({ setModal }) => {
   const dispatch = useDispatch();
-  const bookEvent = useSelector((state) => state.Events.bookEvent);
+  const { bookEvent, error } = useSelector((state) => state.Events);
   const onHandleChange = (e) => {
     dispatch(
       EventsActions.onHandleBookEvent([
@@ -111,6 +111,9 @@ const ContactModal = ({ setModal }) => {
                 onChange={onHandleChange}
               />
             </div>
+            <p className="text-warning" color="#f70">
+              {error}
+            </p>
           </fieldset>
         </div>
         <div className="flex-center mt-3">

@@ -24,6 +24,7 @@ import ResetPasswordCode from "../components/User/ResetPasswordCode";
 import { checkUser, onGetUserFav } from "../store/Ui/actions";
 import AuthModal from "../components/Modal/AuthModal";
 import { onGetCategories } from "../store/Categories/actions";
+import ErrorBoundary from "../UICore/usable-components/ErrorBoundries";
 
 const App = () => {
   const { logged, authModal, loading } = useSelector((state) => state.UI);
@@ -141,15 +142,15 @@ const App = () => {
   }, [dispatch, logged]);
   return (
     <React.Fragment>
-      {authModal && <AuthModal />}
-      {loading ? (
-        <Laoding></Laoding>
-      ) : (
-        <BrowserRouter>
-          <Navbar />
-          <Switch>{state?.Routes?.map((item) => item.Route)}</Switch>
-        </BrowserRouter>
-      )}
+        {authModal && <AuthModal />}
+        {loading ? (
+          <Laoding></Laoding>
+        ) : (
+          <BrowserRouter>
+            <Navbar />
+            <Switch>{state?.Routes?.map((item) => item.Route)}</Switch>
+          </BrowserRouter>
+        )}
     </React.Fragment>
   );
 };

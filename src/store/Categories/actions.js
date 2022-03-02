@@ -43,3 +43,17 @@ export const onLoadCategory = (id) => {
     }
   };
 };
+
+export const onFilterArtists = (selectedArtists, filter) => {
+  return (dispatch) => {
+    let artists = [...selectedArtists];
+    let filtered = artists.filter((item) => {
+      if (
+        item.international === filter.international &&
+        item.mainstream === filter.mainstream
+      )
+        return item;
+    });
+    dispatch(CategoriesActions.onSetFilter(filtered));
+  };
+};

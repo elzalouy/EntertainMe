@@ -25,11 +25,21 @@ export const onLoadData = (state, action) => {
   artists = _.concat(artists, action.payload);
   state.selectedArtists = artists;
 };
+export const onChangeFilter = (state, action) => {
+  state.filter = action.payload;
+};
+
+export const onSetFilter = (state, action) => {
+  state.selectedFilteredArtists = action.payload;
+};
+
 const exports = {
   onChangeCategories,
   onChangeCategory,
   onLoadData,
   onChangeItem,
+  onChangeFilter,
+  onSetFilter,
 };
 
 export default exports;

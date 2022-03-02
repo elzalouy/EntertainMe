@@ -27,11 +27,11 @@ const EventDetailsModal = ({ setModal }) => {
   const onHandleChangeDate = (value) => {
     dispatch(
       EventsActions.onHandleBookEvent([
-        { element: "date", value:  value.valueOf() },
+        { element: "date", value: value.valueOf() },
       ])
     );
   };
-
+  console.log(bookEvent);
   return (
     <form>
       <div className="booking-steps">
@@ -46,7 +46,7 @@ const EventDetailsModal = ({ setModal }) => {
                 required="required"
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
-                value={bookEvent.event_name}
+                value={bookEvent?.event_name}
                 onChange={onHandleChange}
               />
             </div>
@@ -60,7 +60,7 @@ const EventDetailsModal = ({ setModal }) => {
                 required="required"
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
-                value={bookEvent.address}
+                value={bookEvent?.address}
                 onChange={onHandleChange}
               />
             </div>
@@ -74,7 +74,7 @@ const EventDetailsModal = ({ setModal }) => {
                 required="required"
                 aria-required="true"
                 className="bg-transparent border border-dark rounded-0 form-control"
-                value={bookEvent.description}
+                value={bookEvent?.description}
                 onChange={onHandleChange}
               />
             </div>
@@ -84,7 +84,7 @@ const EventDetailsModal = ({ setModal }) => {
               <p className="font-noto-m text-normal mb-2">Event Date</p>{" "}
               <DatePicker
                 className="dateInput bg-transparent border border-dark rounded-0 form-control"
-                selected={bookEvent.date ? bookEvent.date : null}
+                selected={bookEvent?.date ? bookEvent?.date : null}
                 onChange={onHandleChangeDate}
               />
             </div>
@@ -97,10 +97,10 @@ const EventDetailsModal = ({ setModal }) => {
                 aria-required="true"
                 className="border-dark border rounded-0 bg-transparent text-muted form-control"
                 maxLength="7"
-                value={bookEvent.geusts}
+                value={bookEvent?.guests}
                 onChange={onHandleChange}
               />
-            </div>{" "}
+            </div>
             <div className="d-flex align-items-end justify-content-center col-4">
               <div
                 role="radiogroup"
@@ -118,6 +118,11 @@ const EventDetailsModal = ({ setModal }) => {
                     value="indoor"
                     onChange={onHandleChange}
                     id="__BVID__528__BV_option_0_"
+                    checked={
+                      bookEvent.placement && bookEvent.placement === "indoor"
+                        ? true
+                        : false
+                    }
                   />
                   <label
                     className="custom-control-label"
@@ -136,6 +141,11 @@ const EventDetailsModal = ({ setModal }) => {
                     value="outdoor"
                     onChange={onHandleChange}
                     id="__BVID__528__BV_option_1_"
+                    checked={
+                      bookEvent.placement && bookEvent.placement === "outdoor"
+                        ? true
+                        : false
+                    }
                   />
                   <label
                     className="custom-control-label"

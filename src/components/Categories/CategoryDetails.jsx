@@ -5,28 +5,34 @@ import music from "../../assets/channels4.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { onSetDisLiked, onSetLiked } from "../../store/Favorites/actions";
-import { onLoadArtists, onLoadCategory } from "../../store/Categories/actions";
+import {
+  onFilterArtists,
+  onLoadArtists,
+  onLoadCategory,
+} from "../../store/Categories/actions";
 import {
   addArtistToCart,
   onRemoveArtistFromCart,
 } from "../../store/Events/actions";
+import MusicRadio from "../../UICore/Category/MusicRadio";
+import PresnseRadioButtons from "../../UICore/Category/PresenseRadio";
 
 const CategoryDetails = (props) => {
   const api = process.env.REACT_APP_IMAGE_URI;
   const dispatch = useDispatch();
-  const [active1, setActive1] = useState(0);
-  const [active2, setActive2] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const { logged } = useSelector((state) => state.UI);
-  const { category, selectedArtists } = useSelector(
-    (state) => state.Categories
-  );
+  const { category, selectedArtists, filter, selectedFilteredArtists } =
+    useSelector((state) => state.Categories);
   const { favourites } = useSelector((state) => state.Favorites);
   const { cart } = useSelector((state) => state.Events);
   const { FilterSelectedArtists } = useSelector((state) => state.Artists);
   useEffect(() => {
-    // document.getElementById("list");
+    console.log("selected artists changed");
+    dispatch(onFilterArtists(selectedArtists, filter));
+  }, [selectedArtists, filter]);
+  useEffect(() => {
     document.addEventListener("scroll", trackScrolling);
   });
   useEffect(() => {
@@ -53,14 +59,14 @@ const CategoryDetails = (props) => {
     dispatch(onSetDisLiked(id, logged));
   };
   const trackScrolling = () => {
-    const wrappedElement = document.getElementById("list");
+    const wrappedElement = document?.getElementById("list");
     if (isBottom(wrappedElement) && loading === false) {
       setLoading(true);
     }
   };
 
   const isBottom = (el) => {
-    return el.getBoundingClientRect().bottom <= window.innerHeight;
+    return el?.getBoundingClientRect()?.bottom <= window.innerHeight;
   };
   const onAddToCart = (item) => {
     dispatch(addArtistToCart(FilterSelectedArtists, item));
@@ -128,52 +134,20 @@ const CategoryDetails = (props) => {
                 </div>
               </div>
               <div className="category-navbar-right text-normal flex-md-column flex-wrap flex-row mt-3">
-                <div className="category-filter-btns border-normal d-flex mr-2">
-                  <div
-                    className={`text-center font-noto h5 p-1 px-3 m-0 
-                    ${active1 === 0 ? "bg-normal text-light" : ""}`}
-                    onClick={() => {
-                      setActive1(0);
-                    }}
-                  >
-                    Local
-                  </div>
-                  <div
-                    className={`text-center font-noto h5 p-1 m-0 
-                    ${active1 === 1 ? "bg-normal text-light" : ""}`}
-                    onClick={() => {
-                      setActive1(1);
-                    }}
-                  >
-                    International
-                  </div>
-                </div>
                 <div className="category-filter-btns  border-normal d-flex mt-3 mr-2">
-                  <div
-                    className={`text-center font-noto h5 p-1 m-0 px-2
-                   ${active2 === 0 ? "bg-normal text-light" : ""}`}
-                    onClick={() => {
-                      setActive2(0);
-                    }}
-                  >
-                    Alternative
-                  </div>
-                  <div
-                    className={`text-center font-noto h5 p-1 m-0
-                   ${active2 === 1 ? "bg-normal text-light" : ""}`}
-                    onClick={() => {
-                      setActive2(1);
-                    }}
-                  >
-                    Mainstream
-                  </div>
+                  <MusicRadio />
+                </div>
+
+                <div className="category-filter-btns border-normal d-flex mr-2">
+                  <PresnseRadioButtons />
                 </div>
               </div>
             </div>
             <div className="b-overlay-wrap position-relative">
               <div className="row" id="list">
-                {selectedArtists && selectedArtists.length > 0 ? (
-                  selectedArtists.map((item, index) => {
+                {selectedFilteredArtists &&
+                selectedFilteredArtists.length > 0 ? (
+                  selectedFilteredArtists.map((item, index) => {
                     return (
                       <React.Fragment key={index}>
                         <div className="mb-3 col-md-4 col-6" key={index}>
@@ -290,8 +264,8 @@ const CategoryDetails = (props) => {
                     <div className="row">
                       <h4 className="text-normal text-center my-3">
                         Sorry no Artists found in
-                        {active1 === 0 ? " Local " : " International "} and
-                        {active2 === 0 ? " Alternative " : " Mainstream "}
+                        {/* {active1 === 0 ? " Local " : " International "} and
+                        {active2 === 0 ? " Alternative " : " Mainstream "} */}
                         filters, please adjust the filters and try again.
                       </h4>
                     </div>

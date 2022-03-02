@@ -73,5 +73,7 @@ const initialState = {
     },
   ],
   artists: [],
+  selectedFilteredArtists: [],
+  filter: { international: 0, mainstream: 0 },
 };
 export default initialState;

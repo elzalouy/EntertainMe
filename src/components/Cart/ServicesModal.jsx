@@ -114,7 +114,7 @@ const ServicesModal = ({ setModal }) => {
                       onChange={(e) => onHandleSearch(e.target.value)}
                       placeholder="ADDITIONAL ENTERTAINMENT"
                       autoComplete="off"
-                      className="bg-primary border-0 font-noto form-control form-control-lg"
+                      className="border-0 font-noto form-control form-control-lg"
                       id="__BVID__38"
                     />
                   </div>
