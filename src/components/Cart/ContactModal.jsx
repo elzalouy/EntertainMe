@@ -7,7 +7,7 @@ import { requestOrder } from "../../httpService/event";
 
 const ContactModal = ({ setModal }) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.Events.cart);
+  const { cart, error } = useSelector((state) => state.Events);
   const onHandleChange = (e) => {
     dispatch(
       EventsActions.onHandleCart([
@@ -109,6 +109,7 @@ const ContactModal = ({ setModal }) => {
                 onChange={onHandleChange}
               />
             </div>
+            <p className="text-warning">{error}</p>
           </fieldset>
         </div>
         <div className="flex-center mt-3">
